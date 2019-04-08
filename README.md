@@ -18,7 +18,14 @@ The `w_` prefix is followed by a technology name. The name should not use unders
 - smart-seq
 - smart-seq2
 - smarter
-- ...to be completed
+- smart-like
+- 10xv1*
+- 10xv1a*
+- 10xv1i*
+- 10xv2
+- drop-seq
+
+* Not to be supported in first droplet Alevin-based pipeline
 
 ### Phase of analysis
 
