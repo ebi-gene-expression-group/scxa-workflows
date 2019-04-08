@@ -25,7 +25,7 @@ The `w_` prefix is followed by a technology name. The name should not use unders
 - 10xv2
 - drop-seq
 
- * Not to be supported in first droplet Alevin-based pipeline
+ \* Not to be supported in first droplet Alevin-based pipeline
 
 ### Phase of analysis
 
