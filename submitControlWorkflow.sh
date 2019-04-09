@@ -25,7 +25,7 @@ nextflowCommand="NXF_VER=19.03.0-SNAPSHOT nextflow run -N $SCXA_REPORT_EMAIL -r 
 
 # Run the LSF submission if it's not already running
 
-bjobs -w | grep "test_$workflow" > /dev/null 2>&1
+bjobs -w | grep "${SCXA_ENV}_$workflow" > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
 
