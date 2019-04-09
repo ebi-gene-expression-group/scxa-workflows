@@ -46,7 +46,7 @@ if [ $? -ne 0 ]; then
     echo "Submitting job"
     rm -rf run.out run.err .nextflow.log*  
     bsub \
-        -J ${scxaBranch}_$workflow \
+        -J ${SCXA_ENV}_$workflow \
         -M 4096 -R "rusage[mem=4096]" \
         -u $SCXA_REPORT_EMAIL \
         -o run.out \
