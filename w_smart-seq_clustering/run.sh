@@ -84,3 +84,5 @@ if [ $tpm_filtering = "True" ]; then
                          -H scanpy-tpm-filtering-$EXP_ID \
                          -G $GALAXY_INSTANCE
 fi
+
+choose_resolution_per_clustering.py --clusters-path $EXP_BUNDLE --output-dir 
