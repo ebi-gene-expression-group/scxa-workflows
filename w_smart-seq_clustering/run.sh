@@ -24,10 +24,9 @@ scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $scriptDir/../util/manifest_handing.sh
 
 # Paths for intermediate files:
-inputs_yaml=$WORKDIR/inputs_clustering_$EXP_ID\.yaml
-workflow_definition=$scriptDir/workflow_scanpy_prod.json
-params_json=$scriptDir/params.json
-
+inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
+workflow_definition=$scriptDir/scanpy_clustering_workflow.json
+params_json=$scriptDir/scanpy_clustering_params.json
 
 # Create inputs.yaml
 matrix_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'raw' )
@@ -35,7 +34,7 @@ genes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_r
 barcodes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'raw' )
 gtf_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'reference_annotation' '' )
 
-sed "s+<MATRIX_PATH>+$matrix_file+" $scriptDir/input_template.yaml | \
+sed "s+<MATRIX_PATH>+$matrix_file+" $scriptDir/scanpy_clustering_inputs.yaml.template | \
     sed "s+<GENES_PATH>+$genes_file+" | \
     sed "s+<BARCODES_PATH>+$barcodes_file+" | \
     sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
@@ -54,15 +53,15 @@ if [ ${#tpm_matrix_file} -gt 0 ]; then
   tpm_barcodes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'tpm' )
   tpm_filtering=True
 
-  inputs_tpm_filtering_yaml=$WORKDIR/inputs_tpm_filtering_$EXP_ID\.yaml
-  sed "s+<MATRIX_PATH>+$tpm_matrix_file+" $scriptDir/input_tpm_filtering_template.yaml | \
+  inputs_tpm_filtering_yaml=$WORKDIR/scanpy_tpm_filtering_inputs_$EXP_ID\.yaml
+  sed "s+<MATRIX_PATH>+$tpm_matrix_file+" $scriptDir/scanpy_tpm_filtering_inputs.yaml.template | \
       sed "s+<GENES_PATH>+$tpm_genes_file+" | \
       sed "s+<BARCODES_PATH>+$tpm_barcodes_file+" | \
       sed "s+<FILTERED_GENES>+$raw_filtered_genes+" | \
       sed "s+<FILTERED_BARCODES>+$raw_filtered_barcodes+" > $inputs_tpm_filtering_yaml
 
-  tpm_filtering_workflow_definition=$scriptDir/workflow_scanpy_tpm_filtering.json
-  params_tpm_filtering_json=$scriptDir/tpm_filtering_params.json
+  tpm_filtering_workflow_definition=$scriptDir/scanpy_tpm_filtering_workflow.json
+  params_tpm_filtering_json=$scriptDir/scanpy_tpm_filtering_params.json
 fi
 
 # Main clustering run
@@ -71,7 +70,7 @@ run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -o $EXP_BUNDLE \
                        -W $workflow_definition \
                        -P $params_json \
-                       -H clustering-scanpy-prod-1.1-$EXP_ID \
+                       -H scanpy-clustering-$EXP_ID \
                        -G $GALAXY_INSTANCE
 
 # Filter TPM if needed
@@ -81,6 +80,6 @@ if [ $tpm_filtering = "True" ]; then
                          -o $EXP_BUNDLE \
                          -W $tpm_filtering_workflow_definition \
                          -P $params_tpm_filtering_json \
-                         -H filtering-tpm-$EXP_ID \
+                         -H scanpy-tpm-filtering-$EXP_ID \
                          -G $GALAXY_INSTANCE
 fi
