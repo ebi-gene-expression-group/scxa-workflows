@@ -10,15 +10,12 @@ export EXP_BUNDLE=${BUNDLE_PATH}
 # GALAXY Related, needs to be inyected
 export GALAXY_INSTANCE=${GALAXY_INSTANCE}
 export GALAXY_CRED_FILE=${GALAXY_CRED_FILE}
-export BIOBLEND_VENV_PATH=${BIOBLEND_VENV_PATH}
 
 export WORKDIR=${./:-$WORKDIR}
 
 [ ! -z ${EXP_SPECIE+x} ] || ( echo "Env var EXP_SPECIE for the species of the experiment needs to be defined." && exit 1 )
 [ ! -z ${BUNDLE_PATH+x} ] || ( echo "Env var EXP_BUNDLE for the bundle of the experiment needs to be defined." && exit 1 )
 [ ! -z ${EXP_ID+x} ] || ( echo "Env var EXP_ID for the id/accession of the experiment needs to be defined." && exit 1 )
-
-source $BIOBLEND_VENV/bin/activate
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $scriptDir/../util/manifest_handing.sh
@@ -63,6 +60,10 @@ if [ ${#tpm_matrix_file} -gt 0 ]; then
   tpm_filtering_workflow_definition=$scriptDir/scanpy_tpm_filtering_workflow.json
   params_tpm_filtering_json=$scriptDir/scanpy_tpm_filtering_params.json
 fi
+
+# Create needed conda environments if not available
+create_conda_env.sh _bioblend@0.12.0_py3 bioblend=0.12.0
+conda activate _bioblend@0.12.0_py3
 
 # Main clustering run
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
