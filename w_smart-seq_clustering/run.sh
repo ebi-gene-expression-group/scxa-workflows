@@ -19,6 +19,11 @@ export WORKDIR=${./:-$WORKDIR}
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $scriptDir/../util/manifest_handing.sh
+baseDir=$scriptDir/..
+
+for mod in util util/galaxy-workflow-executor; do
+  PATH=$baseDir/$mod:$PATH
+done
 
 # Paths for intermediate files:
 inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
@@ -85,4 +90,4 @@ if [ $tpm_filtering = "True" ]; then
                          -G $GALAXY_INSTANCE
 fi
 
-choose_resolution_per_clustering.py --clusters-path $EXP_BUNDLE --output-dir 
+choose_resolution_per_clustering.py --clusters-path $EXP_BUNDLE --output-dir
