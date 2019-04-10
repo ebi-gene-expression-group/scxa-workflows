@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 """
 Given a set of clustering files, choose resolutions to use for colliding number of clusters, merge cluster files

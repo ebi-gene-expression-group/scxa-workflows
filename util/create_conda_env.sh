@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 conda_env_name=${CONDA_ENV:-$1}
 conda_packages=${CONDA_PACKAGES:-$2}
@@ -10,4 +10,3 @@ if [ $? -eq 1 ]; then
   conda create -y -n $conda_env_name $conda_packages
 fi
 # we currently trust that if the environment with that name is created, then it contains what we need.
-
