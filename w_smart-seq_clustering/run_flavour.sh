@@ -21,7 +21,7 @@ fi
 # Main clustering run
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -i $inputs_yaml \
-                       -o $EXP_BUNDLE \
+                       -o $WORKDIR \
                        -W $workflow_definition \
                        -P $params_json \
                        -H scanpy-clustering-$EXP_ID \
@@ -31,11 +31,11 @@ run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
 if [ $tpm_filtering = "True" ]; then
   run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                          -i $inputs_tpm_filtering_yaml \
-                         -o $EXP_BUNDLE \
+                         -o $WORKDIR \
                          -W $tpm_filtering_workflow_definition \
                          -P $params_tpm_filtering_json \
                          -H scanpy-tpm-filtering-$EXP_ID \
                          -G $GALAXY_INSTANCE
 fi
 
-choose_resolution_per_clustering.py --clusters-path $EXP_BUNDLE --output-dir
+choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
