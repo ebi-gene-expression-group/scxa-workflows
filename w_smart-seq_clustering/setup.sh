@@ -27,10 +27,12 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $scriptDir/scanpy_clustering_inputs.yaml.tem
     sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
 
 echo "export inputs_yaml=$inputs_yaml" > $envs_for_workflow_run
+echo "export workflow_definition=$scriptDir/scanpy_clustering_workflow.json" >> $envs_for_workflow_run
+echo "export params_json=$scriptDir/scanpy_clustering_params.json" >> $envs_for_workflow_run
 
 # Results potentially relevant for TPM filtering:
-echo "export raw_filtered_genes=$WORKDIR/raw_filtered_genes.tsv" >> $envs_for_workflow_run
-echo "export raw_filtered_barcodes=$WORKDIR/raw_filtered_barcodes.tsv" >> $envs_for_workflow_run
+raw_filtered_genes=$WORKDIR/raw_filtered_genes.tsv
+raw_filtered_barcodes=$WORKDIR/raw_filtered_barcodes.tsv
 
 # See if we need to filter TPMs (in the future this could depend on the protocol)
 if [ ! -z ${EXP_BUNDLE+x} ]; then

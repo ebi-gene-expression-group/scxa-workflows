@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Create needed conda environments if not available
 if [ -z ${create_conda_env+x} ]; then {
   create_conda_env.sh _bioblend@0.12.0_py3 bioblend=0.12.0
