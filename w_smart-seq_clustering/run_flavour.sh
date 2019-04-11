@@ -9,13 +9,13 @@ if [ ! -z ${create_conda_env+x} ]; then {
 which run_galaxy_workflow.py
 if [ $? -gt 0 ]; then
   echo "run_galaxy_workflow.py is not in the path, exiting"
-  exit(1)
+  exit 1
 fi
 
 which choose_resolution_per_clustering.py
 if [ $? -gt 0 ]; then
   echo "choose_resolution_per_clustering.py is not in the path, exiting"
-  exit(1)
+  exit 1
 fi
 
 # Main clustering run
