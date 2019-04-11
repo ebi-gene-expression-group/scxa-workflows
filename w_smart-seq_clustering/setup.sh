@@ -6,7 +6,7 @@ source $scriptDir/../util/manifest_handling.sh
 [ -z ${envs_for_workflow_run+x} ] && echo "Env var envs_for_workflow_run should be set by upstream script." && exit 1
 
 # Create inputs.yaml based on MANIFEST
-if [ -z ${EXP_BUNDLE+x} ]; then
+if [ ! -z ${EXP_BUNDLE+x} ]; then
   matrix_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'raw' )
   genes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'raw' )
   barcodes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'raw' )
