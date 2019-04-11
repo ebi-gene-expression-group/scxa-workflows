@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $scriptDir/../util/manifest_handing.sh
+source $scriptDir/../util/manifest_handling.sh
 
 [ -z ${envs_for_workflow_run+x} ] && echo "Env var envs_for_workflow_run should be set by upstream script." && exit 1
 
