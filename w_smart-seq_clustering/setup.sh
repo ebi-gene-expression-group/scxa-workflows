@@ -33,7 +33,7 @@ echo "export raw_filtered_genes=$WORKDIR/raw_filtered_genes.tsv" >> $envs_for_wo
 echo "export raw_filtered_barcodes=$WORKDIR/raw_filtered_barcodes.tsv" >> $envs_for_workflow_run
 
 # See if we need to filter TPMs (in the future this could depend on the protocol)
-if [ -z ${EXP_BUNDLE+x} ]; then
+if [ ! -z ${EXP_BUNDLE+x} ]; then
   tpm_matrix_file=$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'tpm' )
 fi
 
