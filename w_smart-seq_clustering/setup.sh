@@ -10,7 +10,7 @@ if [ ! -z ${EXP_BUNDLE+x} ]; then
   matrix_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'raw' )
   genes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'raw' )
   barcodes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'raw' )
-  gtf_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'reference_annotation' '' )
+  gtf_file=$REF_DIR/$EXP_SPECIE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'reference_annotation' '' )
 fi
 
 [ -z ${matrix_file+x} ] && echo "Env var matrix_file should be set." && exit 1
