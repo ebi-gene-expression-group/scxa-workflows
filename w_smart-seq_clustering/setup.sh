@@ -29,6 +29,7 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $scriptDir/scanpy_clustering_inputs.yaml.tem
 echo "export inputs_yaml=$inputs_yaml" > $envs_for_workflow_run
 echo "export workflow_definition=$scriptDir/scanpy_clustering_workflow.json" >> $envs_for_workflow_run
 echo "export params_json=$scriptDir/scanpy_clustering_params.json" >> $envs_for_workflow_run
+echo "export allowed_errors=$scriptDir/scanpy_clustering_allowed_errors.yaml" >> $envs_for_workflow_run
 
 # Results potentially relevant for TPM filtering:
 raw_filtered_genes=$WORKDIR/raw_filtered_genes.tsv

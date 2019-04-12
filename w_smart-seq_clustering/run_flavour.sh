@@ -25,6 +25,7 @@ run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -W $workflow_definition \
                        -P $params_json \
                        -H scanpy-clustering-$EXP_ID \
+                       -a $allowed_errors \
                        -G $GALAXY_INSTANCE
 
 # Filter TPM if needed
