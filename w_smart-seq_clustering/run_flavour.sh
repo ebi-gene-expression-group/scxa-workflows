@@ -2,8 +2,8 @@
 
 # Create needed conda environments if not available
 if [ ! -z ${create_conda_env+x} ]; then
-  create_conda_env.sh _bioblend@0.12.0_py3 bioblend=0.12.0 bioconda
-  conda activate _bioblend@0.12.0_py3
+  create_conda_env.sh _bioblend@0.12.0_py3 'bioblend=0.12.0 requests-toolbelt=0.9.1' bioconda
+  source activate _bioblend@0.12.0_py3
 fi
 
 which run_galaxy_workflow.py
