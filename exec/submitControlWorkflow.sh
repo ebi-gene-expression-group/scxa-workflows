@@ -21,7 +21,12 @@ export SCXA_BRANCH=$scxaBranch
 if [ -n "$expName" ]; then
     expNamePart="--expName $expName"
 fi
-nextflowCommand="NXF_VER=19.03.0-SNAPSHOT nextflow run -N $SCXA_REPORT_EMAIL -r $scxaBranch -resume ${workflow} $expNamePart --enaSshUser fg_atlas_sc --sdrfDir $SCXA_SDRF_DIR -work-dir $SCXA_WORKFLOW_ROOT/work/$workflow"
+
+workingDir="$SCXA_WORKFLOW_ROOT/work/${workflow}"
+if [ -n "$expName" ]; then
+    workingDir="${workingDir}_$expName"
+fi
+nextflowCommand="NXF_VER=19.03.0-SNAPSHOT nextflow run -N $SCXA_REPORT_EMAIL -r $scxaBranch -resume ${workflow} $expNamePart --enaSshUser fg_atlas_sc --sdrfDir $SCXA_SDRF_DIR -work-dir $workingDir"
 
 # Run the LSF submission if it's not already running
 
@@ -35,7 +40,7 @@ if [ $? -ne 0 ]; then
     successMarker="$SCXA_WORKFLOW_ROOT/work/.success"
 
     if [ -e "$successMarker" ]; then
-        rm -rf $SCXA_WORKFLOW_ROOT/work/$workflow
+        rm -rf $workingDir
         rm -rf $successMarker
     fi
 
