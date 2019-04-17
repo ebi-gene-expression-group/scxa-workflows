@@ -37,7 +37,7 @@ shift $((OPTIND-1))
 expName=$e
 skipQuantification=$q
 skipAggregation=$a
-tertiaryWorflow=$t
+tertiaryWorkflow=$t
 overwrite=$w
 
 workflow=scxa-control-workflow
