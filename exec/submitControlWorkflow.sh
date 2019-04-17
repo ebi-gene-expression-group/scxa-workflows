@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-usage() { echo "Usage: $0 [-e <experiment ID>] [-s <skip quantification, yes or no>] [-t <tertiary workflow>] [-o <overwrite exising results, yes or no>]"  1>&2; }  
+usage() { echo "Usage: $0 [-e <experiment ID>] [-s <skip quantification, yes or no>] [-t <tertiary workflow>] [-w <overwrite exising results, yes or no>]"  1>&2; }  
 
 e=
 s=no
 t=none
-o=no
+w=no
 
 while getopts ":e:s:t:o:" o; do
     case "${o}" in
@@ -18,8 +18,8 @@ while getopts ":e:s:t:o:" o; do
         t)
             t=${OPTARG}
             ;;
-        o)
-            o=${OPTARG}
+        w)
+            w=${OPTARG}
             ;;
         *)
             usage
@@ -34,7 +34,7 @@ shift $((OPTIND-1))
 expName=$e
 skipQuantification=$s
 tertiaryWorflow=$t
-overwrite=$o
+overwrite=$w
 
 workflow=scxa-control-workflow
 
@@ -76,7 +76,7 @@ fi
 overwritePart=
 if [ -n "$overwrite" ]; then
     if [ "$overwrite" != 'yes' ] && [ "$overwrite" != 'no' ]; then
-        echo "Override (-o) must be 'yes' or 'no', $overwrite provided" 1>&2
+        echo "Overwrite (-w) must be 'yes' or 'no', $overwrite provided" 1>&2
         exit 1
     fi
 
