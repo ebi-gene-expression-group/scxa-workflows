@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 
-usage() { echo "Usage: $0 [-e <experiment ID>] [-s <skip quantification, yes or no>] [-t <tertiary workflow>] [-w <overwrite exising results, yes or no>]"  1>&2; }  
+usage() { echo "Usage: $0 [-e <experiment ID>] [-q <re-use existing quantifications where present, yes or no>] [-a <re-use existing aggregations where present, yes or no>] [-t <tertiary workflow>] [-w <overwrite exising results, yes or no>]"  1>&2; }  
 
 e=
 s=no
 t=none
 w=no
 
-while getopts ":e:s:t:w:" o; do
+while getopts ":e:q:a:t:w:" o; do
     case "${o}" in
         e)
             e=${OPTARG}
             ;;
-        s)
-            s=${OPTARG}
+        q)
+            q=${OPTARG}
+            ;;
+        a)
+            a=${OPTARG}
             ;;
         t)
             t=${OPTARG}
@@ -29,10 +32,11 @@ while getopts ":e:s:t:w:" o; do
 done
 shift $((OPTIND-1))
 
-# Trivially simple script to trigger SCXA workflow
+# Simple script to trigger SCXA workflow
 
 expName=$e
-skipQuantification=$s
+skipQuantification=$q
+skipAggregation=$a
 tertiaryWorflow=$t
 overwrite=$w
 
@@ -66,11 +70,21 @@ fi
 skipQuantificationPart=
 if [ -n "$skipQuantification" ]; then
     if [ "$skipQuantification" != 'yes' ] && [ "$skipQuantification" != 'no' ]; then
-        echo "Skip quantification (-s) must be 'yes' or 'no', $skipQuantification provided." 1>&2
+        echo "Skip quantification (-q) must be 'yes' or 'no', $skipQuantification provided." 1>&2
         exit 1
     fi
 
     skipQuantificationPart="--skipQuantification $skipQuantification"
+fi
+
+skipAggregationPart=
+if [ -n "$skipAggregation" ]; then
+    if [ "$skipAggregation" != 'yes' ] && [ "$skipAggregation" != 'no' ]; then
+        echo "Skip aggregation (-a) must be 'yes' or 'no', $skipAggregation provided." 1>&2
+        exit 1
+    fi
+
+    skipAggregationPart="--skipAggregation $skipAggregation"
 fi
 
 overwritePart=
@@ -88,7 +102,7 @@ if [ -n "$tertiaryWorkflow" ]; then
     tertiaryWorkflowPart="--tertiaryWorkflow $tertiaryWorkflow"
 fi
 
-nextflowCommand="NXF_VER=19.03.0-SNAPSHOT nextflow run -N $SCXA_REPORT_EMAIL -r $scxaBranch -resume ${workflow} $expNamePart $skipQuantificationPart $tertiaryWorkflowPart $overwritePart --enaSshUser fg_atlas_sc --sdrfDir $SCXA_SDRF_DIR -work-dir $workingDir"
+nextflowCommand="NXF_VER=19.03.0-SNAPSHOT nextflow run -N $SCXA_REPORT_EMAIL -r $scxaBranch -resume ${workflow} $expNamePart $skipQuantificationPart $skipAggregationPart $tertiaryWorkflowPart $overwritePart --enaSshUser fg_atlas_sc --sdrfDir $SCXA_SDRF_DIR -work-dir $workingDir"
 
 # Run the LSF submission if it's not already running
 
