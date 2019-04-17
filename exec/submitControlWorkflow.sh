@@ -66,7 +66,8 @@ fi
 skipQuantificationPart=
 if [ -n "$skipQuantification" ]; then
     if [ "$skipQuantification" != 'yes' ] && [ "$skipQuantification" != 'no' ]; then
-        echo "Skip quantification (-s) must be 'yes' or 'no'"
+        echo "Skip quantification (-s) must be 'yes' or 'no', $skipQuantification provided." 1>&2
+        exit 1
     fi
 
     skipQuantificationPart="--skipQuantification $skipQuantification"
@@ -75,7 +76,8 @@ fi
 overwritePart=
 if [ -n "$overwrite" ]; then
     if [ "$overwrite" != 'yes' ] && [ "$overwrite" != 'no' ]; then
-        echo "Override (-o) must be 'yes' or 'no'"
+        echo "Override (-o) must be 'yes' or 'no', $overwrite provided" 1>&2
+        exit 1
     fi
 
     overwritePart="--overwrite $overwrite"
