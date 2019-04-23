@@ -6,7 +6,7 @@ source $scriptDir/../util/manifest_handling.sh
 [ -z ${envs_for_workflow_run+x} ] && echo "Env var envs_for_workflow_run should be set by upstream script." && exit 1
 
 # Create inputs.yaml based on MANIFEST
-if [ ! -z ${EXP_BUNDLE+x} ]; then
+if [ ! -z ${EXP_BUNDLE} ]; then
   echo "Using Bundle to set inputs"
   matrix_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'raw' )
   genes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'raw' )
@@ -37,14 +37,14 @@ raw_filtered_genes=$WORKDIR/raw_filtered_genes.tsv
 raw_filtered_barcodes=$WORKDIR/raw_filtered_barcodes.tsv
 
 # See if we need to filter TPMs (in the future this could depend on the protocol)
-if [ ! -z ${EXP_BUNDLE+x} ]; then
+if [ ! -z ${EXP_BUNDLE} ]; then
   tpm_matrix_file=$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'tpm' )
 fi
 
 tpm_filtering=False
 if [ ${#tpm_matrix_file} -gt 0 ]; then
   # matrix file exists for tpm
-  if [ ! -z ${EXP_BUNDLE+x} ]; then
+  if [ ! -z ${EXP_BUNDLE} ]; then
     tpm_matrix_file=${tpm_matrix:-$EXP_BUNDLE/$tpm_matrix_file}
     tpm_genes_file=${tpm_genes:-$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'tpm')}
     tpm_barcodes_file=${tpm_barcodes:-$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'tpm' )}
