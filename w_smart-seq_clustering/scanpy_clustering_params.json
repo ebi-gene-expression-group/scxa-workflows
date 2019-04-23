@@ -132,7 +132,7 @@
     },
     "__rerun_remap_job_id__": null,
     "do_plotting": {
-      "plot": "true",
+      "plot": "false",
       "palette": "",
       "__current_case__": 0,
       "use_raw": "false",
