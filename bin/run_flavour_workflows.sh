@@ -24,7 +24,6 @@ if [ ! -z ${BUNDLE_PATH+x} ]; then
 fi
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $scriptDir/../util/manifest_handing.sh
 export baseDir=$scriptDir/..
 
 for mod in util util/galaxy-workflow-executor; do
