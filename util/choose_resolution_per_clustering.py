@@ -40,7 +40,7 @@ def main():
     for cluster_file in listdir(args.clusters_path):
         match = re.search(clusters_file_pat, cluster_file)
         if match is not None:
-            resolution = match.group('resolution')
+            resolution = float(match.group('resolution'))
             clusters = num_of_clusters(args.clusters_path+"/"+cluster_file)
             if clusters in clusters_to_res:
                 if clusters_to_res[clusters] > resolution >= 1 or 1 >= resolution > clusters_to_res[clusters]:
