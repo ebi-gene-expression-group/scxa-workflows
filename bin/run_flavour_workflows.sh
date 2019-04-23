@@ -18,7 +18,9 @@ export WORKDIR=${./:-$WORKDIR}
 [ ! -z ${GALAXY_CRED_FILE+x} ] || ( echo "Env var GALAXY_CRED_FILE pointing to the credentials file must be set." && exit 1 )
 [ ! -z ${EXP_SPECIE+x} ] || ( echo "Env var EXP_SPECIE for the species of the experiment needs to be defined." && exit 1 )
 [ ! -z ${EXP_ID+x} ] || ( echo "Env var EXP_ID for the id/accession of the experiment needs to be defined." && exit 1 )
-[ ! -z ${REF_DIR+x} ] || ( echo "Env var REF_DIR for the reference genome annot needs to be defined." && exit 1 )
+if [ -z ${BUNDLE_PATH+x} ]; then
+  [ ! -z ${REF_DIR+x} ] || ( echo "Env var REF_DIR for the reference genome annot needs to be defined." && exit 1 )
+fi
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $scriptDir/../util/manifest_handing.sh
