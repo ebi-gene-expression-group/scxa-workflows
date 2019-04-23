@@ -1,4 +1,5 @@
 #!/bin/env bash
+set -e
 
 # This file runs the Galaxy smart-seq Scanpy clustering workflow
 
