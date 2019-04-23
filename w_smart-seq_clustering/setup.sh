@@ -7,6 +7,7 @@ source $scriptDir/../util/manifest_handling.sh
 
 # Create inputs.yaml based on MANIFEST
 if [ ! -z ${EXP_BUNDLE+x} ]; then
+  echo "Using Bundle to set inputs"
   matrix_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_content' 'raw' )
   genes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'raw' )
   barcodes_file=$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'raw' )
@@ -43,9 +44,16 @@ fi
 tpm_filtering=False
 if [ ${#tpm_matrix_file} -gt 0 ]; then
   # matrix file exists for tpm
-  tpm_matrix_file=${tpm_matrix:-$EXP_BUNDLE/$tpm_matrix_file}
-  tpm_genes_file=${tpm_genes:-$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'tpm')}
-  tpm_barcodes_file=${tpm_barcodes:-$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'tpm' )}
+  if [ ! -z ${EXP_BUNDLE+x} ]; then
+    tpm_matrix_file=${tpm_matrix:-$EXP_BUNDLE/$tpm_matrix_file}
+    tpm_genes_file=${tpm_genes:-$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_rows' 'tpm')}
+    tpm_barcodes_file=${tpm_barcodes:-$EXP_BUNDLE/$( file_for_desc_param $EXP_BUNDLE/MANIFEST 'mtx_matrix_cols' 'tpm' )}
+  fi
+
+  [ -z ${tpm_matrix_file+x} ] && echo "Env var tpm_matrix_file should be set." && exit 1
+  [ -z ${tpm_genes_file+x} ] && echo "Env var tpm_genes_file should be set." && exit 1
+  [ -z ${tpm_barcodes_file+x} ] && echo "Env var tpm_barcodes_file should be set." && exit 1
+
   tpm_filtering=True
 
   inputs_tpm_filtering_yaml=$WORKDIR/scanpy_tpm_filtering_inputs_$EXP_ID\.yaml
