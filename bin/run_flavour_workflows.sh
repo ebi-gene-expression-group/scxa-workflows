@@ -12,7 +12,7 @@ export EXP_BUNDLE=${BUNDLE_PATH}
 export GALAXY_INSTANCE=${GALAXY_INSTANCE}
 export GALAXY_CRED_FILE=${GALAXY_CRED_FILE}
 
-export WORKDIR=${WORKDIR:-./}
+export WORKDIR=${WORKDIR:-$(pwd)}
 
 [ ! -z ${FLAVOUR+x} ] || ( echo "Env var FLAVOUR for the type of workflow to be run, matching one of the w_* directories" && exit 1 )
 [ ! -z ${GALAXY_INSTANCE+x} ] || ( echo "Env var GALAXY_INSTANCE must be set." && exit 1 )
