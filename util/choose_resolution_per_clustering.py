@@ -6,7 +6,7 @@ into a single file and move markers from resolutions to applicable clusters numb
 """
 
 import argparse
-from os import listdir
+from os import listdir, path
 import re
 import shutil
 
@@ -66,7 +66,8 @@ def main():
 
         source = args.clusters_path+"/markers_clusters_resolution_"+str(resolution)+".csv"
         dest = args.output_dir+"/markers_"+str(clusters)+".csv"
-        shutil.copy(source, dest)
+        if path.isfile(source):
+            shutil.copy(source, dest)
 
     print("Cell set has {} entries".format(len(cells_set)))
     print("Cell clusters has {} entries".format(len(cells_clusters)))
