@@ -116,6 +116,7 @@ if [ $? -ne 0 ]; then
     successMarker="$SCXA_WORKFLOW_ROOT/work/.success"
 
     if [ -e "$successMarker" ]; then
+        echo "Previous run succeeded, cleaning up $workingDir"
         rm -rf $workingDir
         rm -rf $successMarker
     fi
