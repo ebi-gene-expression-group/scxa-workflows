@@ -18,6 +18,7 @@ if [ $? -gt 0 ]; then
   exit 1
 fi
 
+set -e
 echo "Results will be available on $WORKDIR"
 # Main clustering run
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
