@@ -29,7 +29,7 @@ export baseDir=$scriptDir/..
 for mod in util util/galaxy-workflow-executor; do
   PATH=$baseDir/$mod:$PATH
 done
-export $PATH
+export PATH
 
 # This is where additional variables defined during the inputs_yaml setup will be left
 export envs_for_workflow_run=$WORKDIR/envs_for_workflow_run.sh
