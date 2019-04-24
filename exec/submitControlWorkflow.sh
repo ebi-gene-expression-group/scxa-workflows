@@ -117,7 +117,8 @@ if [ $? -ne 0 ]; then
 
     if [ -e "$successMarker" ]; then
         echo "Previous run succeeded, cleaning up $workingDir"
-        rm -rf $workingDir
+        mv $workingDir ${workingDir}_removing_$$ 
+        nohup rm -rf ${workingDir}_removing_$$ &
         rm -rf $successMarker
     fi
 
