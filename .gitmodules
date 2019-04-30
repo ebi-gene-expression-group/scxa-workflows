@@ -1,3 +1,15 @@
 [submodule "util/galaxy-workflow-executor"]
 	path = util/galaxy-workflow-executor
 	url = https://github.com/ebi-gene-expression-group/galaxy-workflow-executor
+[submodule "util/scxa-smartseq-quantification-workflow"]
+	path = util/scxa-smartseq-quantification-workflow
+	url = https://github.com/ebi-gene-expression-group/scxa-smartseq-quantification-workflow
+[submodule "util/scxa-droplet-quantification-workflow"]
+	path = util/scxa-droplet-quantification-workflow
+	url = https://github.com/ebi-gene-expression-group/scxa-droplet-quantification-workflow
+[submodule "util/scxa-aggregation-workflow"]
+	path = util/scxa-aggregation-workflow
+	url = https://github.com/ebi-gene-expression-group/scxa-aggregation-workflow
+[submodule "util/scxa-bundle-workflow"]
+	path = util/scxa-bundle-workflow
+	url = https://github.com/ebi-gene-expression-group/scxa-bundle-workflow
