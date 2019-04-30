@@ -34,4 +34,34 @@ Given that we currently have separation between quantification and clustering, t
 - quantification
 - clustering
 
+### Running the clustering part manually
 
+To run the clustering part manually, define the following environment variables
+in the environment (example below for E-ENAD-15):
+
+```
+export species=mus_musculus
+export expName=E-ENAD-15
+
+export matrix_file=$BUNDLE/raw/matrix.mtx.gz
+export genes_file=$BUNDLE/raw/genes.tsv.gz
+export barcodes_file=$BUNDLE/raw/barcodes.tsv.gz
+export gtf_file=$REF/$species/Mus_musculus.GRCm38.95.gtf.gz
+
+export tpm_matrix_file=$BUNDLE/tpm/matrix.mtx.gz
+export tpm_genes_file=$BUNDLE/tpm/genes.tsv.gz
+export tpm_barcodes_file=$BUNDLE/tpm/barcodes.tsv.gz
+
+export create_conda_env=yes
+export GALAXY_CRED_FILE=../galaxy_credentials.yaml
+export GALAXY_INSTANCE=ebi_cluster
+
+export FLAVOUR=w_smart-seq_clustering
+```
+
+If `create_conda_env` is set to `no`, then the the following script should be executed
+in an environment that has bioblend and Python 3. Then execute:
+
+```
+run_flavour_workflows.sh
+```

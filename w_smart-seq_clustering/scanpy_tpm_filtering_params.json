@@ -1,0 +1,34 @@
+{
+  "TPM_filter_cells": {
+    "parameters":[
+      {
+        "__index__": 0,
+        "min": "0.0",
+        "name": "n_genes",
+        "max": "1000000000.0"
+      },
+      {
+        "__index__": 1,
+        "min": "0.0",
+        "name": "n_counts",
+        "max": "1000000000.0"
+      }
+    ]
+  },
+  "TPM_filter_genes": {
+    "parameters": [
+      {
+        "__index__": 0,
+        "min": "0.0",
+        "name": "n_cells",
+        "max": "1000000000.0"
+      },
+      {
+        "__index__": 1,
+        "min": "0.0",
+        "name": "n_counts",
+        "max": "1000000000.0"
+      }
+    ]
+  }
+}

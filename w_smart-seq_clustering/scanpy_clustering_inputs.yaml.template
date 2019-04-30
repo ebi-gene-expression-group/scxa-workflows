@@ -1,0 +1,12 @@
+matrix:
+  path: <MATRIX_PATH>
+  type: txt
+genes:
+  path: <GENES_PATH>
+  type: tsv
+barcodes:
+  path: <BARCODES_PATH>
+  type: tsv
+gtf:
+  path: <GTF_PATH>
+  type: gtf
