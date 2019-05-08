@@ -39,7 +39,8 @@ if [ $tpm_filtering = "True" ]; then
                          -P $params_tpm_filtering_json \
                          -H scanpy-tpm-filtering-$EXP_ID \
                          -G $GALAXY_INSTANCE
+
+  mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/filter_tpms_software_versions.txt
 fi
-mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/filter_tpms_software_versions.txt
 
 choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
