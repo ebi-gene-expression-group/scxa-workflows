@@ -301,9 +301,9 @@
     "run_mode": {
       "chunked": "false",
       "random_seed": "1234",
-      "zero_center": "true",
+      "zero_center": "false",
       "__current_case__": 1,
-      "svd_solver": null
+      "svd_solver": "arpack"
     }
   },
   "normalise_data": {
