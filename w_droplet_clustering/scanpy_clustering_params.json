@@ -63,10 +63,10 @@
     "__page__": null,
     "input_format": "anndata",
     "settings": {
-      "knn": "false",
+      "knn": "true",
       "default": "false",
       "metric": "euclidean",
-      "use_rep": "auto",
+      "use_rep": "X_pca",
       "random_seed": "1234",
       "n_neighbours": "15",
       "__current_case__": 1,
