@@ -238,7 +238,7 @@
       "__class__": "ConnectedValue"
     },
     "__rerun_remap_job_id__": null,
-    "scale_max": "",
+    "scale_max": "10",
     "scale_factor": "5",
     "do_log": "true",
     "__job_resource": {
