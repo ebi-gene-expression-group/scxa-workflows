@@ -21,6 +21,25 @@
     },
     "output_format": "anndata"
   },
+  "filter_genes": {
+    "subset": {
+      "__class__": "ConnectedValue"
+    },
+    "__page__": null,
+    "parameters_0|min": "3",
+    "parameters_0|name": "n_cells",
+    "parameters_0|max": "1000000000.0",
+    "input_format": "anndata",
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
   "find_clusters": {
     "__page__": null,
     "input_format": "anndata",
@@ -61,28 +80,6 @@
       "parameter_values": "list_comma_separated_values",
       "__current_case__": 0
     }
-  },
-  "filter_genes": {
-    "subset": {
-      "__class__": "ConnectedValue"
-    },
-    "__page__": null,
-    "parameters_0|min": "0.0",
-    "parameters_0|name": "n_cells",
-    "parameters_0|max": "1000000000.0",
-    "parameters_1|min": "0.0",
-    "parameters_1|name": "n_counts",
-    "parameters_1|max": "1000000000.0",
-    "input_format": "anndata",
-    "input_obj_file": {
-      "__class__": "ConnectedValue"
-    },
-    "__rerun_remap_job_id__": null,
-    "__job_resource": {
-      "__job_resource__select": "no",
-      "__current_case__": 0
-    },
-    "output_format": "anndata"
   },
   "neighbours": {
     "__page__": null,
