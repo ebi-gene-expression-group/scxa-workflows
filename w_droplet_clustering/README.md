@@ -34,3 +34,41 @@ No deviations from defaults.
   
 ## Scale data (Scanpy)
 
+- log1p scaling: yes
+- Zero centering: yes
+- regress out: n_count
+- scale max: 10
+
+I suspect some of these are actually the defaults.
+
+## Run PCA (Scanpy)
+
+- number of PCs: 50
+- incremental PCA by chunks: no
+- Zero center: no
+- SVD soler: arpack
+
+## Compute Graph / neighbours (Scanpy)
+
+- max neighbours: 15
+- use indicated: x_pca use PCs
+- hard threshold on neighbourhood: yes
+- method for connectivity: UMAP
+- distance: Euclidian
+
+## Find clusters (Scanpy)
+
+- representation: vtraag
+- use weights from knn graph: false
+
+## Run t-SNE (Scanpy)
+
+No deviations
+
+## UMAP (Scanpy)
+
+No deviations
+
+## Find markers (Scanpy)
+
+- number of top genes: 50
