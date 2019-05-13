@@ -222,7 +222,7 @@
       "__class__": "ConnectedValue"
     },
     "__rerun_remap_job_id__": null,
-    "n_genes": "100",
+    "n_genes": "50",
     "__job_resource": {
       "__job_resource__select": "no",
       "__current_case__": 0
