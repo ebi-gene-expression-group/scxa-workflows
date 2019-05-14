@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "No TPM filtering", 
     "format-version": "0.1", 
-    "name": "Scanpy Prod 1.2", 
+    "name": "Scanpy Prod 1.3", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -71,7 +71,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "70c61081-5fc7-45ee-8023-3d5318dedd99"
+                    "uuid": "ca9db49e-c721-40fa-b3b3-1bd4c90fc231"
                 }
             ]
         }, 
@@ -98,7 +98,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "c9cd9f6e-2764-4df7-8a2b-857e211d8d67"
+                    "uuid": "ee57bf2e-6583-4961-9fcd-3bffe28e6a81"
                 }
             ]
         }, 
@@ -125,7 +125,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "3a5a65eb-e9e7-493a-86c6-fe6ba63fc7b5"
+                    "uuid": "60dd7abf-11b0-4056-b829-ebe594936ee2"
                 }
             ]
         }, 
@@ -152,7 +152,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "d7dc7d3e-55b4-4af5-8edd-68c45ef5fe60"
+                    "uuid": "5dce1164-fdf5-4429-ac32-544a06f1d2e6"
                 }
             ]
         }, 
@@ -375,7 +375,16 @@
                     "output_name": "gene_list"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy FilterGenes", 
+                    "name": "subset"
+                }, 
+                {
+                    "description": "runtime parameter for tool Scanpy FilterGenes", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "filter_genes", 
             "name": "Scanpy FilterGenes", 
             "outputs": [
@@ -440,7 +449,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"subset\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"export_mtx\": \"\\\"true\\\"\", \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_cells\\\"}, {\\\"__index__\\\": 1, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_counts\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"__page__\": null, \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"subset\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"export_mtx\": \"\\\"true\\\"\", \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_cells\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"__page__\": null, \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy1", 
             "type": "tool", 
             "uuid": "0bf4093a-ad6d-453d-87fc-b14c6a5a0126", 
@@ -1055,6 +1064,6 @@
         }
     }, 
     "tags": [], 
-    "uuid": "6071ea6c-a196-4e27-8dbb-8d7bcf2fbb83", 
+    "uuid": "49764ee4-16dd-462b-afed-225d3817cee9", 
     "version": 1
 }
