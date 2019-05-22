@@ -93,7 +93,7 @@
     "parameters_0|max": "1000000000.0",
     "parameters_1|name": "n_counts",
     "parameters_1|min": "0.0",
-    "parameters_1|max": "10000.0",
+    "parameters_1|max": "1000000000.0",
     "input_format": "anndata",
     "input_obj_file": {
       "__class__": "ConnectedValue"
