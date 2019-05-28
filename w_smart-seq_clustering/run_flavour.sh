@@ -28,7 +28,7 @@ run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -P $params_json \
                        -H scanpy-clustering-$EXP_ID \
                        -a $allowed_errors \
-                       -G $GALAXY_INSTANCE
+                       -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
 # Filter TPM if needed
 if [ $tpm_filtering = "True" ]; then
@@ -38,7 +38,7 @@ if [ $tpm_filtering = "True" ]; then
                          -W $tpm_filtering_workflow_definition \
                          -P $params_tpm_filtering_json \
                          -H scanpy-tpm-filtering-$EXP_ID \
-                         -G $GALAXY_INSTANCE
+                         -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION
 
   mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/filter_tpms_software_versions.txt
 fi
