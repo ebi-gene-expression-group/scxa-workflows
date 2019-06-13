@@ -114,7 +114,7 @@
       "perplexity_file": {
         "__class__": "ConnectedValue"
       },
-      "learning_rate": "1000.0",
+      "learning_rate": "500.0",
       "default": "false",
       "use_rep": "auto",
       "__current_case__": 1,
@@ -230,24 +230,6 @@
     "output_markers": "true",
     "output_format": "anndata"
   },
-  "scale_data": {
-    "__page__": null,
-    "zero_center": "true",
-    "input_format": "anndata",
-    "input_obj_file": {
-      "__class__": "ConnectedValue"
-    },
-    "__rerun_remap_job_id__": null,
-    "scale_max": "10",
-    "scale_factor": "5",
-    "do_log": "true",
-    "__job_resource": {
-      "__job_resource__select": "no",
-      "__current_case__": 0
-    },
-    "var_to_regress": "n_counts",
-    "output_format": "anndata"
-  },
   "find_variable_genes": {
     "n_top_gene": "",
     "__page__": null,
@@ -308,7 +290,7 @@
   },
   "normalise_data": {
     "__page__": null,
-    "scale_factor": "10000.0",
+    "scale_factor": "1000000.0",
     "input_format": "anndata",
     "save_raw": "true",
     "input_obj_file": {
