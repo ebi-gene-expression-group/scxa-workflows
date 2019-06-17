@@ -249,7 +249,7 @@
       "__current_case__": 0
     },
     "n_bin": "20",
-    "flavor": "seurat",
+    "flavor": "cell_ranger",
     "output_format": "anndata"
   },
   "run_pca": {
