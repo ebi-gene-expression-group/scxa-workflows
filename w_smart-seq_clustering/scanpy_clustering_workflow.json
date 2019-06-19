@@ -71,7 +71,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "f339636b-169e-47fc-8daf-898750ff609d"
+                    "uuid": "7c4b99d7-1282-4938-8532-5eea1d63a5e9"
                 }
             ]
         }, 
@@ -98,7 +98,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "139e2465-ad94-47ae-a961-c5524eaea535"
+                    "uuid": "1d76c83e-e2b5-44e1-af4a-89d822cd624a"
                 }
             ]
         }, 
@@ -125,7 +125,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "d096165e-0c60-46ca-a8a0-6ecaa02c0b58"
+                    "uuid": "cdb4902b-d741-445c-a10b-890ea832b25f"
                 }
             ]
         }, 
@@ -152,7 +152,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "f46be826-49a3-403f-a122-5517a9a6cbf2"
+                    "uuid": "956fc417-f7bf-4ddf-90fa-5a451121867d"
                 }
             ]
         }, 
@@ -321,6 +321,10 @@
                 {
                     "description": "runtime parameter for tool Scanpy FilterCells", 
                     "name": "subset"
+                }, 
+                {
+                    "description": "runtime parameter for tool Scanpy FilterCells", 
+                    "name": "input_obj_file"
                 }
             ], 
             "label": "filter_cells", 
@@ -354,7 +358,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"subset\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": null, \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_genes\\\"}, {\\\"__index__\\\": 1, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_counts\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"subset\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": null, \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"400.0\\\", \\\"name\\\": \\\"n_genes\\\"}, {\\\"__index__\\\": 1, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_counts\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy0", 
             "type": "tool", 
             "uuid": "8e3edafe-82ef-47b4-b387-6931244ac0fb", 
@@ -375,7 +379,16 @@
                     "output_name": "gene_list"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy FilterGenes", 
+                    "name": "subset"
+                }, 
+                {
+                    "description": "runtime parameter for tool Scanpy FilterGenes", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "filter_genes", 
             "name": "Scanpy FilterGenes", 
             "outputs": [
@@ -440,7 +453,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"subset\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"export_mtx\": \"\\\"true\\\"\", \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"n_cells\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"__page__\": null, \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"subset\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"export_mtx\": \"\\\"true\\\"\", \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"3.0\\\", \\\"name\\\": \\\"n_cells\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"__page__\": null, \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy1", 
             "type": "tool", 
             "uuid": "0bf4093a-ad6d-453d-87fc-b14c6a5a0126", 
@@ -473,12 +486,7 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Scanpy NormaliseData", 
-                    "name": "input_obj_file"
-                }
-            ], 
+            "inputs": [], 
             "label": "normalise_data", 
             "name": "Scanpy NormaliseData", 
             "outputs": [
@@ -543,7 +551,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"export_mtx\": \"\\\"true\\\"\", \"scale_factor\": \"\\\"1000000.0\\\"\", \"input_format\": \"\\\"anndata\\\"\", \"__page__\": null, \"save_raw\": \"\\\"true\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"export_mtx\": \"\\\"true\\\"\", \"scale_factor\": \"\\\"1000000.0\\\"\", \"input_format\": \"\\\"anndata\\\"\", \"__page__\": null, \"save_raw\": \"\\\"true\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy1", 
             "type": "tool", 
             "uuid": "7175010e-d7b9-47b3-97e3-1b1da2c2bc34", 
@@ -576,7 +584,12 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy FindVariableGenes", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "find_variable_genes", 
             "name": "Scanpy FindVariableGenes", 
             "outputs": [
@@ -608,7 +621,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"n_top_gene\": \"\\\"\\\"\", \"__page__\": null, \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"mean\\\"}, {\\\"__index__\\\": 1, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0\\\", \\\"name\\\": \\\"disp\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"n_bin\": \"\\\"20\\\"\", \"flavor\": \"\\\"seurat\\\"\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"n_top_gene\": \"\\\"\\\"\", \"__page__\": null, \"parameters\": \"[{\\\"__index__\\\": 0, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"0.0125\\\", \\\"name\\\": \\\"mean\\\"}, {\\\"__index__\\\": 1, \\\"max\\\": \\\"1000000000.0\\\", \\\"min\\\": \\\"3.0\\\", \\\"name\\\": \\\"disp\\\"}]\", \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"n_bin\": \"\\\"20\\\"\", \"flavor\": \"\\\"cell_ranger\\\"\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy0", 
             "type": "tool", 
             "uuid": "6fa6b2a2-3b55-43f0-8cd0-7be854f2086b", 
@@ -625,7 +638,12 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy RunPCA", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "run_pca", 
             "name": "Scanpy RunPCA", 
             "outputs": [
@@ -666,7 +684,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"do_plotting\": \"{\\\"__current_case__\\\": 0, \\\"arrows\\\": \\\"false\\\", \\\"color_by\\\": \\\"n_genes\\\", \\\"components\\\": \\\"1,2\\\", \\\"edges\\\": \\\"false\\\", \\\"frameoff\\\": \\\"true\\\", \\\"groups\\\": \\\"\\\", \\\"palette\\\": \\\"\\\", \\\"plot\\\": \\\"true\\\", \\\"projection\\\": \\\"2d\\\", \\\"sort_order\\\": \\\"true\\\", \\\"use_raw\\\": \\\"false\\\"}\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"extra_outputs\": \"null\", \"n_pcs\": \"\\\"50\\\"\", \"__rerun_remap_job_id__\": null, \"run_mode\": \"{\\\"__current_case__\\\": 1, \\\"chunked\\\": \\\"false\\\", \\\"random_seed\\\": \\\"1234\\\", \\\"svd_solver\\\": null, \\\"zero_center\\\": \\\"true\\\"}\"}", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"do_plotting\": \"{\\\"__current_case__\\\": 0, \\\"arrows\\\": \\\"false\\\", \\\"color_by\\\": \\\"n_genes\\\", \\\"components\\\": \\\"1,2\\\", \\\"edges\\\": \\\"false\\\", \\\"frameoff\\\": \\\"true\\\", \\\"groups\\\": \\\"\\\", \\\"palette\\\": \\\"\\\", \\\"plot\\\": \\\"true\\\", \\\"projection\\\": \\\"2d\\\", \\\"sort_order\\\": \\\"true\\\", \\\"use_raw\\\": \\\"false\\\"}\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"extra_outputs\": \"null\", \"n_pcs\": \"\\\"50\\\"\", \"__rerun_remap_job_id__\": null, \"run_mode\": \"{\\\"__current_case__\\\": 1, \\\"chunked\\\": \\\"false\\\", \\\"random_seed\\\": \\\"1234\\\", \\\"svd_solver\\\": \\\"arpack\\\", \\\"zero_center\\\": \\\"false\\\"}\"}", 
             "tool_version": "1.3.2+galaxy1", 
             "type": "tool", 
             "uuid": "2ed9e300-8bcb-44c2-8d25-8c1e246e7a28", 
@@ -683,7 +701,12 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy ComputeGraph", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "neighbours", 
             "name": "Scanpy ComputeGraph", 
             "outputs": [
@@ -715,7 +738,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"knn\\\": \\\"false\\\", \\\"method\\\": \\\"umap\\\", \\\"metric\\\": \\\"euclidean\\\", \\\"n_neighbours\\\": \\\"15\\\", \\\"n_pcs\\\": \\\"50\\\", \\\"random_seed\\\": \\\"0\\\", \\\"use_rep\\\": \\\"auto\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"knn\\\": \\\"false\\\", \\\"method\\\": \\\"umap\\\", \\\"metric\\\": \\\"euclidean\\\", \\\"n_neighbours\\\": \\\"15\\\", \\\"n_pcs\\\": \\\"50\\\", \\\"random_seed\\\": \\\"0\\\", \\\"use_rep\\\": \\\"X_pca\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy1", 
             "type": "tool", 
             "uuid": "6864184b-3a87-4f96-a75c-51949fc6a90a", 
@@ -788,7 +811,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"embeddings\": \"\\\"true\\\"\", \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"early_exaggeration\\\": \\\"12.0\\\", \\\"fast_tsne\\\": \\\"false\\\", \\\"learning_rate\\\": \\\"500.0\\\", \\\"n_job\\\": \\\"\\\", \\\"n_pc\\\": \\\"\\\", \\\"perplexity\\\": \\\"30.0\\\", \\\"perplexity_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"random_seed\\\": \\\"1234\\\", \\\"use_rep\\\": \\\"auto\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"do_plotting\": \"{\\\"__current_case__\\\": 1, \\\"plot\\\": \\\"false\\\"}\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_state": "{\"__page__\": null, \"embeddings\": \"\\\"true\\\"\", \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"early_exaggeration\\\": \\\"12.0\\\", \\\"fast_tsne\\\": \\\"false\\\", \\\"learning_rate\\\": \\\"400.0\\\", \\\"n_job\\\": \\\"\\\", \\\"n_pc\\\": \\\"\\\", \\\"perplexity\\\": \\\"30.0\\\", \\\"perplexity_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"random_seed\\\": \\\"1234\\\", \\\"use_rep\\\": \\\"auto\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"do_plotting\": \"{\\\"__current_case__\\\": 1, \\\"plot\\\": \\\"false\\\"}\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}", 
             "tool_version": "1.3.2+galaxy1", 
             "type": "tool", 
             "uuid": "000dc762-69f5-4fb1-bfad-15efddc3f6a4", 
@@ -1020,6 +1043,6 @@
         }
     }, 
     "tags": [], 
-    "uuid": "a62a4436-6168-4b83-8e4f-51307b1d1075", 
-    "version": 1
+    "uuid": "2eef29cf-8c2c-4e6f-88a3-886aa32abe89", 
+    "version": 2
 }
