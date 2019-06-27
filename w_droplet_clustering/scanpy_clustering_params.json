@@ -1,0 +1,306 @@
+{
+  "find_clusters": {
+    "__page__": null,
+    "input_format": "anndata",
+    "settings": {
+      "random_seed": "1234",
+      "default": "false",
+      "use_weights": "false",
+      "resolution_file": {
+        "__class__": "ConnectedValue"
+      },
+      "key_added": "louvain",
+      "__current_case__": 1,
+      "restrict_to": "",
+      "flavor": "vtraag",
+      "resolution": "1.0"
+    },
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "output_cluster": "true",
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
+  "resolution": {
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "__page__": null,
+    "__rerun_remap_job_id__": null,
+    "parameter_name": "resolution",
+    "input_type": {
+      "input_values": "0.1, 0.3, 0.5, 0.7, 1.0, 2.0, 3.0, 4.0, 5.0",
+      "parameter_values": "list_comma_separated_values",
+      "__current_case__": 0
+    }
+  },
+  "filter_genes": {
+    "subset": {
+      "__class__": "ConnectedValue"
+    },
+    "__page__": null,
+    "parameters_0|min": "3",
+    "parameters_0|name": "n_cells",
+    "parameters_0|max": "1000000000.0",
+    "input_format": "anndata",
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
+  "neighbours": {
+    "__page__": null,
+    "input_format": "anndata",
+    "settings": {
+      "knn": "true",
+      "default": "false",
+      "metric": "euclidean",
+      "use_rep": "X_pca",
+      "random_seed": "1234",
+      "n_neighbours": "15",
+      "__current_case__": 1,
+      "n_pcs": "50",
+      "method": "umap"
+    },
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
+  "filter_cells": {
+    "subset": {
+      "__class__": "RuntimeValue"
+    },
+    "__page__": null,
+    "parameters_0|name": "n_genes",
+    "parameters_0|min": "400",
+    "parameters_0|max": "1000000000.0",
+    "parameters_1|name": "n_counts",
+    "parameters_1|min": "0.0",
+    "parameters_1|max": "1000000000.0",
+    "input_format": "anndata",
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
+  "run_tsne": {
+    "__page__": null,
+    "embeddings": "true",
+    "input_format": "anndata",
+    "settings": {
+      "random_seed": "1234",
+      "perplexity_file": {
+        "__class__": "ConnectedValue"
+      },
+      "learning_rate": "400.0",
+      "default": "false",
+      "use_rep": "auto",
+      "__current_case__": 1,
+      "n_job": "",
+      "early_exaggeration": "12.0",
+      "perplexity": "30.0",
+      "n_pc": "",
+      "fast_tsne": "false"
+    },
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "do_plotting": {
+      "plot": "false",
+      "palette": "",
+      "__current_case__": 0,
+      "use_raw": "false",
+      "arrows": "false",
+      "frameoff": "false",
+      "color_by": "",
+      "edges": "false",
+      "groups": "",
+      "components": "1,2",
+      "sort_order": "true",
+      "projection": "2d"
+    },
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
+  "run_umap": {
+    "__page__": null,
+    "embeddings": "true",
+    "input_format": "anndata",
+    "settings": {
+      "a": "",
+      "b": "",
+      "random_seed": "1234",
+      "min_dist": "0.5",
+      "default": "false",
+      "spread": "1.0",
+      "init_pos": "spectral",
+      "__current_case__": 1,
+      "maxiter": "",
+      "alpha": "1.0",
+      "negative_sample_rate": "5",
+      "gamma": "1.0",
+      "n_components": "2"
+    },
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "do_plotting": {
+      "plot": "true",
+      "palette": "",
+      "__current_case__": 0,
+      "use_raw": "false",
+      "arrows": "false",
+      "frameoff": "false",
+      "color_by": "",
+      "edges": "false",
+      "groups": "",
+      "components": "1,2",
+      "sort_order": "true",
+      "projection": "2d"
+    },
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  },
+  "perplexity": {
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "__page__": null,
+    "__rerun_remap_job_id__": null,
+    "parameter_name": "perplexity",
+    "input_type": {
+      "input_values": "1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50",
+      "parameter_values": "list_comma_separated_values",
+      "__current_case__": 0
+    }
+  },
+  "find_markers": {
+    "__page__": null,
+    "input_format": "anndata",
+    "settings": {
+      "__current_case__": 1,
+      "reference": "rest",
+      "default": "false",
+      "use_raw": "true",
+      "method": "t-test_overestim_var",
+      "rankby_abs": "false",
+      "groups": "",
+      "groupby": "louvain"
+    },
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "n_genes": "50",
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_markers": "true",
+    "output_format": "anndata"
+  },
+  "find_variable_genes": {
+    "n_top_gene": "",
+    "__page__": null,
+    "parameters_0|name": "mean",
+    "parameters_0|min": "0.0125",
+    "parameters_0|max": "1000000000.0",
+    "parameters_1|name": "disp",
+    "parameters_1|min": "3",
+    "parameters_1|max": "1000000000.0",
+    "input_format": "anndata",
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "n_bin": "20",
+    "flavor": "cell_ranger",
+    "output_format": "anndata"
+  },
+  "run_pca": {
+    "__page__": null,
+    "input_format": "anndata",
+    "input_obj_file": {
+      "__class__": "RuntimeValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "do_plotting": {
+      "plot": "false",
+      "palette": "",
+      "__current_case__": 0,
+      "use_raw": "false",
+      "arrows": "false",
+      "frameoff": "true",
+      "color_by": "n_genes",
+      "edges": "false",
+      "groups": "",
+      "components": "1,2",
+      "sort_order": "true",
+      "projection": "2d"
+    },
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "extra_outputs": null,
+    "n_pcs": "50",
+    "output_format": "anndata",
+    "run_mode": {
+      "chunked": "false",
+      "random_seed": "1234",
+      "zero_center": "false",
+      "__current_case__": 1,
+      "svd_solver": "arpack"
+    }
+  },
+  "normalise_data": {
+    "__page__": null,
+    "scale_factor": "1000000.0",
+    "input_format": "anndata",
+    "save_raw": "true",
+    "input_obj_file": {
+      "__class__": "ConnectedValue"
+    },
+    "__rerun_remap_job_id__": null,
+    "__job_resource": {
+      "__job_resource__select": "no",
+      "__current_case__": 0
+    },
+    "output_format": "anndata"
+  }
+}

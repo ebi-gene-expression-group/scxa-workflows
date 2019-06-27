@@ -1,0 +1,15 @@
+TPM_matrix:
+  path: <MATRIX_PATH>
+  type: txt
+TPM_genes:
+  path: <GENES_PATH>
+  type: tsv
+TPM_barcodes:
+  path: <BARCODES_PATH>
+  type: tsv
+filtered_genes:
+  path: <FILTERED_GENES>
+  type: tsv
+filtered_barcodes:
+  path: <FILTERED_BARCODES>
+  type: tsv
