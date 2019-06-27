@@ -1,5 +1,17 @@
-# scxa-workflows
-Higher level repo for aggregating all of Atlas workflow logic for Single Cell towards execution purposes.
+# scxa-workflows v0.1.0
+
+Higher level repo for aggregating all of Atlas workflow logic for Single Cell
+towards execution purposes. Version 0.1.0 was used to run all data analysis for
+the [Release 6](https://www.ebi.ac.uk/gxa/sc/release-notes.html) of
+[Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home).
+
+Alignment and quantification workflows are developed in NextFlow and can be
+found in the `w_*_quantification` directories, whereas the clustering and
+downstream analysis was built on Galaxy and can be found in `w_*_clustering`
+directories. All of the Galaxy tools used here are available from the
+[Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/view/ebi-gxa) to be installed
+on any instance. The tools are available for direct use as well on the
+[Human Cell Atlas European Galaxy](https://humancellatlas.usegalaxy.eu/) instance.
 
 ## Organization
 
