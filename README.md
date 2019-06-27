@@ -11,7 +11,7 @@ downstream analysis was built on Galaxy and can be found in `w_*_clustering`
 directories. All of the Galaxy tools used here are available from the
 [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/view/ebi-gxa) to be installed
 on any instance. The tools are available for direct use as well on the
-[Human Cell Atlas Euopean Galaxy](https://humancellatlas.usegalaxy.eu/) instance.
+[Human Cell Atlas European Galaxy](https://humancellatlas.usegalaxy.eu/) instance.
 
 ## Organization
 
