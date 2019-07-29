@@ -87,7 +87,7 @@ To run the Galaxy part, you will need a running Galaxy instance with all tools i
 The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galaxy instance already has all the tools required installed there, and can be used to reproduce the Expression Atlas clustering pipeline available here. For this you need to: 
 - Create an account at https://humancellatlas.usegalaxy.eu/ by clicking on **Login or Register**
 ![image](https://user-images.githubusercontent.com/368478/62038201-35d49300-b1ed-11e9-9c87-571cf539cb8c.png)
-- Retrieve you users API Key for programmatic access:
+- Retrieve your user's API Key for programmatic access:
 ![image](https://user-images.githubusercontent.com/368478/62038291-5f8dba00-b1ed-11e9-864a-aa2d27f69e91.png)
   - Click on Manage API Key
   ![image](https://user-images.githubusercontent.com/368478/62038697-1c801680-b1ee-11e9-9bb0-e7b1d1cd6439.png)
