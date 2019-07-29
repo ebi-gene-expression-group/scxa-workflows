@@ -77,3 +77,22 @@ in an environment that has bioblend and Python 3. Then execute:
 ```
 run_flavour_workflows.sh
 ```
+
+# Setting up access to a Galaxy instance
+
+To run the Galaxy part, you will need a running Galaxy instance with all tools installed. Below we explain with [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) as an example which already has the tools, but the same holds for another instance where the Galaxy tools are installed. 
+
+## Using Human Cell Atlas use-galaxy.eu instance
+
+The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galaxy instance already has all the tools required installed there, and can be used to reproduce the Expression Atlas clustering pipeline available here. For this you need to: 
+- Create an account at https://humancellatlas.usegalaxy.eu/ by clicking on **Login or Register**
+![image](https://user-images.githubusercontent.com/368478/62038201-35d49300-b1ed-11e9-9c87-571cf539cb8c.png)
+- Retrieve you users API Key for programmatic access:
+![image](https://user-images.githubusercontent.com/368478/62038291-5f8dba00-b1ed-11e9-864a-aa2d27f69e91.png)
+  - Click on Manage API Key
+  ![image](https://user-images.githubusercontent.com/368478/62038697-1c801680-b1ee-11e9-9bb0-e7b1d1cd6439.png)
+  - Click on create API Key if not available, and copy it, to use in in the credentials file needed of the Galaxy workflow executor module (galaxy_credentials.yaml file, as the one [here](https://github.com/ebi-gene-expression-group/galaxy-workflow-executor/blob/b36dcb1eeb546f0b34566e95fb55202d92a34520/galaxy_credentials.yml.sample))
+  ![image](https://user-images.githubusercontent.com/368478/62038543-d6c34e00-b1ed-11e9-9aae-8d0647e9ea13.png)
+
+Make sure that environment variable `GALAXY_CRED_FILE` points to the file where you put the API key, and that `GALAXY_INSTANCE` env variable is accordingly set to match what it is in that file.
+
