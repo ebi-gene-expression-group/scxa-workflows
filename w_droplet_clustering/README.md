@@ -9,7 +9,7 @@ Below we enumerate and explain the reasoning for deviating from default paramete
   - max: Inf (very large number used in Galaxy)
 - n_counts
   - min: 0
-  - max: 10,000
+  - max: Inf (very large number used in Galaxy)
   
 ## Filter Genes (Scanpy)
 
