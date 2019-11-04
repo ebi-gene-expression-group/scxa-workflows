@@ -98,7 +98,7 @@
         "groupby": "louvain", 
         "input_format": "anndata", 
         "input_obj_file": {
-            "__class__": "RuntimeValue"
+            "__class__": "ConnectedValue"
         }, 
         "n_genes": "100", 
         "output_format": "anndata", 
@@ -166,17 +166,13 @@
         }
     }, 
     "normalise_data": {
-        "__job_resource": {
-            "__current_case__": 0, 
-            "__job_resource__select": "no"
-        }, 
         "__page__": null, 
         "__rerun_remap_job_id__": null, 
         "export_mtx": "true", 
         "fraction": "1.0", 
         "input_format": "anndata", 
         "input_obj_file": {
-            "__class__": "ConnectedValue"
+            "__class__": "RuntimeValue"
         }, 
         "log_transform": "false", 
         "output_format": "anndata", 
