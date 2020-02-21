@@ -749,7 +749,7 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_variable_genes/scanpy_find_variable_genes/1.4.3+galaxy0", 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_variable_genes/scanpy_find_variable_genes/1.4.3+galaxy9", 
             "tool_shed_repository": {
                 "changeset_revision": "d88a29e2eba6", 
                 "name": "scanpy_find_variable_genes", 
