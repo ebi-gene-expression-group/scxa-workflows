@@ -71,7 +71,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "4ba5c5bc-73fc-43b5-a5b8-62f7b7b23c4e"
+                    "uuid": "74619e35-1bde-421e-8463-39888902e2ac"
                 }
             ]
         }, 
@@ -98,7 +98,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "01487010-5d0d-4b9b-ae3d-f3b14b5c678f"
+                    "uuid": "f28cd8a6-87d7-4bb8-9b1e-48595d5f78f6"
                 }
             ]
         }, 
@@ -125,7 +125,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "d9a50636-f6e9-4a98-a545-99d562b5dda3"
+                    "uuid": "598c7cd3-32bd-40dd-8cec-916833e38dd0"
                 }
             ]
         }, 
@@ -152,7 +152,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "9be8fcb4-9584-44e4-9557-555b85cf5166"
+                    "uuid": "b53c3b3a-e66b-4398-a720-ac542673ebfa"
                 }
             ]
         }, 
@@ -719,12 +719,7 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Scanpy FindVariableGenes", 
-                    "name": "input_obj_file"
-                }
-            ], 
+            "inputs": [], 
             "label": "find_variable_genes", 
             "name": "Scanpy FindVariableGenes", 
             "outputs": [
@@ -756,7 +751,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"filter\": \"\\\"false\\\"\", \"n_bin\": \"\\\"20\\\"\", \"__rerun_remap_job_id__\": null, \"method\": \"{\\\"__current_case__\\\": 0, \\\"flavor\\\": \\\"seurat\\\", \\\"max_disp\\\": \\\"1000000000.0\\\", \\\"max_mean\\\": \\\"1000000000.0\\\", \\\"min_disp\\\": \\\"0.5\\\", \\\"min_mean\\\": \\\"0.0125\\\"}\"}", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"filter\": \"\\\"false\\\"\", \"n_bin\": \"\\\"20\\\"\", \"__rerun_remap_job_id__\": null, \"method\": \"{\\\"__current_case__\\\": 0, \\\"flavor\\\": \\\"seurat\\\", \\\"max_disp\\\": \\\"1000000000.0\\\", \\\"max_mean\\\": \\\"1000000000.0\\\", \\\"min_disp\\\": \\\"0.5\\\", \\\"min_mean\\\": \\\"0.0125\\\"}\"}", 
             "tool_version": "1.4.3+galaxy9", 
             "type": "tool", 
             "uuid": "6fa6b2a2-3b55-43f0-8cd0-7be854f2086b", 
@@ -764,7 +759,7 @@
         }, 
         "14": {
             "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_pca/scanpy_run_pca/1.4.3+galaxy0", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_pca/scanpy_run_pca/1.4.3+galaxy10", 
             "errors": null, 
             "id": 14, 
             "input_connections": {
@@ -773,7 +768,12 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy RunPCA", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "run_pca", 
             "name": "Scanpy RunPCA", 
             "outputs": [
@@ -798,15 +798,15 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_pca/scanpy_run_pca/1.4.3+galaxy0", 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_pca/scanpy_run_pca/1.4.3+galaxy10", 
             "tool_shed_repository": {
-                "changeset_revision": "8b4dae3748d3", 
+                "changeset_revision": "2dd53b944e78", 
                 "name": "scanpy_run_pca", 
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"extra_outputs\": \"null\", \"n_pcs\": \"\\\"50\\\"\", \"__rerun_remap_job_id__\": null, \"run_mode\": \"{\\\"__current_case__\\\": 1, \\\"chunked\\\": \\\"false\\\", \\\"random_seed\\\": \\\"1234\\\", \\\"svd_solver\\\": \\\"arpack\\\", \\\"zero_center\\\": \\\"false\\\"}\"}", 
-            "tool_version": "1.4.3+galaxy0", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"extra_outputs\": \"null\", \"n_pcs\": \"\\\"50\\\"\", \"__rerun_remap_job_id__\": null, \"run_mode\": \"{\\\"__current_case__\\\": 1, \\\"chunked\\\": \\\"false\\\", \\\"random_seed\\\": \\\"1234\\\", \\\"svd_solver\\\": \\\"arpack\\\", \\\"zero_center\\\": \\\"false\\\"}\"}", 
+            "tool_version": "1.4.3+galaxy10", 
             "type": "tool", 
             "uuid": "2ed9e300-8bcb-44c2-8d25-8c1e246e7a28", 
             "workflow_outputs": []
@@ -1229,6 +1229,6 @@
         }
     }, 
     "tags": [], 
-    "uuid": "d5685fb9-ed12-4f69-bab6-f687104a4a2c", 
-    "version": 2
+    "uuid": "a0eb168f-09b2-4995-aada-302dbeb80dca", 
+    "version": 1
 }
