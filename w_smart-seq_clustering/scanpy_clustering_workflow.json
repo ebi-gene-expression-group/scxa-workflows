@@ -1141,7 +1141,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"groups\\\": \\\"\\\", \\\"max_out_group_fraction\\\": \\\"1.0\\\", \\\"method\\\": \\\"t-test_overestim_var\\\", \\\"min_fold_change\\\": \\\"1.0\\\", \\\"min_in_group_fraction\\\": \\\"0.0\\\", \\\"rankby_abs\\\": \\\"false\\\", \\\"reference\\\": \\\"rest\\\", \\\"use_raw\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"n_genes\": \"\\\"100\\\"\", \"output_markers\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"groupby\": \"\\\"cell_type\\\"\"}", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"groups\\\": \\\"\\\", \\\"max_out_group_fraction\\\": \\\"1.0\\\", \\\"method\\\": \\\"t-test_overestim_var\\\", \\\"min_fold_change\\\": \\\"1.0\\\", \\\"min_in_group_fraction\\\": \\\"0.0\\\", \\\"rankby_abs\\\": \\\"false\\\", \\\"reference\\\": \\\"rest\\\", \\\"use_raw\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"n_genes\": \"\\\"100\\\"\", \"output_markers\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"groupby\": \"\\\"inferred_cell_type\\\"\"}", 
             "tool_version": "1.4.3+galaxy1", 
             "type": "tool", 
             "uuid": "39d48646-ebad-4b6f-b031-fa70e0532f94", 
