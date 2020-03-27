@@ -1,5 +1,6 @@
 {
     "barcodes": {}, 
+    "cellmeta": {}, 
     "filter_cells": {
         "__job_resource": {
             "__current_case__": 0, 
@@ -116,11 +117,31 @@
             "use_raw": "true"
         }
     }, 
-    "find_variable_genes": {
-        "__job_resource": {
-            "__current_case__": 0, 
-            "__job_resource__select": "no"
+    "find_markers_cell_type": {
+        "__page__": null, 
+        "__rerun_remap_job_id__": null, 
+        "groupby": "cell_type", 
+        "input_format": "anndata", 
+        "input_obj_file": {
+            "__class__": "RuntimeValue"
         }, 
+        "n_genes": "100", 
+        "output_format": "anndata", 
+        "output_markers": "true", 
+        "settings": {
+            "__current_case__": 1, 
+            "default": "false", 
+            "groups": "", 
+            "max_out_group_fraction": "1.0", 
+            "method": "t-test_overestim_var", 
+            "min_fold_change": "1.0", 
+            "min_in_group_fraction": "0.0", 
+            "rankby_abs": "false", 
+            "reference": "rest", 
+            "use_raw": "true"
+        }
+    }, 
+    "find_variable_genes": {
         "__page__": null, 
         "__rerun_remap_job_id__": null, 
         "filter": "false", 
@@ -172,7 +193,7 @@
         "fraction": "1.0", 
         "input_format": "anndata", 
         "input_obj_file": {
-            "__class__": "RuntimeValue"
+            "__class__": "ConnectedValue"
         }, 
         "log_transform": "false", 
         "output_format": "anndata", 
@@ -272,10 +293,6 @@
         "parameter_name": "resolution"
     }, 
     "run_pca": {
-        "__job_resource": {
-            "__current_case__": 0, 
-            "__job_resource__select": "no"
-        }, 
         "__page__": null, 
         "__rerun_remap_job_id__": null, 
         "extra_outputs": null, 
