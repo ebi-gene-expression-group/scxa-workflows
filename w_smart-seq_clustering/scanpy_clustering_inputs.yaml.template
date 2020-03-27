@@ -7,6 +7,9 @@ genes:
 barcodes:
   path: <BARCODES_PATH>
   type: tsv
+cellmeta:
+  path: <CELL_META_PATH>
+  type: tsv
 gtf:
   path: <GTF_PATH>
   type: gtf
