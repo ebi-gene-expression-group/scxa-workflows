@@ -120,7 +120,7 @@
     "find_markers_cell_type": {
         "__page__": null, 
         "__rerun_remap_job_id__": null, 
-        "groupby": "cell_type", 
+        "groupby": "inferred_cell_type", 
         "input_format": "anndata", 
         "input_obj_file": {
             "__class__": "RuntimeValue"
