@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "No TPM filtering", 
     "format-version": "0.1", 
-    "name": "Scanpy Prod 1.4.3 smart (imported from uploaded file)", 
+    "name": "Scanpy Prod 1.4.3 smart (with cell type differential)", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -71,7 +71,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "ebaf4966-3d88-4e18-825d-272cf12fd6d5"
+                    "uuid": "41a76a46-ecf4-49a2-a6c6-bcb8e60909af"
                 }
             ]
         }, 
@@ -98,7 +98,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "83fce33c-39b3-4f6a-9403-b9a9687be6d2"
+                    "uuid": "57c9158c-2b9b-4b01-848b-ee138ef8bd8a"
                 }
             ]
         }, 
@@ -125,7 +125,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "cb354682-74cc-4d6f-afe1-f10ad27a747b"
+                    "uuid": "83718b22-8f16-4bfd-ac45-db723f089c93"
                 }
             ]
         }, 
@@ -152,7 +152,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "50588fb8-0e95-4af5-9fbe-330b563dd59f"
+                    "uuid": "48be6401-93e1-4f91-a8d5-e51c2104a757"
                 }
             ]
         }, 
@@ -179,7 +179,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "12873fe6-9ede-4a7e-9905-a4cdb9c36bc4"
+                    "uuid": "3ac2d603-34d1-49a8-9a99-38469f679743"
                 }
             ]
         }, 
@@ -349,12 +349,7 @@
                     "output_name": "output"
                 }
             }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Scanpy Read10x", 
-                    "name": "cell_meta"
-                }
-            ], 
+            "inputs": [], 
             "label": null, 
             "name": "Scanpy Read10x", 
             "outputs": [
@@ -381,7 +376,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"gene_meta\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__page__\": null, \"genes\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"cell_meta\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"var_names\": \"\\\"gene_ids\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"barcodes\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__rerun_remap_job_id__\": null, \"matrix\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\"}", 
+            "tool_state": "{\"gene_meta\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__page__\": null, \"genes\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"cell_meta\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"var_names\": \"\\\"gene_ids\\\"\", \"__job_resource\": \"{\\\"__current_case__\\\": 0, \\\"__job_resource__select\\\": \\\"no\\\"}\", \"barcodes\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__rerun_remap_job_id__\": null, \"matrix\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\"}", 
             "tool_version": "1.4.3+galaxy0", 
             "type": "tool", 
             "uuid": "9a05f13e-c9df-4fdd-b539-73749191709f", 
@@ -1088,12 +1083,7 @@
                     "output_name": "output_h5"
                 }
             }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Scanpy FindMarkers", 
-                    "name": "input_obj_file"
-                }
-            ], 
+            "inputs": [], 
             "label": "find_markers_cell_type", 
             "name": "Scanpy FindMarkers", 
             "outputs": [
@@ -1108,18 +1098,13 @@
             ], 
             "position": {
                 "left": 3126, 
-                "top": 543
+                "top": 542
             }, 
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5": {
                     "action_arguments": {}, 
                     "action_type": "DeleteIntermediatesAction", 
                     "output_name": "output_h5"
-                }, 
-                "HideDatasetActionoutput_csv": {
-                    "action_arguments": {}, 
-                    "action_type": "HideDatasetAction", 
-                    "output_name": "output_csv"
                 }, 
                 "HideDatasetActionoutput_h5": {
                     "action_arguments": {}, 
@@ -1141,11 +1126,17 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"groups\\\": \\\"\\\", \\\"max_out_group_fraction\\\": \\\"1.0\\\", \\\"method\\\": \\\"t-test_overestim_var\\\", \\\"min_fold_change\\\": \\\"1.0\\\", \\\"min_in_group_fraction\\\": \\\"0.0\\\", \\\"rankby_abs\\\": \\\"false\\\", \\\"reference\\\": \\\"rest\\\", \\\"use_raw\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"n_genes\": \"\\\"100\\\"\", \"output_markers\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"groupby\": \"\\\"inferred_cell_type\\\"\"}", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"groups\\\": \\\"\\\", \\\"max_out_group_fraction\\\": \\\"1.0\\\", \\\"method\\\": \\\"t-test_overestim_var\\\", \\\"min_fold_change\\\": \\\"1.0\\\", \\\"min_in_group_fraction\\\": \\\"0.0\\\", \\\"rankby_abs\\\": \\\"false\\\", \\\"reference\\\": \\\"rest\\\", \\\"use_raw\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata\\\"\", \"n_genes\": \"\\\"100\\\"\", \"output_markers\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"groupby\": \"\\\"inferred_cell_type\\\"\"}", 
             "tool_version": "1.4.3+galaxy1", 
             "type": "tool", 
             "uuid": "39d48646-ebad-4b6f-b031-fa70e0532f94", 
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output_csv", 
+                    "uuid": "e78b83f6-5d7b-44f9-aeb2-f20a059bdd32"
+                }
+            ]
         }, 
         "21": {
             "annotation": "", 
@@ -1325,6 +1316,6 @@
         }
     }, 
     "tags": [], 
-    "uuid": "8a6df6f3-d7c8-406a-878c-ab5d7cdd3555", 
+    "uuid": "865f5cbb-3c68-48c2-beff-7bcc66c2c167", 
     "version": 2
 }
