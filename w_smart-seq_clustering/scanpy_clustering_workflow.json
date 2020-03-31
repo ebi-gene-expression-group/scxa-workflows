@@ -906,7 +906,7 @@
                 }, 
                 {
                     "name": "output_embed", 
-                    "type": "csv"
+                    "type": "tsv"
                 }
             ], 
             "position": {
@@ -926,7 +926,7 @@
                 }, 
                 "RenameDatasetActionoutput_embed": {
                     "action_arguments": {
-                        "newname": "tsne_#{perplexity_file}.csv"
+                        "newname": "tsne_#{perplexity_file}.tsv"
                     }, 
                     "action_type": "RenameDatasetAction", 
                     "output_name": "output_embed"
@@ -1092,8 +1092,8 @@
                     "type": "h5"
                 }, 
                 {
-                    "name": "output_csv", 
-                    "type": "csv"
+                    "name": "output_tsv", 
+                    "type": "tsv"
                 }
             ], 
             "position": {
@@ -1111,12 +1111,12 @@
                     "action_type": "HideDatasetAction", 
                     "output_name": "output_h5"
                 }, 
-                "RenameDatasetActionoutput_csv": {
+                "RenameDatasetActionoutput_tsv": {
                     "action_arguments": {
                         "newname": "celltype_markers.tsv"
                     }, 
                     "action_type": "RenameDatasetAction", 
-                    "output_name": "output_csv"
+                    "output_name": "output_tsv"
                 }
             }, 
             "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.4.3+galaxy1", 
@@ -1133,7 +1133,7 @@
             "workflow_outputs": [
                 {
                     "label": null, 
-                    "output_name": "output_csv", 
+                    "output_name": "output_tsv", 
                     "uuid": "e78b83f6-5d7b-44f9-aeb2-f20a059bdd32"
                 }
             ]
@@ -1224,8 +1224,8 @@
                     "type": "h5"
                 }, 
                 {
-                    "name": "output_csv", 
-                    "type": "csv"
+                    "name": "output_tsv", 
+                    "type": "tsv"
                 }
             ], 
             "position": {
@@ -1243,12 +1243,12 @@
                     "action_type": "HideDatasetAction", 
                     "output_name": "output_h5"
                 }, 
-                "RenameDatasetActionoutput_csv": {
+                "RenameDatasetActionoutput_tsv": {
                     "action_arguments": {
                         "newname": "markers_#{input_obj_file}.tsv"
                     }, 
                     "action_type": "RenameDatasetAction", 
-                    "output_name": "output_csv"
+                    "output_name": "output_tsv"
                 }
             }, 
             "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.4.3+galaxy1", 
@@ -1265,7 +1265,7 @@
             "workflow_outputs": [
                 {
                     "label": null, 
-                    "output_name": "output_csv", 
+                    "output_name": "output_tsv", 
                     "uuid": "af32de20-9cf0-4d3a-8c0d-f8ce794a96cb"
                 }
             ]
