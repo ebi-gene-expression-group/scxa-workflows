@@ -1113,7 +1113,7 @@
                 }, 
                 "RenameDatasetActionoutput_csv": {
                     "action_arguments": {
-                        "newname": "celltype_markers.csv"
+                        "newname": "celltype_markers.tsv"
                     }, 
                     "action_type": "RenameDatasetAction", 
                     "output_name": "output_csv"
@@ -1245,7 +1245,7 @@
                 }, 
                 "RenameDatasetActionoutput_csv": {
                     "action_arguments": {
-                        "newname": "markers_#{input_obj_file}.csv"
+                        "newname": "markers_#{input_obj_file}.tsv"
                     }, 
                     "action_type": "RenameDatasetAction", 
                     "output_name": "output_csv"
