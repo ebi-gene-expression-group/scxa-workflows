@@ -33,7 +33,7 @@ def main():
     args = arg_parser.parse_args()
 
     # Pattern to extract resolution value from clusters file residing in clusters-path, supports integer or floats res.
-    clusters_file_pat = re.compile(r'clusters_resolution_(?P<resolution>\d+\.?\d*).tsv')
+    clusters_file_pat = re.compile(r'^clusters_resolution_(?P<resolution>\d+\.?\d*).tsv')
 
     clusters_to_res = {}
     # Choose resolutions and map to cluster numbers
