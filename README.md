@@ -5,6 +5,13 @@ towards execution purposes. Version 0.2.0 was used to run all data analysis for
 the [Release 10](https://www.ebi.ac.uk/gxa/sc/release-notes.html) of
 [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home).
 
+The main changes in this version are:
+- Upgrade Alevin to 1.2.
+- Upgrade Scanpy to 1.4.3.
+- Tertiary workflow remodelled.
+- Marker p-values use BH correction rather than previous Bonferroni.
+- References properly reported and placed in bundles. Updated reference usage.
+
 Alignment and quantification workflows are developed in NextFlow and can be
 found in the `w_*_quantification` directories, whereas the clustering and
 downstream analysis was built on Galaxy and can be found in `w_*_clustering`
