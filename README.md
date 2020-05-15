@@ -1,8 +1,9 @@
 # scxa-workflows v0.2.0
 
 Higher level repo for aggregating all of Atlas workflow logic for Single Cell
-towards execution purposes. Version 0.2.0 was used to run all data analysis for
-the [Release 10](https://www.ebi.ac.uk/gxa/sc/release-notes.html) of
+towards execution purposes. Version 0.2.0 was used to run all data analysis
+(164 Single Cell RNA-seq datasets) for the
+[Release 10](https://www.ebi.ac.uk/gxa/sc/release-notes.html) of
 [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home).
 
 The main changes in this version are:
