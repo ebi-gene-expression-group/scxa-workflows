@@ -1,8 +1,8 @@
-# scxa-workflows v0.1.0
+# scxa-workflows v0.2.0
 
 Higher level repo for aggregating all of Atlas workflow logic for Single Cell
-towards execution purposes. Version 0.1.0 was used to run all data analysis for
-the [Release 6](https://www.ebi.ac.uk/gxa/sc/release-notes.html) of
+towards execution purposes. Version 0.2.0 was used to run all data analysis for
+the [Release 10](https://www.ebi.ac.uk/gxa/sc/release-notes.html) of
 [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home).
 
 Alignment and quantification workflows are developed in NextFlow and can be
@@ -11,7 +11,9 @@ downstream analysis was built on Galaxy and can be found in `w_*_clustering`
 directories. All of the Galaxy tools used here are available from the
 [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/view/ebi-gxa) to be installed
 on any instance. The tools are available for direct use as well on the
-[Human Cell Atlas European Galaxy](https://humancellatlas.usegalaxy.eu/) instance.
+[Human Cell Atlas European Galaxy](https://humancellatlas.usegalaxy.eu/) instance
+and the workflow itself available directly [there](https://humancellatlas.usegalaxy.eu/u/pmoreno/w/ebi-sc-expression-atlas-release-10-analysis-pipeline-scanpy-143).
+Details of all of the Single Cell tools that we have available in this setup can be found in our [pre-print](https://www.biorxiv.org/content/10.1101/2020.04.08.032698v1).
 
 ## Organization
 
@@ -80,11 +82,11 @@ run_flavour_workflows.sh
 
 # Setting up access to a Galaxy instance
 
-To run the Galaxy part, you will need a running Galaxy instance with all tools installed. Below we explain with [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) as an example which already has the tools, but the same holds for another instance where the Galaxy tools are installed. 
+To run the Galaxy part, you will need a running Galaxy instance with all tools installed. Below we explain with [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) as an example which already has the tools, but the same holds for another instance where the Galaxy tools are installed.
 
 ## Using Human Cell Atlas use-galaxy.eu instance
 
-The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galaxy instance already has all the tools required installed there, and can be used to reproduce the Expression Atlas clustering pipeline available here. For this you need to: 
+The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galaxy instance already has all the tools required installed there, and can be used to reproduce the Expression Atlas clustering pipeline available here. For this you need to:
 - Create an account at https://humancellatlas.usegalaxy.eu/ by clicking on **Login or Register**
 ![image](https://user-images.githubusercontent.com/368478/62038201-35d49300-b1ed-11e9-9c87-571cf539cb8c.png)
 - Retrieve your user's API Key for programmatic access:
@@ -95,4 +97,3 @@ The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galax
   ![image](https://user-images.githubusercontent.com/368478/62038543-d6c34e00-b1ed-11e9-9aae-8d0647e9ea13.png)
 
 Make sure that environment variable `GALAXY_CRED_FILE` points to the file where you put the API key, and that `GALAXY_INSTANCE` env variable is accordingly set to match what it is in that file.
-
