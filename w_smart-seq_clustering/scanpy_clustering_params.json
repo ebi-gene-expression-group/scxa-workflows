@@ -123,7 +123,7 @@
         "groupby": "inferred_cell_type", 
         "input_format": "anndata", 
         "input_obj_file": {
-            "__class__": "RuntimeValue"
+            "__class__": "ConnectedValue"
         }, 
         "n_genes": "100", 
         "output_format": "anndata", 
@@ -163,6 +163,16 @@
     "genes": {}, 
     "gtf": {}, 
     "matrix": {}, 
+    "n_neighbors": {
+        "__page__": null, 
+        "__rerun_remap_job_id__": null, 
+        "input_type": {
+            "__current_case__": 0, 
+            "input_values": "3, 5, 10, 15, 20, 25, 30, 50, 100", 
+            "parameter_values": "list_comma_separated_values"
+        }, 
+        "parameter_name": "perplexity"
+    }, 
     "neighbours": {
         "__job_resource": {
             "__current_case__": 0, 
@@ -181,6 +191,28 @@
             "knn": "true", 
             "method": "umap", 
             "n_neighbours": "15", 
+            "n_pcs": "50", 
+            "random_seed": "0", 
+            "use_rep": "X_pca"
+        }
+    }, 
+    "neighbours for umap": {
+        "__page__": null, 
+        "__rerun_remap_job_id__": null, 
+        "input_format": "anndata", 
+        "input_obj_file": {
+            "__class__": "RuntimeValue"
+        }, 
+        "output_format": "anndata", 
+        "settings": {
+            "__current_case__": 1, 
+            "default": "false", 
+            "knn": "true", 
+            "method": "umap", 
+            "n_neighbors": "15", 
+            "n_neighbors_file": {
+                "__class__": "RuntimeValue"
+            }, 
             "n_pcs": "50", 
             "random_seed": "0", 
             "use_rep": "X_pca"
@@ -255,29 +287,6 @@
         "point_size": "", 
         "use_raw": "true"
     }, 
-    "plot_umap": {
-        "__job_resource": {
-            "__current_case__": 0, 
-            "__job_resource__select": "no"
-        }, 
-        "__page__": null, 
-        "__rerun_remap_job_id__": null, 
-        "basis": "umap", 
-        "color_by": "n_genes", 
-        "fig_dpi": "80", 
-        "fig_fontsize": "10", 
-        "fig_frame": "false", 
-        "fig_size": "7,7", 
-        "fig_title": "UMAP", 
-        "input_format": "anndata", 
-        "input_obj_file": {
-            "__class__": "ConnectedValue"
-        }, 
-        "legend_fontsize": "10", 
-        "legend_loc": "right margin", 
-        "point_size": "", 
-        "use_raw": "true"
-    }, 
     "resolution": {
         "__job_resource": {
             "__current_case__": 0, 
@@ -341,16 +350,12 @@
         "use_rep": "auto"
     }, 
     "run_umap": {
-        "__job_resource": {
-            "__current_case__": 0, 
-            "__job_resource__select": "no"
-        }, 
         "__page__": null, 
         "__rerun_remap_job_id__": null, 
         "embeddings": "true", 
         "input_format": "anndata", 
         "input_obj_file": {
-            "__class__": "ConnectedValue"
+            "__class__": "RuntimeValue"
         }, 
         "key_added": "", 
         "output_format": "anndata", 
