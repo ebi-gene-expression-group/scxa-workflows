@@ -1091,7 +1091,7 @@
                 }, 
                 "RenameDatasetActionoutput_h5": {
                     "action_arguments": {
-                        "newname": "neighbors_#{neighbors_file}"
+                        "newname": "neighbors_#{n_neighbors_file}"
                     }, 
                     "action_type": "RenameDatasetAction", 
                     "output_name": "output_h5"
