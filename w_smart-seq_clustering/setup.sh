@@ -16,8 +16,8 @@ fi
 
 [ -z ${matrix_file+x} ] && echo "Env var matrix_file should be set." && exit 1
 [ -z ${genes_file+x} ] && echo "Env var genes_file should be set." && exit 1
-[ -z ${barcodes_file+x} ] && echo "env var barcodes_file should be set." && exit 1
-[ -z ${cell_meta_file+x} ] && echo "env var cell_meta_file should be set." && exit 1
+[ -z ${barcodes_file+x} ] && echo "Env var barcodes_file should be set." && exit 1
+[ -z ${cell_meta_file+x} ] && echo "Env var cell_meta_file should be set." && exit 1
 [ -z ${gtf_file+x} ] && echo "Env var gtf_file should be set." && exit 1
 [ -z ${EXP_ID+x} ] && echo "Env var EXP_ID should be set." && exit 1
 
