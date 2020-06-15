@@ -56,15 +56,13 @@ echo "Results will be available on $WORKDIR"
 # This is where additional variables defined during the inputs_yaml setup will be left
 
 inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
+flavor_dir=$baseDir/$FLAVOUR
 
-sed "s+<MATRIX_PATH>+$matrix_file+" $scriptDir/scanpy_clustering_inputs.yaml.template | \
+sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
     sed "s+<GENES_PATH>+$genes_file+" | \
     sed "s+<BARCODES_PATH>+$barcodes_file+" | \
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
     sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
-
-
-flavor_dir=$baseDir/$FLAVOUR
 
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -i $inputs_yaml \
