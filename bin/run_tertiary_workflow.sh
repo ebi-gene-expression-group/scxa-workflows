@@ -69,10 +69,10 @@ flavor_dir=$baseDir/$FLAVOUR
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -i $inputs_yaml \
                        -o $WORKDIR \
-                       -W $flavour_dir/scanpy_clustering_workflow.json \
-                       -P $flavour_dir/scanpy_clustering_workflow_parameters.yaml \
+                       -W $flavor_dir/scanpy_clustering_workflow.json \
+                       -P $flavor_dir/scanpy_clustering_workflow_parameters.yaml \
                        -H scanpy-clustering-$EXP_ID \
-                       -a $flavour_dir/scanpy_clustering_allowed_errors.yaml \
+                       -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
                        -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
                        -s $STATE_FILE
 
