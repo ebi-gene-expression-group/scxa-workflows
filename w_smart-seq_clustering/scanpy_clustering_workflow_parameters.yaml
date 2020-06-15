@@ -1,0 +1,246 @@
+barcodes: {}
+cellmeta: {}
+filter_cells:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    categories: []
+    export_mtx: 'true'
+    gene_name: gene_symbols
+    input_format: anndata
+    output_format: anndata
+    parameters:
+    -   __index__: 0
+        max: '1000000000.0'
+        min: '400.0'
+        name: n_genes
+    -   __index__: 1
+        max: '1000000000.0'
+        min: '0.0'
+        name: n_counts
+    subsets: []
+filter_genes:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    categories: []
+    export_mtx: 'true'
+    input_format: anndata
+    output_format: anndata
+    parameters:
+    -   __index__: 0
+        max: '1000000000.0'
+        min: '3.0'
+        name: n_cells
+    subsets:
+    -   __index__: 0
+        name: index
+        subset:
+            __class__: ConnectedValue
+find_clusters:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    input_format: anndata
+    method: louvain
+    output_cluster: 'true'
+    output_format: anndata
+    settings:
+        __current_case__: 1
+        default: 'false'
+        directed: 'true'
+        key_added: ''
+        random_seed: '1234'
+        resolution: '1.0'
+        resolution_file:
+            __class__: ConnectedValue
+        restrict_to: ''
+        use_graph: neighbors
+        use_weights: 'false'
+find_markers:
+    groupby: louvain
+    input_format: anndata
+    n_genes: '100'
+    output_format: anndata
+    output_markers: 'true'
+    settings:
+        __current_case__: 1
+        default: 'false'
+        groups: ''
+        max_out_group_fraction: '1.0'
+        method: t-test_overestim_var
+        min_fold_change: '1.0'
+        min_in_group_fraction: '0.0'
+        rankby_abs: 'false'
+        reference: rest
+        use_raw: 'true'
+find_markers_cell_type:
+    groupby: inferred_cell_type
+    input_format: anndata
+    n_genes: '100'
+    output_format: anndata
+    output_markers: 'true'
+    settings:
+        __current_case__: 1
+        default: 'false'
+        groups: ''
+        max_out_group_fraction: '1.0'
+        method: t-test_overestim_var
+        min_fold_change: '1.0'
+        min_in_group_fraction: '0.0'
+        rankby_abs: 'false'
+        reference: rest
+        use_raw: 'true'
+find_variable_genes:
+    filter: 'false'
+    input_format: anndata
+    method:
+        __current_case__: 0
+        flavor: seurat
+        max_disp: '1000000000.0'
+        max_mean: '1000000000.0'
+        min_disp: '0.5'
+        min_mean: '0.0125'
+    n_bin: '20'
+    output_format: anndata
+genes: {}
+gtf: {}
+matrix: {}
+n_neighbors:
+    input_type:
+        __current_case__: 0
+        input_values: 3, 5, 10, 15, 20, 25, 30, 50, 100
+        parameter_values: list_comma_separated_values
+    parameter_name: n_neighbors
+neighbours:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    input_format: anndata
+    output_format: anndata
+    settings:
+        __current_case__: 1
+        default: 'false'
+        knn: 'true'
+        method: umap
+        n_neighbours: '15'
+        n_pcs: '50'
+        random_seed: '0'
+        use_rep: X_pca
+neighbours for umap:
+    input_format: anndata
+    output_format: anndata
+    settings:
+        __current_case__: 1
+        default: 'false'
+        knn: 'true'
+        method: umap
+        n_neighbors: '15'
+        n_neighbors_file:
+            __class__: RuntimeValue
+        n_pcs: '50'
+        random_seed: '0'
+        use_rep: X_pca
+normalise_data:
+    export_mtx: 'true'
+    fraction: '1.0'
+    input_format: anndata
+    log_transform: 'false'
+    output_format: anndata
+    save_raw: 'true'
+    scale_factor: '1000000.0'
+normalise_data_internal:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    export_mtx: 'false'
+    fraction: '1.0'
+    input_format: anndata
+    log_transform: 'true'
+    output_format: anndata
+    save_raw: 'true'
+    scale_factor: '1000000.0'
+perplexity:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    input_type:
+        __current_case__: 0
+        input_values: 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
+        parameter_values: list_comma_separated_values
+    parameter_name: perplexity
+plot_pca:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    basis: pca
+    color_by: n_genes
+    fig_dpi: '80'
+    fig_fontsize: '10'
+    fig_frame: 'false'
+    fig_size: 7,7
+    fig_title: PCA
+    input_format: anndata
+    legend_fontsize: '10'
+    legend_loc: right margin
+    point_size: ''
+    use_raw: 'true'
+resolution:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    input_type:
+        __current_case__: 0
+        input_values: 0.1, 0.3, 0.5, 0.7, 1.0, 2.0, 3.0, 4.0, 5.0
+        parameter_values: list_comma_separated_values
+    parameter_name: resolution
+run_pca:
+    extra_outputs: null
+    input_format: anndata
+    n_pcs: '50'
+    output_format: anndata
+    run_mode:
+        __current_case__: 1
+        chunked: 'false'
+        random_seed: '1234'
+        svd_solver: arpack
+        zero_center: 'false'
+run_tsne:
+    __job_resource:
+        __current_case__: 0
+        __job_resource__select: 'no'
+    embeddings: 'true'
+    input_format: anndata
+    key_added: ''
+    output_format: anndata
+    settings:
+        __current_case__: 1
+        default: 'false'
+        early_exaggeration: '12.0'
+        fast_tsne: 'false'
+        learning_rate: '400.0'
+        n_job: ''
+        n_pc: ''
+        perplexity: '30.0'
+        perplexity_file:
+            __class__: ConnectedValue
+        random_seed: '1234'
+    use_rep: auto
+run_umap:
+    embeddings: 'true'
+    input_format: anndata
+    key_added: ''
+    output_format: anndata
+    settings:
+        __current_case__: 1
+        alpha: '1.0'
+        default: 'false'
+        gamma: '1.0'
+        init_pos: spectral
+        maxiter: ''
+        min_dist: '0.5'
+        n_components: '2'
+        negative_sample_rate: '5'
+        random_seed: '0'
+        spread: '1.0'
+    use_graph: neighbors
