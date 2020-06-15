@@ -36,13 +36,13 @@ export PATH
 
 # Check galaxy-workflow-executor properly installed
 
-which run_galaxy_workflow.py
+which run_galaxy_workflow.py > /dev/null
 if [ $? -gt 0 ]; then
   echo "run_galaxy_workflow.py is not in the path, please install galaxy-workflow-executor. Exiting"
   exit 1
 fi
 
-which choose_resolution_per_clustering.py
+which choose_resolution_per_clustering.py > /dev/null
 if [ $? -gt 0 ]; then
   echo "choose_resolution_per_clustering.py is not in the path, exiting"
   exit 1
@@ -72,7 +72,8 @@ run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -H scanpy-clustering-$EXP_ID \
                        -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
                        -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
-                       -s $STATE_FILE
+                       -s $STATE_FILE \
+                       --parameters-yaml
 
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
 
