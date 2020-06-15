@@ -6,7 +6,6 @@ set -e
 # Experiment related, needs to be inyected
 export EXP_ID=${1:-$expName}
 export EXP_SPECIE=${2:-$species}
-export EXP_BUNDLE=${BUNDLE_PATH}
 
 # GALAXY Related, needs to be inyected
 export GALAXY_INSTANCE=${GALAXY_INSTANCE}
@@ -19,9 +18,6 @@ export WORKDIR=${WORKDIR:-$(pwd)}
 [ ! -z ${GALAXY_CRED_FILE+x} ] || ( echo "Env var GALAXY_CRED_FILE pointing to the credentials file must be set." && exit 1 )
 [ ! -z ${EXP_SPECIE+x} ] || ( echo "Env var EXP_SPECIE for the species of the experiment needs to be defined." && exit 1 )
 [ ! -z ${EXP_ID+x} ] || ( echo "Env var EXP_ID for the id/accession of the experiment needs to be defined." && exit 1 )
-if [ ! -z ${EXP_BUNDLE} ]; then
-  [ ! -z ${REF_DIR+x} ] || ( echo "Env var REF_DIR for the reference genome annot needs to be defined." && exit 1 )
-fi
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export baseDir=$scriptDir/..
