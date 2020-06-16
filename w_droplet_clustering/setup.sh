@@ -1,1 +1,0 @@
-../w_smart-seq_clustering/setup.sh
