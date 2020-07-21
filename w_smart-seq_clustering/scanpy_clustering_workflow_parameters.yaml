@@ -75,7 +75,7 @@ find_markers:
         reference: rest
         use_raw: 'true'
 find_markers_cell_type:
-    groupby: inferred_cell_type
+    groupby: CELL_TYPE_FIELD
     input_format: anndata
     n_genes: '100'
     output_format: anndata
