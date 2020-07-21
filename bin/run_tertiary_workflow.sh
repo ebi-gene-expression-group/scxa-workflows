@@ -68,8 +68,8 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.te
 # Make any required parameter tweaks
 
 cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
-if [ -n "$CELL_TYPE_FIELD" ]; then
-    sed -i "s/CELL_TYPE_FIELD/$CELL_TYPE_FIELD/" $parameters_yaml 
+if [ -n "$cell_type_field" ]; then
+    sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
 fi
 
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
