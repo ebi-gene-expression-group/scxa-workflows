@@ -56,6 +56,7 @@ echo "Results will be available on $WORKDIR"
 # This is where additional variables defined during the inputs_yaml setup will be left
 
 inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
+parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml
 flavor_dir=$baseDir/$FLAVOUR
 
 sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
@@ -64,11 +65,18 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.te
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
     sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
 
+# Make any required parameter tweaks
+
+cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
+if [ -n "$cell_type_field" ]; then
+    sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
+fi
+
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -i $inputs_yaml \
                        -o $WORKDIR \
                        -W $flavor_dir/scanpy_clustering_workflow.json \
-                       -P $flavor_dir/scanpy_clustering_workflow_parameters.yaml \
+                       -P $parameters_yaml \
                        -H scanpy-clustering-$EXP_ID \
                        -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
                        -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
