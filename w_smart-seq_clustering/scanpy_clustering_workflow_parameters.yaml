@@ -1,11 +1,9 @@
 barcodes: {}
 cellmeta: {}
 filter_cells:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     categories: []
     export_mtx: 'true'
+    force_recalc: 'false'
     gene_name: gene_symbols
     input_format: anndata
     output_format: anndata
@@ -20,11 +18,9 @@ filter_cells:
         name: n_counts
     subsets: []
 filter_genes:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     categories: []
     export_mtx: 'true'
+    force_recalc: 'false'
     input_format: anndata
     output_format: anndata
     parameters:
@@ -38,9 +34,6 @@ filter_genes:
         subset:
             __class__: ConnectedValue
 find_clusters:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     input_format: anndata
     method: louvain
     output_cluster: 'true'
@@ -50,12 +43,13 @@ find_clusters:
         default: 'false'
         directed: 'true'
         key_added: ''
+        layer: ''
+        neighbors_key: neighbors
         random_seed: '1234'
         resolution: '1.0'
         resolution_file:
             __class__: ConnectedValue
         restrict_to: ''
-        use_graph: neighbors
         use_weights: 'false'
 find_markers:
     groupby: louvain
@@ -71,8 +65,10 @@ find_markers:
         method: t-test_overestim_var
         min_fold_change: '1.0'
         min_in_group_fraction: '0.0'
+        pts: 'false'
         rankby_abs: 'false'
         reference: rest
+        tie_correct: 'false'
         use_raw: 'true'
 find_markers_cell_type:
     groupby: CELL_TYPE_FIELD
@@ -88,23 +84,35 @@ find_markers_cell_type:
         method: t-test_overestim_var
         min_fold_change: '1.0'
         min_in_group_fraction: '0.0'
+        pts: 'false'
         rankby_abs: 'false'
         reference: rest
+        tie_correct: 'false'
         use_raw: 'true'
 find_variable_genes:
+    batch_key: ''
     filter: 'false'
+    flavor: seurat
     input_format: anndata
-    method:
-        __current_case__: 0
-        flavor: seurat
-        max_disp: '1000000000.0'
-        max_mean: '1000000000.0'
-        min_disp: '0.5'
-        min_mean: '0.0125'
+    max_disp: '50.0'
+    max_mean: '1000000000.0'
+    min_disp: '0.5'
+    min_mean: '0.0125'
     n_bin: '20'
+    n_top_gene: ''
     output_format: anndata
+    span: '0.3'
 genes: {}
 gtf: {}
+harmony_batch:
+    adjusted_basis: X_pca
+    basis: X_pca
+    batch_key: BATCH_VARIABLE
+    input_format: anndata
+    output_format: anndata_h5ad
+    settings:
+        __current_case__: 0
+        default: 'true'
 matrix: {}
 n_neighbors:
     input_type:
@@ -113,9 +121,6 @@ n_neighbors:
         parameter_values: list_comma_separated_values
     parameter_name: n_neighbors
 neighbours:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     input_format: anndata
     output_format: anndata
     settings:
@@ -123,7 +128,10 @@ neighbours:
         default: 'false'
         knn: 'true'
         method: umap
-        n_neighbours: '15'
+        metric: euclidean
+        n_neighbors: '15'
+        n_neighbors_file:
+            __class__: RuntimeValue
         n_pcs: '50'
         random_seed: '0'
         use_rep: X_pca
@@ -135,31 +143,45 @@ neighbours for umap:
         default: 'false'
         knn: 'true'
         method: umap
+        metric: euclidean
         n_neighbors: '15'
         n_neighbors_file:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
         n_pcs: '50'
         random_seed: '0'
         use_rep: X_pca
 normalise_data:
     export_mtx: 'true'
-    fraction: '1.0'
     input_format: anndata
-    log_transform: 'false'
     output_format: anndata
-    save_raw: 'true'
-    scale_factor: '1000000.0'
+    settings:
+        __current_case__: 1
+        default: 'false'
+        exclude:
+            __current_case__: 1
+            exclude_highly_expressed: 'false'
+        key_added: ''
+        layer_norm: ''
+        layers: ''
+        log_transform: 'false'
+        save_raw: 'true'
+        scale_factor: '1000000.0'
 normalise_data_internal:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     export_mtx: 'false'
-    fraction: '1.0'
     input_format: anndata
-    log_transform: 'true'
     output_format: anndata
-    save_raw: 'true'
-    scale_factor: '1000000.0'
+    settings:
+        __current_case__: 1
+        default: 'false'
+        exclude:
+            __current_case__: 1
+            exclude_highly_expressed: 'false'
+        key_added: ''
+        layer_norm: ''
+        layers: ''
+        log_transform: 'true'
+        save_raw: 'true'
+        scale_factor: '10000.0'
 perplexity:
     __job_resource:
         __current_case__: 0
@@ -170,20 +192,27 @@ perplexity:
         parameter_values: list_comma_separated_values
     parameter_name: perplexity
 plot_pca:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     basis: pca
     color_by: n_genes
+    components: ''
+    edges: 'false'
+    edges_color: ''
+    edges_width: '0.1'
     fig_dpi: '80'
     fig_fontsize: '10'
     fig_frame: 'false'
     fig_size: 7,7
     fig_title: PCA
+    gene_symbols_field: ''
+    groups: ''
     input_format: anndata
+    layer: ''
     legend_fontsize: '10'
     legend_loc: right margin
+    neighbors_key: ''
     point_size: ''
+    projection: 2d
+    sort_order: 'false'
     use_raw: 'true'
 resolution:
     __job_resource:
@@ -206,9 +235,6 @@ run_pca:
         svd_solver: arpack
         zero_center: 'false'
 run_tsne:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     embeddings: 'true'
     input_format: anndata
     key_added: ''
