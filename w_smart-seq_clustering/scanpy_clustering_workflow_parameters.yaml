@@ -204,7 +204,7 @@ neighbours for umap:
     settings:
         __current_case__: 1
         default: 'false'
-        key_added: N_NEIGHBORS
+        key_added: neighbors_n_neighbors_N_NEIGHBORS
         knn: 'true'
         method: umap
         metric: euclidean
@@ -319,7 +319,7 @@ run_tsne:
 run_umap:
     embeddings: 'true'
     input_format: anndata
-    key_added: n_neighbors_NEIGHBORS_KEY
+    key_added: NEIGHBORS_KEY
     output_format: anndata
     settings:
         __current_case__: 1
