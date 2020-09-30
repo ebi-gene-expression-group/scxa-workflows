@@ -50,7 +50,7 @@ find_clusters:
         random_seed: '1234'
         resolution: '1.0'
         resolution_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         restrict_to: ''
         use_weights: 'false'
 find_markers:
