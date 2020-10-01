@@ -33,14 +33,16 @@ def main():
     args = arg_parser.parse_args()
 
     # Pattern to extract resolution value from clusters file residing in clusters-path, supports integer or floats res.
-    clusters_file_pat = re.compile(r'^clusters_resolution_(?P<resolution>\d+\.?\d*).tsv')
+    clusters_file_pat = re.compile(r'^clusters_resolution_(?P<resolution>\d+\.?\d*)(.tsv)*')
 
+    clusters_files = {}
     clusters_to_res = {}
     # Choose resolutions and map to cluster numbers
     for cluster_file in listdir(args.clusters_path):
         match = re.search(clusters_file_pat, cluster_file)
         if match is not None:
             resolution = float(match.group('resolution'))
+            clusters_files[resolution] = cluster_file
             clusters = num_of_clusters(args.clusters_path+"/"+cluster_file)
             if clusters in clusters_to_res:
                 if clusters_to_res[clusters] > resolution >= 1 or 1 >= resolution > clusters_to_res[clusters]:
@@ -55,19 +57,19 @@ def main():
     cells_clusters = {}
     for clusters, resolution in sorted(clusters_to_res.items()):
         print("Res: {} --> Cluster: {}".format(resolution, clusters))
-        clusters_source = open(args.clusters_path+"/clusters_resolution_"+str(resolution)+".tsv", mode="r")
-        header = clusters_source.readline()
-        cluster_assignment = {}
-        for line in clusters_source:
-            cell, cluster_num = line.rstrip().split(sep="\t")
-            cells_set.add(cell)
-            cluster_assignment[cell] = cluster_num
-        cells_clusters[clusters] = cluster_assignment
+        with open(clusters_files[resolution], mode="r") as clusters_source:
+            header = clusters_source.readline()
+            cluster_assignment = {}
+            for line in clusters_source:
+                cell, cluster_num = line.rstrip().split(sep="\t")
+                cells_set.add(cell)
+                cluster_assignment[cell] = cluster_num
+            cells_clusters[clusters] = cluster_assignment
 
-        source = args.clusters_path+"/markers_clusters_resolution_"+str(resolution)+".tsv"
-        dest = args.output_dir+"/markers_"+str(clusters)+".tsv"
-        if path.isfile(source):
-            shutil.copy(source, dest)
+            source = args.clusters_path+"/markers_clusters_resolution_"+str(resolution)+".tsv"
+            dest = args.output_dir+"/markers_"+str(clusters)+".tsv"
+            if path.isfile(source):
+                shutil.copy(source, dest)
 
     print("Cell set has {} entries".format(len(cells_set)))
     print("Cell clusters has {} entries".format(len(cells_clusters)))
