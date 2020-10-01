@@ -66,7 +66,7 @@ def main():
                 cluster_assignment[cell] = cluster_num
             cells_clusters[clusters] = cluster_assignment
 
-            source = args.clusters_path+"/markers_clusters_resolution_"+str(resolution)+".tsv"
+            source = args.clusters_path+"/markers_louvain_resolution_"+str(resolution)+".tsv"
             dest = args.output_dir+"/markers_"+str(clusters)+".tsv"
             if path.isfile(source):
                 shutil.copy(source, dest)
