@@ -1,14 +1,14 @@
+Filtered cell type marker: {}
+Filtered cluster markers: {}
 barcodes: {}
 cellmeta: {}
 filter_cells:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     categories: []
     export_mtx: 'true'
+    force_recalc: 'false'
     gene_name: gene_symbols
     input_format: anndata
-    output_format: anndata
+    output_format: anndata_h5ad
     parameters:
     -   __index__: 0
         max: '1000000000.0'
@@ -20,13 +20,11 @@ filter_cells:
         name: n_counts
     subsets: []
 filter_genes:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     categories: []
     export_mtx: 'true'
+    force_recalc: 'false'
     input_format: anndata
-    output_format: anndata
+    output_format: anndata_h5ad
     parameters:
     -   __index__: 0
         max: '1000000000.0'
@@ -38,74 +36,146 @@ filter_genes:
         subset:
             __class__: ConnectedValue
 find_clusters:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     input_format: anndata
     method: louvain
     output_cluster: 'true'
-    output_format: anndata
+    output_format: anndata_h5ad
     settings:
         __current_case__: 1
         default: 'false'
         directed: 'true'
-        key_added: ''
+        key_added: METHOD_resolution_RESOLUTION
+        layer: ''
+        neighbors_key: neighbors
         random_seed: '1234'
         resolution: '1.0'
         resolution_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         restrict_to: ''
-        use_graph: neighbors
         use_weights: 'false'
 find_markers:
-    groupby: louvain
+    groupby: INPUT_OBJ
     input_format: anndata
     n_genes: '100'
-    output_format: anndata
+    output_format: anndata_h5ad
     output_markers: 'true'
     settings:
         __current_case__: 1
         default: 'false'
         groups: ''
+        key_added: markers_GROUPBY
         max_out_group_fraction: '1.0'
         method: t-test_overestim_var
         min_fold_change: '1.0'
         min_in_group_fraction: '0.0'
+        pts: 'false'
         rankby_abs: 'false'
         reference: rest
+        tie_correct: 'false'
         use_raw: 'true'
 find_markers_cell_type:
     groupby: CELL_TYPE_FIELD
     input_format: anndata
     n_genes: '100'
-    output_format: anndata
+    output_format: anndata_h5ad
     output_markers: 'true'
     settings:
         __current_case__: 1
         default: 'false'
         groups: ''
+        key_added: markers_GROUPBY
         max_out_group_fraction: '1.0'
         method: t-test_overestim_var
         min_fold_change: '1.0'
         min_in_group_fraction: '0.0'
+        pts: 'false'
         rankby_abs: 'false'
         reference: rest
+        tie_correct: 'false'
         use_raw: 'true'
 find_variable_genes:
+    batch_key: ''
     filter: 'false'
+    flavor: seurat
     input_format: anndata
-    method:
-        __current_case__: 0
-        flavor: seurat
-        max_disp: '1000000000.0'
-        max_mean: '1000000000.0'
-        min_disp: '0.5'
-        min_mean: '0.0125'
+    max_disp: '50.0'
+    max_mean: '1000000000.0'
+    min_disp: '0.5'
+    min_mean: '0.0125'
     n_bin: '20'
-    output_format: anndata
+    n_top_gene: ''
+    output_format: anndata_h5ad
+    span: '0.3'
 genes: {}
 gtf: {}
+harmony_batch:
+    adjusted_basis: X_pca
+    basis: X_pca
+    batch_key: BATCH_FIELD
+    input_format: anndata
+    output_format: anndata_h5ad
+    settings:
+        __current_case__: 0
+        default: 'true'
+make_project_file:
+    copy_adata_to_raw: 'false'
+    copy_e:
+        __current_case__: 0
+        default: 'true'
+        embedding_keys:
+        -   __index__: 0
+            contains: tsne
+        -   __index__: 1
+            contains: umap
+        embedding_sources:
+            __class__: ConnectedValue
+    copy_o:
+        __current_case__: 0
+        default: 'true'
+        obs_keys:
+        -   __index__: 0
+            contains: louvain
+        obs_sources:
+            __class__: ConnectedValue
+    copy_u:
+        __current_case__: 0
+        default: 'true'
+        uns_keys:
+        -   __index__: 0
+            contains: marker
+        uns_sources:
+            __class__: ConnectedValue
+    gene_flags: []
+    gene_symbols_field: index
+    modifications: []
+    output_format: anndata_h5ad
+    sanitize_varm: 'false'
+    top_genes: '50'
 matrix: {}
+merged_embeddings:
+    advanced:
+        conflict:
+            __current_case__: 3
+            duplicate_options: keep_first
+    inputs:
+    -   __index__: 0
+        input:
+            __class__: ConnectedValue
+    -   __index__: 1
+        input:
+            __class__: ConnectedValue
+merged_markers:
+    advanced:
+        conflict:
+            __current_case__: 3
+            duplicate_options: keep_first
+    inputs:
+    -   __index__: 0
+        input:
+            __class__: ConnectedValue
+    -   __index__: 1
+        input:
+            __class__: ConnectedValue
 n_neighbors:
     input_type:
         __current_case__: 0
@@ -113,53 +183,69 @@ n_neighbors:
         parameter_values: list_comma_separated_values
     parameter_name: n_neighbors
 neighbours:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     input_format: anndata
-    output_format: anndata
+    output_format: anndata_h5ad
     settings:
         __current_case__: 1
         default: 'false'
+        key_added: ''
         knn: 'true'
         method: umap
-        n_neighbours: '15'
-        n_pcs: '50'
-        random_seed: '0'
-        use_rep: X_pca
-neighbours for umap:
-    input_format: anndata
-    output_format: anndata
-    settings:
-        __current_case__: 1
-        default: 'false'
-        knn: 'true'
-        method: umap
+        metric: euclidean
         n_neighbors: '15'
         n_neighbors_file:
             __class__: RuntimeValue
         n_pcs: '50'
         random_seed: '0'
         use_rep: X_pca
+neighbours for umap:
+    input_format: anndata
+    output_format: anndata_h5ad
+    settings:
+        __current_case__: 1
+        default: 'false'
+        key_added: neighbors_n_neighbors_N_NEIGHBORS
+        knn: 'true'
+        method: umap
+        metric: euclidean
+        n_neighbors: '15'
+        n_neighbors_file:
+            __class__: ConnectedValue
+        n_pcs: '50'
+        random_seed: '0'
+        use_rep: X_pca
 normalise_data:
     export_mtx: 'true'
-    fraction: '1.0'
     input_format: anndata
-    log_transform: 'false'
-    output_format: anndata
-    save_raw: 'true'
-    scale_factor: '1000000.0'
+    output_format: anndata_h5ad
+    settings:
+        __current_case__: 1
+        default: 'false'
+        exclude:
+            __current_case__: 1
+            exclude_highly_expressed: 'false'
+        key_added: ''
+        layer_norm: ''
+        layers: ''
+        log_transform: 'false'
+        save_raw: 'true'
+        scale_factor: '1000000.0'
 normalise_data_internal:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     export_mtx: 'false'
-    fraction: '1.0'
     input_format: anndata
-    log_transform: 'true'
-    output_format: anndata
-    save_raw: 'true'
-    scale_factor: '1000000.0'
+    output_format: anndata_h5ad
+    settings:
+        __current_case__: 1
+        default: 'false'
+        exclude:
+            __current_case__: 1
+            exclude_highly_expressed: 'false'
+        key_added: ''
+        layer_norm: ''
+        layers: ''
+        log_transform: 'true'
+        save_raw: 'true'
+        scale_factor: '10000.0'
 perplexity:
     __job_resource:
         __current_case__: 0
@@ -170,20 +256,27 @@ perplexity:
         parameter_values: list_comma_separated_values
     parameter_name: perplexity
 plot_pca:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     basis: pca
     color_by: n_genes
+    components: ''
+    edges: 'false'
+    edges_color: ''
+    edges_width: '0.1'
     fig_dpi: '80'
     fig_fontsize: '10'
     fig_frame: 'false'
     fig_size: 7,7
     fig_title: PCA
+    gene_symbols_field: ''
+    groups: ''
     input_format: anndata
+    layer: ''
     legend_fontsize: '10'
     legend_loc: right margin
+    neighbors_key: ''
     point_size: ''
+    projection: 2d
+    sort_order: 'false'
     use_raw: 'true'
 resolution:
     __job_resource:
@@ -198,7 +291,7 @@ run_pca:
     extra_outputs: null
     input_format: anndata
     n_pcs: '50'
-    output_format: anndata
+    output_format: anndata_h5ad
     run_mode:
         __current_case__: 1
         chunked: 'false'
@@ -206,18 +299,15 @@ run_pca:
         svd_solver: arpack
         zero_center: 'false'
 run_tsne:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     embeddings: 'true'
     input_format: anndata
-    key_added: ''
-    output_format: anndata
+    output_format: anndata_h5ad
     settings:
         __current_case__: 1
         default: 'false'
         early_exaggeration: '12.0'
         fast_tsne: 'false'
+        key_added: perplexity_PERPLEXITY
         learning_rate: '400.0'
         n_job: ''
         n_pc: ''
@@ -229,7 +319,7 @@ run_tsne:
 run_umap:
     embeddings: 'true'
     input_format: anndata
-    key_added: ''
+    key_added: NEIGHBORS_KEY
     output_format: anndata
     settings:
         __current_case__: 1
@@ -243,4 +333,4 @@ run_umap:
         negative_sample_rate: '5'
         random_seed: '0'
         spread: '1.0'
-    use_graph: neighbors
+    use_graph: neighbors_INPUT_OBJ

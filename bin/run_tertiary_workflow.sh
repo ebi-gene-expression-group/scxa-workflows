@@ -72,6 +72,11 @@ if [ -n "$cell_type_field" ]; then
     sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
 fi
 
+# If the batch variable is set, then tell the workflow about it. Otherwise just
+# unset it so any batch-adjustment steps just 'pass through'.
+
+sed -i "s/BATCH_FIELD/$batch_field/" $parameters_yaml 
+
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -i $inputs_yaml \
                        -o $WORKDIR \
