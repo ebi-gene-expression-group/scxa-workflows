@@ -95,7 +95,7 @@ gtf: {}
 harmony_batch:
     adjusted_basis: X_pca
     basis: X_pca
-    batch_key: BATCH_VARIABLE
+    batch_key: BATCH_FIELD
     input_format: anndata
     output_format: anndata_h5ad
     settings:

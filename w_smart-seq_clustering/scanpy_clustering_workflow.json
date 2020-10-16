@@ -1062,7 +1062,7 @@
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 0, \\\"default\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata_h5ad\\\"\", \"basis\": \"\\\"X_pca\\\"\", \"batch_key\": \"\\\"BATCH_VARIABLE\\\"\", \"__rerun_remap_job_id__\": null, \"adjusted_basis\": \"\\\"X_pca\\\"\"}", 
+            "tool_state": "{\"__page__\": null, \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 0, \\\"default\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata_h5ad\\\"\", \"basis\": \"\\\"X_pca\\\"\", \"batch_key\": \"\\\"BATCH_FIELD\\\"\", \"__rerun_remap_job_id__\": null, \"adjusted_basis\": \"\\\"X_pca\\\"\"}", 
             "tool_version": "1.6.0+galaxy1", 
             "type": "tool", 
             "uuid": "46e2af6a-f979-4326-a3dd-387eec3b9f05", 
