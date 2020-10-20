@@ -27,7 +27,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "1b70e058-7820-4dee-80b8-aa2968ca676d"
+                    "uuid": "db236aaf-a297-41cd-8204-c15dd0fb174e"
                 }
             ]
         }, 
@@ -54,7 +54,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "733d2dc9-3a72-4052-9d83-68a17ac956a5"
+                    "uuid": "9be6ea2f-f987-483e-a09d-118a606f55ba"
                 }
             ]
         }, 
@@ -81,7 +81,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "4dc9c780-394d-48db-bd24-0227f485b3cf"
+                    "uuid": "f3decc23-7bc7-4972-8e27-afc143c4b117"
                 }
             ]
         }, 
@@ -108,7 +108,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "1f11138b-76fd-47c0-950f-62708dcd6c79"
+                    "uuid": "1f4392d5-688c-4e09-99e5-4645bc9bdb6c"
                 }
             ]
         }, 
@@ -135,7 +135,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "a2ebdf4b-3c3e-4221-a46a-b4580a871adb"
+                    "uuid": "65a31ed4-787c-428b-95e6-4eeed45eed63"
                 }
             ]
         }, 
@@ -158,7 +158,13 @@
                 "left": 290, 
                 "top": 736
             }, 
-            "post_job_actions": {}, 
+            "post_job_actions": {
+                "HideDatasetActionparameter_iteration": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "parameter_iteration"
+                }
+            }, 
             "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_parameter_iterator/scanpy_parameter_iterator/0.0.1+galaxy3", 
             "tool_shed_repository": {
                 "changeset_revision": "ae4debc68f4a", 
@@ -170,13 +176,7 @@
             "tool_version": "0.0.1+galaxy3", 
             "type": "tool", 
             "uuid": "ac7e7888-f93f-495f-8563-ade504429071", 
-            "workflow_outputs": [
-                {
-                    "label": null, 
-                    "output_name": "parameter_iteration", 
-                    "uuid": "64a1c137-c574-45a0-b174-ddfa27d2717c"
-                }
-            ]
+            "workflow_outputs": []
         }, 
         "6": {
             "annotation": "", 
@@ -1503,6 +1503,11 @@
                     "action_arguments": {}, 
                     "action_type": "DeleteIntermediatesAction", 
                     "output_name": "output"
+                }, 
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
                 }
             }, 
             "tool_id": "__MERGE_COLLECTION__", 
@@ -1510,13 +1515,7 @@
             "tool_version": "1.0.0", 
             "type": "tool", 
             "uuid": "25131a8b-93f5-4134-b5b9-d8567a804260", 
-            "workflow_outputs": [
-                {
-                    "label": null, 
-                    "output_name": "output", 
-                    "uuid": "7c2b397a-5a3a-44e0-810b-61d32cb6d85e"
-                }
-            ]
+            "workflow_outputs": []
         }, 
         "30": {
             "annotation": "", 
@@ -1692,6 +1691,6 @@
         }
     }, 
     "tags": [], 
-    "uuid": "6e9df4aa-f3a2-4142-9ef5-dd1b20be4a99", 
-    "version": 18
+    "uuid": "34082df6-b119-4e25-9c66-eace9d71edd0", 
+    "version": 19
 }
