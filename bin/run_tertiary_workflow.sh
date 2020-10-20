@@ -67,13 +67,12 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.te
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
     sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
 
-if [ -n "$cell_type_field" ]; then
-    sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
-fi
-
 # Make any required parameter tweaks
 
 cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
+if [ -n "$cell_type_field" ]; then
+    sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
+fi
 
 # If the batch variable is set, then tell the workflow about it. Otherwise just
 # unset it so any batch-adjustment steps just 'pass through'.
