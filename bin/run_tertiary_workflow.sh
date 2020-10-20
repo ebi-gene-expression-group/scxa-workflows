@@ -76,7 +76,7 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.te
     sed "s+<GENES_PATH>+$genes_file+" | \
     sed "s+<BARCODES_PATH>+$barcodes_file+" | \
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
-    sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml \
+    sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml | \
     sed "s+<METADATA_VARS_PATH>+$meta_vars_file+" > $inputs_yaml
 
 # Make any required parameter tweaks
