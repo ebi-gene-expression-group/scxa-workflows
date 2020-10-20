@@ -59,17 +59,6 @@ inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
 parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml
 flavor_dir=$baseDir/$FLAVOUR
 
-# Store the metadata variables we want to group by to a file. Right now this is
-# only cell type, but will likely include other things in future. The dummpy
-# CELL_TYPE_FIELD value will cause that instance of marker detection to fail in
-# the workflow, but the failure will be filtered out.
-
-meta_vars_file='meta_vars.txt'
-if [ -z "$cell_type_field" ]; then
-    cell_type_field=CELL_TYPE_FIELD    
-fi
-echo -e "$cell_type_field" > $meta_vars_file
-
 # Run substitutions on the inputs template
 
 sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
