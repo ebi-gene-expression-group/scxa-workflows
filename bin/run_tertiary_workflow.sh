@@ -59,18 +59,29 @@ inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
 parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml
 flavor_dir=$baseDir/$FLAVOUR
 
+# Store the metadata variables we want to group by to a file. Right now this is
+# only cell type, but will likely include other things in future. The dummpy
+# CELL_TYPE_FIELD value will cause that instance of marker detection to fail in
+# the workflow, but the failure will be filtered out.
+
+meta_vars_file='meta_vars.txt'
+if [ -z "$cell_type_field" ]; then
+    cell_type_field=CELL_TYPE_FIELD    
+fi
+echo -e "$cell_type_field" > $meta_vars_file
+
+# Run substitutions on the inputs template
+
 sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
     sed "s+<GENES_PATH>+$genes_file+" | \
     sed "s+<BARCODES_PATH>+$barcodes_file+" | \
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
-    sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
+    sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml \
+    sed "s+<METADATA_VARS_PATH>+$meta_vars_file+" > $inputs_yaml
 
 # Make any required parameter tweaks
 
 cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
-if [ -n "$cell_type_field" ]; then
-    sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
-fi
 
 # If the batch variable is set, then tell the workflow about it. Otherwise just
 # unset it so any batch-adjustment steps just 'pass through'.

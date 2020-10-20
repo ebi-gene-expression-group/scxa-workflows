@@ -13,3 +13,6 @@ cellmeta:
 gtf:
   path: <GTF_PATH>
   type: gtf
+metadata_group_vars:
+  path: <METADATA_VARS_PATH>
+  type: txt
