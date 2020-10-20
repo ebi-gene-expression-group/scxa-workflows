@@ -160,7 +160,12 @@ merged_embeddings:
     -   __index__: 1
         input:
             __class__: ConnectedValue
-metadata_group_vars: {}
+meta_vars:
+    input_type:
+        __current_case__: 0
+        input_values: CELL_TYPE_FIELD
+        parameter_values: list_comma_separated_values
+    parameter_name: meta
 n_neighbors:
     input_type:
         __current_case__: 0
@@ -319,21 +324,3 @@ run_umap:
         random_seed: '0'
         spread: '1.0'
     use_graph: neighbors_INPUT_OBJ
-split_metadata_vars:
-    split_parms:
-        __current_case__: 6
-        input:
-            __class__: ConnectedValue
-        newfilenames: meta_var_
-        select_allocate:
-            __current_case__: 2
-            allocate: byrow
-        select_ftype: generic
-        select_mode:
-            __current_case__: 0
-            chunksize: '1'
-            mode: chunk
-        split_method:
-            __current_case__: 1
-            record_length: '1'
-            select_split_method: number
