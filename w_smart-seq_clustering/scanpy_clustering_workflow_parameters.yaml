@@ -1,7 +1,11 @@
-Filtered cell type marker: {}
-Filtered cluster markers: {}
+Filtered cellgroup markers: {}
 barcodes: {}
 cellmeta: {}
+clusering_slotnames:
+    replacements:
+    -   __index__: 0
+        find_pattern: (.*)
+        replace_pattern: louvain_resolution_\1
 filter_cells:
     categories: []
     export_mtx: 'true'
@@ -50,31 +54,11 @@ find_clusters:
         random_seed: '1234'
         resolution: '1.0'
         resolution_file:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
         restrict_to: ''
         use_weights: 'false'
 find_markers:
     groupby: INPUT_OBJ
-    input_format: anndata
-    n_genes: '100'
-    output_format: anndata_h5ad
-    output_markers: 'true'
-    settings:
-        __current_case__: 1
-        default: 'false'
-        groups: ''
-        key_added: markers_GROUPBY
-        max_out_group_fraction: '1.0'
-        method: t-test_overestim_var
-        min_fold_change: '1.0'
-        min_in_group_fraction: '0.0'
-        pts: 'false'
-        rankby_abs: 'false'
-        reference: rest
-        tie_correct: 'false'
-        use_raw: 'true'
-find_markers_cell_type:
-    groupby: CELL_TYPE_FIELD
     input_format: anndata
     n_genes: '100'
     output_format: anndata_h5ad
@@ -152,6 +136,18 @@ make_project_file:
     sanitize_varm: 'false'
     top_genes: '50'
 matrix: {}
+merge_group_slotnames:
+    advanced:
+        conflict:
+            __current_case__: 3
+            duplicate_options: keep_first
+    inputs:
+    -   __index__: 0
+        input:
+            __class__: ConnectedValue
+    -   __index__: 1
+        input:
+            __class__: ConnectedValue
 merged_embeddings:
     advanced:
         conflict:
@@ -164,18 +160,12 @@ merged_embeddings:
     -   __index__: 1
         input:
             __class__: ConnectedValue
-merged_markers:
-    advanced:
-        conflict:
-            __current_case__: 3
-            duplicate_options: keep_first
-    inputs:
-    -   __index__: 0
-        input:
-            __class__: ConnectedValue
-    -   __index__: 1
-        input:
-            __class__: ConnectedValue
+meta_vars:
+    input_type:
+        __current_case__: 0
+        input_values: CELL_TYPE_FIELD
+        parameter_values: list_comma_separated_values
+    parameter_name: meta
 n_neighbors:
     input_type:
         __current_case__: 0

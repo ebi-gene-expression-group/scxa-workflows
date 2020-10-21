@@ -2,5 +2,3 @@ find_clusters:
   - any
 find_markers:
   - any
-find_markers_cell_type:
-  - any

@@ -59,6 +59,8 @@ inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
 parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml
 flavor_dir=$baseDir/$FLAVOUR
 
+# Run substitutions on the inputs template
+
 sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
     sed "s+<GENES_PATH>+$genes_file+" | \
     sed "s+<BARCODES_PATH>+$barcodes_file+" | \
