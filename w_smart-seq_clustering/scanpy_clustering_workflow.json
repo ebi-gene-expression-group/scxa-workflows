@@ -27,7 +27,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "db236aaf-a297-41cd-8204-c15dd0fb174e"
+                    "uuid": "af4e3a52-169d-4997-90a0-069b7e66c81d"
                 }
             ]
         }, 
@@ -54,7 +54,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "9be6ea2f-f987-483e-a09d-118a606f55ba"
+                    "uuid": "74b9ecec-e917-4362-b5ec-a82f0279c230"
                 }
             ]
         }, 
@@ -81,7 +81,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "f3decc23-7bc7-4972-8e27-afc143c4b117"
+                    "uuid": "70f1a46b-8476-4a4e-b2d0-0801d3f104f2"
                 }
             ]
         }, 
@@ -108,7 +108,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "1f4392d5-688c-4e09-99e5-4645bc9bdb6c"
+                    "uuid": "b0bb1376-377b-45ad-8c9e-839d2612ba82"
                 }
             ]
         }, 
@@ -135,7 +135,7 @@
                 {
                     "label": null, 
                     "output_name": "output", 
-                    "uuid": "65a31ed4-787c-428b-95e6-4eeed45eed63"
+                    "uuid": "46b5d1c6-3394-447c-9953-1dd661cef064"
                 }
             ]
         }, 
@@ -1519,7 +1519,7 @@
         }, 
         "30": {
             "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.6.0+galaxy3", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.6.0+galaxy4", 
             "errors": null, 
             "id": 30, 
             "input_connections": {
@@ -1532,7 +1532,16 @@
                     "output_name": "output"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scanpy FindMarkers", 
+                    "name": "groupby_file"
+                }, 
+                {
+                    "description": "runtime parameter for tool Scanpy FindMarkers", 
+                    "name": "input_obj_file"
+                }
+            ], 
             "label": "find_markers", 
             "name": "Scanpy FindMarkers", 
             "outputs": [
@@ -1563,15 +1572,15 @@
                     "output_name": "output_tsv"
                 }
             }, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.6.0+galaxy3", 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.6.0+galaxy4", 
             "tool_shed_repository": {
-                "changeset_revision": "f04dd4e5b6a7", 
+                "changeset_revision": "bfdca1eb4548", 
                 "name": "scanpy_find_markers", 
                 "owner": "ebi-gxa", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": null, \"groupby_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"groups\\\": \\\"\\\", \\\"key_added\\\": \\\"markers_GROUPBY\\\", \\\"max_out_group_fraction\\\": \\\"1.0\\\", \\\"method\\\": \\\"t-test_overestim_var\\\", \\\"min_fold_change\\\": \\\"1.0\\\", \\\"min_in_group_fraction\\\": \\\"0.0\\\", \\\"pts\\\": \\\"false\\\", \\\"rankby_abs\\\": \\\"false\\\", \\\"reference\\\": \\\"rest\\\", \\\"tie_correct\\\": \\\"false\\\", \\\"use_raw\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"output_format\": \"\\\"anndata_h5ad\\\"\", \"n_genes\": \"\\\"100\\\"\", \"output_markers\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"groupby\": \"\\\"INPUT_OBJ\\\"\"}", 
-            "tool_version": "1.6.0+galaxy3", 
+            "tool_state": "{\"__page__\": null, \"groupby_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"input_format\": \"\\\"anndata\\\"\", \"settings\": \"{\\\"__current_case__\\\": 1, \\\"default\\\": \\\"false\\\", \\\"groups\\\": \\\"\\\", \\\"key_added\\\": \\\"markers_GROUPBY\\\", \\\"max_out_group_fraction\\\": \\\"1.0\\\", \\\"method\\\": \\\"t-test_overestim_var\\\", \\\"min_fold_change\\\": \\\"1.0\\\", \\\"min_in_group_fraction\\\": \\\"0.0\\\", \\\"pts\\\": \\\"false\\\", \\\"rankby_abs\\\": \\\"false\\\", \\\"reference\\\": \\\"rest\\\", \\\"tie_correct\\\": \\\"false\\\", \\\"use_raw\\\": \\\"true\\\"}\", \"input_obj_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"output_format\": \"\\\"anndata_h5ad\\\"\", \"n_genes\": \"\\\"100\\\"\", \"output_markers\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"groupby\": \"\\\"INPUT_OBJ\\\"\"}", 
+            "tool_version": "1.6.0+galaxy4", 
             "type": "tool", 
             "uuid": "e961706f-2b0c-4640-bfaf-06d6869e876e", 
             "workflow_outputs": [
@@ -1691,6 +1700,6 @@
         }
     }, 
     "tags": [], 
-    "uuid": "34082df6-b119-4e25-9c66-eace9d71edd0", 
-    "version": 19
+    "uuid": "c602fa2b-dafc-4c77-871c-da78e2e867c8", 
+    "version": 20
 }
