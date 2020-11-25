@@ -280,7 +280,7 @@ resolution:
 run_pca:
     extra_outputs: null
     input_format: anndata
-    n_pcs: '50'
+    n_pcs: ''
     output_format: anndata_h5ad
     run_mode:
         __current_case__: 1
