@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "Scanpy Prod 1.6.0 clustering with Harmony batch adjustment (h5ad) - groupby as file", 
+    "name": "Scanpy Prod 1.6.0 clustering with Harmony batch adjustment (h5ad) - groupby as file (v0.2.1)", 
     "steps": {
         "0": {
             "annotation": "", 
