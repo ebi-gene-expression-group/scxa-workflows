@@ -1,6 +1,8 @@
 Filtered cellgroup markers: {}
-barcodes: {}
-cellmeta: {}
+barcodes:
+    optional: false
+cellmeta:
+    optional: false
 clusering_slotnames:
     replacements:
     -   __index__: 0
@@ -90,8 +92,10 @@ find_variable_genes:
     n_top_gene: ''
     output_format: anndata_h5ad
     span: '0.3'
-genes: {}
-gtf: {}
+genes:
+    optional: false
+gtf:
+    optional: false
 harmony_batch:
     adjusted_basis: X_pca
     basis: X_pca
@@ -113,6 +117,9 @@ make_project_file:
             contains: umap
         embedding_sources:
             __class__: ConnectedValue
+    copy_l:
+        __current_case__: 1
+        default: 'false'
     copy_o:
         __current_case__: 0
         default: 'true'
@@ -120,6 +127,11 @@ make_project_file:
         -   __index__: 0
             contains: louvain
         obs_sources:
+            __class__: ConnectedValue
+    copy_r:
+        __current_case__: 0
+        default: 'true'
+        r_source:
             __class__: ConnectedValue
     copy_u:
         __current_case__: 0
@@ -129,13 +141,22 @@ make_project_file:
             contains: marker
         uns_sources:
             __class__: ConnectedValue
+    copy_x:
+        __current_case__: 0
+        default: 'true'
+        xlayers:
+        -   __index__: 0
+            dest: filtered
+            x_source:
+                __class__: ConnectedValue
     gene_flags: []
     gene_symbols_field: index
     modifications: []
     output_format: anndata_h5ad
     sanitize_varm: 'false'
     top_genes: '50'
-matrix: {}
+matrix:
+    optional: false
 merge_group_slotnames:
     advanced:
         conflict:
@@ -218,7 +239,6 @@ normalise_data:
         layer_norm: ''
         layers: ''
         log_transform: 'false'
-        save_raw: 'true'
         scale_factor: '1000000.0'
 normalise_data_internal:
     export_mtx: 'false'
@@ -234,8 +254,7 @@ normalise_data_internal:
         layer_norm: ''
         layers: ''
         log_transform: 'true'
-        save_raw: 'true'
-        scale_factor: '10000.0'
+        scale_factor: '1000000.0'
 perplexity:
     __job_resource:
         __current_case__: 0
@@ -280,7 +299,7 @@ resolution:
 run_pca:
     extra_outputs: null
     input_format: anndata
-    n_pcs: '50'
+    n_pcs: ''
     output_format: anndata_h5ad
     run_mode:
         __current_case__: 1
