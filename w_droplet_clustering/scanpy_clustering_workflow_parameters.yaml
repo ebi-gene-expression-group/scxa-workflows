@@ -268,29 +268,6 @@ perplexity:
         input_values: 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
         parameter_values: list_comma_separated_values
     parameter_name: perplexity
-plot_pca:
-    basis: pca
-    color_by: n_genes
-    components: ''
-    edges: 'false'
-    edges_color: ''
-    edges_width: '0.1'
-    fig_dpi: '80'
-    fig_fontsize: '10'
-    fig_frame: 'false'
-    fig_size: 7,7
-    fig_title: PCA
-    gene_symbols_field: ''
-    groups: ''
-    input_format: anndata
-    layer: ''
-    legend_fontsize: '10'
-    legend_loc: right margin
-    neighbors_key: ''
-    point_size: ''
-    projection: 2d
-    sort_order: 'false'
-    use_raw: 'true'
 resolution:
     __job_resource:
         __current_case__: 0
