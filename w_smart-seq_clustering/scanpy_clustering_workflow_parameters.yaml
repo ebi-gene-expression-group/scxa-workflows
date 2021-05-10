@@ -3,7 +3,7 @@ barcodes:
     optional: false
 cellmeta:
     optional: false
-clusering_slotnames:
+clustering_slotnames:
     replacements:
     -   __index__: 0
         find_pattern: (.*)
@@ -40,7 +40,7 @@ filter_genes:
     -   __index__: 0
         name: index
         subset:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
 find_clusters:
     input_format: anndata
     method: louvain
@@ -56,7 +56,7 @@ find_clusters:
         random_seed: '1234'
         resolution: '1.0'
         resolution_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         restrict_to: ''
         use_weights: 'false'
 find_markers:
@@ -165,10 +165,10 @@ merge_group_slotnames:
     inputs:
     -   __index__: 0
         input:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     -   __index__: 1
         input:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
 merged_embeddings:
     advanced:
         conflict:
@@ -221,7 +221,7 @@ neighbours for umap:
         metric: euclidean
         n_neighbors: '15'
         n_neighbors_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         n_pcs: '50'
         random_seed: '0'
         use_rep: X_pca
@@ -303,7 +303,7 @@ run_tsne:
         n_pc: ''
         perplexity: '30.0'
         perplexity_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         random_seed: '1234'
     use_rep: auto
 run_umap:
