@@ -23,7 +23,7 @@ export WORKDIR=${WORKDIR:-$(pwd)}
 [ -z ${genes_file+x} ] && echo "Env var genes_file should be set." && exit 1
 [ -z ${barcodes_file+x} ] && echo "Env var barcodes_file should be set." && exit 1
 [ -z ${cell_meta_file+x} ] && echo "Env var cell_meta_file should be set." && exit 1
-[ -z ${gtf_file+x} ] && echo "Env var gtf_file should be set." && exit 1
+[ -z ${gene_meta_file+x} ] && echo "Env var gene_meta_file should be set." && exit 1
 [ -z ${EXP_ID+x} ] && echo "Env var EXP_ID should be set." && exit 1
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
@@ -65,7 +65,7 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.te
     sed "s+<GENES_PATH>+$genes_file+" | \
     sed "s+<BARCODES_PATH>+$barcodes_file+" | \
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
-    sed "s+<GTF_PATH>+$gtf_file+" > $inputs_yaml
+    sed "s+<GENEMETA_PATH>+$gene_meta_file+" > $inputs_yaml
 
 # Make any required parameter tweaks
 

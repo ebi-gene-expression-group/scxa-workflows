@@ -10,6 +10,6 @@ barcodes:
 cellmeta:
   path: <CELL_META_PATH>
   type: tsv
-gtf:
-  path: <GTF_PATH>
-  type: gtf
+genemeta:
+  path: <GENE_META_PATH>
+  type: tsv
