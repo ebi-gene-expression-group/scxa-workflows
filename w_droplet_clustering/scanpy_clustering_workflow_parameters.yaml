@@ -92,9 +92,9 @@ find_variable_genes:
     n_top_gene: ''
     output_format: anndata_h5ad
     span: '0.3'
-genes:
+genemeta:
     optional: false
-gtf:
+genes:
     optional: false
 harmony_batch:
     adjusted_basis: X_pca
@@ -165,10 +165,10 @@ merge_group_slotnames:
     inputs:
     -   __index__: 0
         input:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
     -   __index__: 1
         input:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
 merged_embeddings:
     advanced:
         conflict:
@@ -177,10 +177,10 @@ merged_embeddings:
     inputs:
     -   __index__: 0
         input:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
     -   __index__: 1
         input:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
 meta_vars:
     input_type:
         __current_case__: 0
