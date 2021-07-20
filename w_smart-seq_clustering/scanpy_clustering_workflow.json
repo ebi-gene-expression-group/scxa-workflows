@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true",
     "annotation": "",
     "format-version": "0.1",
-    "name": "SCXA prod v0.2.3, Scanpy 1.7.X (no GTF)",
+    "name": "SCXA prod v0.2.4, Scanpy 1.7.X",
     "steps": {
         "0": {
             "annotation": "",
