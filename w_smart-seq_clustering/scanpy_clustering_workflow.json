@@ -63,10 +63,10 @@
             "inputs": [
                 {
                     "description": "Select the representation to be used in t-SNE and neighbour graph calculation. Should usually be 'X_pca' without batches, 'X_pca_harmony' with batches. ",
-                    "name": "Representation"
+                    "name": "representation"
                 }
             ],
-            "label": "Representation",
+            "label": "representation",
             "name": "Input parameter",
             "outputs": [],
             "position": {
@@ -101,10 +101,10 @@
             "inputs": [
                 {
                     "description": "The cell metadata column that differentiates among experiments/batches.",
-                    "name": "Batch variable"
+                    "name": "batch_variable"
                 }
             ],
-            "label": "Batch variable",
+            "label": "batch_variable",
             "name": "Input parameter",
             "outputs": [],
             "position": {
