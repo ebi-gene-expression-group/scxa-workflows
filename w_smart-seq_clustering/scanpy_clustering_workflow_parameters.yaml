@@ -1,4 +1,6 @@
+Batch variable: ''
 Filtered cellgroup markers: {}
+Representation: ''
 barcodes:
     optional: false
 cellmeta:
@@ -24,6 +26,10 @@ filter_cells:
         max: '1000000000.0'
         min: '0.0'
         name: n_counts
+    -   __index__: 2
+        max: '35.0'
+        min: '0.0'
+        name: pct_counts_mito
     subsets: []
 filter_genes:
     categories: []
@@ -71,7 +77,7 @@ find_markers:
         groups: ''
         key_added: markers_GROUPBY
         max_out_group_fraction: '1.0'
-        method: t-test_overestim_var
+        method: wilcoxon
         min_fold_change: '1.0'
         min_in_group_fraction: '0.0'
         pts: 'false'
@@ -80,16 +86,15 @@ find_markers:
         tie_correct: 'false'
         use_raw: 'true'
 find_variable_genes:
-    batch_key: ''
     filter: 'false'
-    flavor: seurat
+    flavor: seurat_v3
     input_format: anndata
     max_disp: '50.0'
     max_mean: '1000000000.0'
     min_disp: '0.5'
     min_mean: '0.0125'
     n_bin: '20'
-    n_top_gene: ''
+    n_top_gene: '2000'
     output_format: anndata_h5ad
     span: '0.3'
 genemeta:
@@ -97,9 +102,8 @@ genemeta:
 genes:
     optional: false
 harmony_batch:
-    adjusted_basis: X_pca
+    adjusted_basis: X_pca_harmony
     basis: X_pca
-    batch_key: BATCH_FIELD
     input_format: anndata
     output_format: anndata_h5ad
     settings:
@@ -208,7 +212,8 @@ neighbours:
             __class__: RuntimeValue
         n_pcs: '50'
         random_seed: '0'
-        use_rep: X_pca
+        use_rep:
+            __class__: ConnectedValue
 neighbours for umap:
     input_format: anndata
     output_format: anndata_h5ad
@@ -221,10 +226,11 @@ neighbours for umap:
         metric: euclidean
         n_neighbors: '15'
         n_neighbors_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         n_pcs: '50'
         random_seed: '0'
-        use_rep: X_pca
+        use_rep:
+            __class__: ConnectedValue
 normalise_data:
     export_mtx: 'true'
     input_format: anndata
@@ -303,9 +309,8 @@ run_tsne:
         n_pc: ''
         perplexity: '30.0'
         perplexity_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         random_seed: '1234'
-    use_rep: auto
 run_umap:
     embeddings: 'true'
     input_format: anndata
