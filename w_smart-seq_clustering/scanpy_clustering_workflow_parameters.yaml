@@ -1,6 +1,6 @@
-Batch variable: ''
+batch_variable: ''
 Filtered cellgroup markers: {}
-Representation: ''
+representation: ''
 barcodes:
     optional: false
 cellmeta:
