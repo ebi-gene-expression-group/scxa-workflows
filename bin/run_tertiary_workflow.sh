@@ -67,17 +67,20 @@ sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.te
     sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
     sed "s+<GENE_META_PATH>+$gene_meta_file+" > $inputs_yaml
 
-# Make any required parameter tweaks
+# If the batch variable is set, then tell the workflow about it, and also
+# adjust the representation used by PCA-consuming workflow steps.
+
+if [ -n "$batch_variable" ]; then
+    sed -i "s/batch_variable:/batch_variable/: $batch_field" $inputs_yaml 
+    sed -i "s/X_pca: /X_pca_harmony" $inputs_yaml 
+fi
+
+# If we have cell type fields, set those in the inputs
 
 cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
 if [ -n "$cell_type_field" ]; then
-    sed -i "s/CELL_TYPE_FIELD/$cell_type_field/" $parameters_yaml 
+    sed -i "s/cell_type_field:/cell_type_field: $cell_type_field/" $inputs_yaml 
 fi
-
-# If the batch variable is set, then tell the workflow about it. Otherwise just
-# unset it so any batch-adjustment steps just 'pass through'.
-
-sed -i "s/BATCH_FIELD/$batch_field/" $parameters_yaml 
 
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
                        -i $inputs_yaml \

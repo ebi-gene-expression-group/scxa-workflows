@@ -1,8 +1,8 @@
-batch_variable: ''
 Filtered cellgroup markers: {}
-representation: ''
 barcodes:
     optional: false
+batch_variable: ''
+cell_type_field: ''
 cellmeta:
     optional: false
 clustering_slotnames:
@@ -188,7 +188,8 @@ merged_embeddings:
 meta_vars:
     input_type:
         __current_case__: 0
-        input_values: CELL_TYPE_FIELD
+        input_values:
+            __class__: ConnectedValue
         parameter_values: list_comma_separated_values
     parameter_name: meta
 n_neighbors:
@@ -226,7 +227,7 @@ neighbours for umap:
         metric: euclidean
         n_neighbors: '15'
         n_neighbors_file:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
         n_pcs: '50'
         random_seed: '0'
         use_rep:
@@ -274,6 +275,7 @@ perplexity:
         input_values: 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
         parameter_values: list_comma_separated_values
     parameter_name: perplexity
+representation: ''
 resolution:
     __job_resource:
         __current_case__: 0
@@ -309,7 +311,7 @@ run_tsne:
         n_pc: ''
         perplexity: '30.0'
         perplexity_file:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
         random_seed: '1234'
 run_umap:
     embeddings: 'true'
