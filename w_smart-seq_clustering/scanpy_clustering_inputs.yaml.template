@@ -13,6 +13,6 @@ cellmeta:
 genemeta:
   path: <GENE_META_PATH>
   type: tsv
-cell_type_field:
+cell_type_field: NO_CELLTYPE_FIELD
 batch_variable:
 representation: X_pca

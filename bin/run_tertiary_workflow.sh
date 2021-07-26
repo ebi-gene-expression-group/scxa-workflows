@@ -79,7 +79,7 @@ fi
 
 cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
 if [ -n "$cell_type_field" ]; then
-    sed -i "s/cell_type_field:/cell_type_field: $cell_type_field/" $inputs_yaml 
+    sed -i "s/cell_type_field: NO_CELLTYPE_FIELD/cell_type_field: $cell_type_field/" $inputs_yaml 
 fi
 
 run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
