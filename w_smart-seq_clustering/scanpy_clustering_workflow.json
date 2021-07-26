@@ -20,25 +20,25 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 221.5,
+                "bottom": 312,
                 "height": 61,
-                "left": 342.5,
-                "right": 542.5,
-                "top": 160.5,
+                "left": 369,
+                "right": 569,
+                "top": 251,
                 "width": 200,
-                "x": 342.5,
-                "y": 160.5
+                "x": 369,
+                "y": 251
             },
             "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_state": "{\"default\": \"NO_CELLTYPE_FIELD\", \"parameter_type\": \"text\", \"optional\": true}",
             "tool_version": null,
             "type": "parameter_input",
-            "uuid": "786640f8-7108-42fe-8e35-68c1f2a9915e",
+            "uuid": "51bfdb17-708c-4b8a-bfa6-4b3211304130",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "ebd985a0-cc79-467e-8442-7b1e696f73d9"
+                    "uuid": "64f5c402-5d30-4ce5-9d36-4b40d6e5b2d8"
                 }
             ]
         },
@@ -58,14 +58,14 @@
                 }
             ],
             "position": {
-                "bottom": 381.5,
+                "bottom": 472,
                 "height": 81,
-                "left": 342.5,
-                "right": 542.5,
-                "top": 300.5,
+                "left": 369,
+                "right": 569,
+                "top": 391,
                 "width": 200,
-                "x": 342.5,
-                "y": 300.5
+                "x": 369,
+                "y": 391
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionparameter_iteration": {
@@ -108,14 +108,14 @@
                 }
             ],
             "position": {
-                "bottom": 1047.5,
+                "bottom": 1138,
                 "height": 81,
-                "left": 54.5,
-                "right": 254.5,
-                "top": 966.5,
+                "left": 81,
+                "right": 281,
+                "top": 1057,
                 "width": 200,
-                "x": 54.5,
-                "y": 966.5
+                "x": 81,
+                "y": 1057
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionparameter_iteration": {
@@ -158,14 +158,14 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 727.5,
+                "bottom": 818,
                 "height": 61,
-                "left": -779.5,
-                "right": -579.5,
-                "top": 666.5,
+                "left": -753,
+                "right": -553,
+                "top": 757,
                 "width": 200,
-                "x": -779.5,
-                "y": 666.5
+                "x": -753,
+                "y": 757
             },
             "tool_id": null,
             "tool_state": "{\"parameter_type\": \"text\", \"optional\": true}",
@@ -176,7 +176,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "0cd0039f-9416-4a0f-9f4a-34ac27cb97fc"
+                    "uuid": "b5e12fc1-81cd-4a97-8fc2-d23103d38f66"
                 }
             ]
         },
@@ -196,14 +196,14 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 1146.5,
+                "bottom": 1237,
                 "height": 61,
-                "left": 54.5,
-                "right": 254.5,
-                "top": 1085.5,
+                "left": 81,
+                "right": 281,
+                "top": 1176,
                 "width": 200,
-                "x": 54.5,
-                "y": 1085.5
+                "x": 81,
+                "y": 1176
             },
             "tool_id": null,
             "tool_state": "{\"default\": \"X_pca\", \"parameter_type\": \"text\", \"optional\": true}",
@@ -214,7 +214,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "a31d0a6a-c41b-40a7-b47a-dc725ff2ed89"
+                    "uuid": "51c9d3ae-69cc-4b73-864b-5d37bd5e8613"
                 }
             ]
         },
@@ -234,14 +234,14 @@
                 }
             ],
             "position": {
-                "bottom": 1448.5,
+                "bottom": 1539,
                 "height": 81,
-                "left": 54.5,
-                "right": 254.5,
-                "top": 1367.5,
+                "left": 81,
+                "right": 281,
+                "top": 1458,
                 "width": 200,
-                "x": 54.5,
-                "y": 1367.5
+                "x": 81,
+                "y": 1458
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionparameter_iteration": {
@@ -284,14 +284,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 1175.5,
+                "bottom": 1266,
                 "height": 61,
-                "left": -1901.5,
-                "right": -1701.5,
-                "top": 1114.5,
+                "left": -1875,
+                "right": -1675,
+                "top": 1205,
                 "width": 200,
-                "x": -1901.5,
-                "y": 1114.5
+                "x": -1875,
+                "y": 1205
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -302,7 +302,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "9ba43624-4f83-486d-811f-c1e704e06748"
+                    "uuid": "94e5c3ae-527a-440c-8d34-02679f0dc6cd"
                 }
             ]
         },
@@ -322,14 +322,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 1275.5,
+                "bottom": 1366,
                 "height": 61,
-                "left": -1901.5,
-                "right": -1701.5,
-                "top": 1214.5,
+                "left": -1875,
+                "right": -1675,
+                "top": 1305,
                 "width": 200,
-                "x": -1901.5,
-                "y": 1214.5
+                "x": -1875,
+                "y": 1305
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -340,7 +340,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "6bc0fe0f-4085-4223-a4cb-c7bd1592e4df"
+                    "uuid": "c7486173-396a-4c61-95a9-7c0e067f17f0"
                 }
             ]
         },
@@ -360,14 +360,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 1504.5,
+                "bottom": 1595,
                 "height": 61,
-                "left": -1901.5,
-                "right": -1701.5,
-                "top": 1443.5,
+                "left": -1875,
+                "right": -1675,
+                "top": 1534,
                 "width": 200,
-                "x": -1901.5,
-                "y": 1443.5
+                "x": -1875,
+                "y": 1534
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -378,7 +378,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "4c6b5d29-fe6e-4807-8246-92b3b8904af8"
+                    "uuid": "c4144854-b329-4556-8355-d8b969123afc"
                 }
             ]
         },
@@ -398,14 +398,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 1425.5,
+                "bottom": 1516,
                 "height": 61,
-                "left": -2457.5,
-                "right": -2257.5,
-                "top": 1364.5,
+                "left": -2431,
+                "right": -2231,
+                "top": 1455,
                 "width": 200,
-                "x": -2457.5,
-                "y": 1364.5
+                "x": -2431,
+                "y": 1455
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -416,7 +416,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "f271806e-1ed6-4f72-9e2c-5d27e7dec0aa"
+                    "uuid": "d109eb46-7014-46de-abc5-0415ef4dd59a"
                 }
             ]
         },
@@ -436,14 +436,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 1300.5,
+                "bottom": 1391,
                 "height": 61,
-                "left": -3013.5,
-                "right": -2813.5,
-                "top": 1239.5,
+                "left": -2987,
+                "right": -2787,
+                "top": 1330,
                 "width": 200,
-                "x": -3013.5,
-                "y": 1239.5
+                "x": -2987,
+                "y": 1330
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -454,7 +454,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "32a6d448-a497-4de8-b243-371d10e3603b"
+                    "uuid": "7bf43fe5-f471-414d-b0b2-e5b848eb3ea3"
                 }
             ]
         },
@@ -479,14 +479,14 @@
                 }
             ],
             "position": {
-                "bottom": 227.5,
+                "bottom": 318,
                 "height": 92,
-                "left": 620.5,
-                "right": 820.5,
-                "top": 135.5,
+                "left": 647,
+                "right": 847,
+                "top": 226,
                 "width": 200,
-                "x": 620.5,
-                "y": 135.5
+                "x": 647,
+                "y": 226
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionparameter_iteration": {
@@ -517,7 +517,7 @@
                 {
                     "label": "meta_vars output",
                     "output_name": "parameter_iteration",
-                    "uuid": "921ec076-42bf-4b8f-828e-b085d2b0eae0"
+                    "uuid": "6e083588-7b21-4ab0-8813-40e127a790e7"
                 }
             ]
         },
@@ -542,14 +542,14 @@
                 }
             ],
             "position": {
-                "bottom": 417.5,
+                "bottom": 508,
                 "height": 132,
-                "left": 620.5,
-                "right": 820.5,
-                "top": 285.5,
+                "left": 647,
+                "right": 847,
+                "top": 376,
                 "width": 200,
-                "x": 620.5,
-                "y": 285.5
+                "x": 647,
+                "y": 376
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutfile": {
@@ -587,7 +587,7 @@
                 {
                     "label": "clustering_slotnames output",
                     "output_name": "outfile",
-                    "uuid": "902501c7-7efb-4481-a555-fc266ac8ba92"
+                    "uuid": "ade95c0d-1eec-4a95-a0a5-3311d8fb5d3d"
                 }
             ]
         },
@@ -612,14 +612,14 @@
                 }
             ],
             "position": {
-                "bottom": 764.5,
+                "bottom": 855,
                 "height": 92,
-                "left": -2735.5,
-                "right": -2535.5,
-                "top": 672.5,
+                "left": -2709,
+                "right": -2509,
+                "top": 763,
                 "width": 200,
-                "x": -2735.5,
-                "y": 672.5
+                "x": -2709,
+                "y": 763
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput": {
@@ -643,7 +643,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "5b35940e-4960-493f-98d8-a85484da826e"
+                    "uuid": "31b9ff1e-a7f5-43ff-86ea-67c2bbff09bc"
                 }
             ]
         },
@@ -668,14 +668,14 @@
                 }
             ],
             "position": {
-                "bottom": 1316.5,
+                "bottom": 1407,
                 "height": 92,
-                "left": -2735.5,
-                "right": -2535.5,
-                "top": 1224.5,
+                "left": -2709,
+                "right": -2509,
+                "top": 1315,
                 "width": 200,
-                "x": -2735.5,
-                "y": 1224.5
+                "x": -2709,
+                "y": 1315
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput": {
@@ -699,7 +699,7 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "b74b4f86-26ea-4798-b83a-2db442b331dd"
+                    "uuid": "9b87ae12-d541-46e9-9e8e-450728452620"
                 }
             ]
         },
@@ -728,14 +728,14 @@
                 }
             ],
             "position": {
-                "bottom": 405.5,
+                "bottom": 496,
                 "height": 202,
-                "left": 898.5,
-                "right": 1098.5,
-                "top": 203.5,
+                "left": 925,
+                "right": 1125,
+                "top": 294,
                 "width": 200,
-                "x": 898.5,
-                "y": 203.5
+                "x": 925,
+                "y": 294
             },
             "post_job_actions": {
                 "TagDatasetActionoutput": {
@@ -755,7 +755,7 @@
                 {
                     "label": "merge_group_slotnames output",
                     "output_name": "output",
-                    "uuid": "12ba8955-d2f7-497a-b0d8-b7d37565d38f"
+                    "uuid": "be2ece9d-acee-4d79-a771-dee8d8d9bc1d"
                 }
             ]
         },
@@ -780,14 +780,14 @@
                 }
             ],
             "position": {
-                "bottom": 774.5,
+                "bottom": 865,
                 "height": 112,
-                "left": -2179.5,
-                "right": -1979.5,
-                "top": 662.5,
+                "left": -2153,
+                "right": -1953,
+                "top": 753,
                 "width": 200,
-                "x": -2179.5,
-                "y": 662.5
+                "x": -2153,
+                "y": 753
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionout_file1": {
@@ -805,7 +805,7 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "701130f8-42af-44c4-a0d3-8144dbce9923"
+                    "uuid": "87b36c82-9c65-47ff-8e01-6f836d4a18b4"
                 }
             ]
         },
@@ -830,14 +830,14 @@
                 }
             ],
             "position": {
-                "bottom": 1326.5,
+                "bottom": 1417,
                 "height": 112,
-                "left": -2457.5,
-                "right": -2257.5,
-                "top": 1214.5,
+                "left": -2431,
+                "right": -2231,
+                "top": 1305,
                 "width": 200,
-                "x": -2457.5,
-                "y": 1214.5
+                "x": -2431,
+                "y": 1305
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionout_file1": {
@@ -855,7 +855,7 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "fdd4cc59-e8f9-4d35-80c0-e8e60d39e8da"
+                    "uuid": "0e9aae41-1382-436e-af4f-46e6ae3e9182"
                 }
             ]
         },
@@ -884,14 +884,14 @@
                 }
             ],
             "position": {
-                "bottom": 1368.5,
+                "bottom": 1459,
                 "height": 142,
-                "left": -2179.5,
-                "right": -1979.5,
-                "top": 1226.5,
+                "left": -2153,
+                "right": -1953,
+                "top": 1317,
                 "width": 200,
-                "x": -2179.5,
-                "y": 1226.5
+                "x": -2153,
+                "y": 1317
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionout_file1": {
@@ -909,7 +909,7 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "bd23fa81-8ddd-4466-a25f-421ef6140a6a"
+                    "uuid": "4388d997-b99e-48bc-9263-d3637d0944cf"
                 }
             ]
         },
@@ -934,14 +934,14 @@
                 }
             ],
             "position": {
-                "bottom": 1405.5,
+                "bottom": 1496,
                 "height": 92,
-                "left": -1901.5,
-                "right": -1701.5,
-                "top": 1313.5,
+                "left": -1875,
+                "right": -1675,
+                "top": 1404,
                 "width": 200,
-                "x": -1901.5,
-                "y": 1313.5
+                "x": -1875,
+                "y": 1404
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionout_file1": {
@@ -959,7 +959,7 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "9105e0d0-9ae1-45b9-b13f-759e5c5f9f61"
+                    "uuid": "ac7f58bf-5e6b-4526-96b9-a7b8d58f11d5"
                 }
             ]
         },
@@ -1000,14 +1000,14 @@
                 }
             ],
             "position": {
-                "bottom": 1394.5,
+                "bottom": 1485,
                 "height": 292,
-                "left": -1613.5,
-                "right": -1413.5,
-                "top": 1102.5,
+                "left": -1587,
+                "right": -1387,
+                "top": 1193,
                 "width": 200,
-                "x": -1613.5,
-                "y": 1102.5
+                "x": -1587,
+                "y": 1193
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1067,14 +1067,14 @@
                 }
             ],
             "position": {
-                "bottom": 1543.5,
+                "bottom": 1634,
                 "height": 362,
-                "left": -1335.5,
-                "right": -1135.5,
-                "top": 1181.5,
+                "left": -1309,
+                "right": -1109,
+                "top": 1272,
                 "width": 200,
-                "x": -1335.5,
-                "y": 1181.5
+                "x": -1309,
+                "y": 1272
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1153,14 +1153,14 @@
                 }
             ],
             "position": {
-                "bottom": 1084.5,
+                "bottom": 1175,
                 "height": 432,
-                "left": -1057.5,
-                "right": -857.5,
-                "top": 652.5,
+                "left": -1031,
+                "right": -831,
+                "top": 743,
                 "width": 200,
-                "x": -1057.5,
-                "y": 652.5
+                "x": -1031,
+                "y": 743
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1209,18 +1209,18 @@
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "genes_10x",
-                    "uuid": "97109585-9bbc-4d1b-a200-9522bfa6896c"
+                    "output_name": "matrix_10x",
+                    "uuid": "6fe634c7-b038-495d-9eee-c6903cc8da1b"
                 },
                 {
                     "label": null,
                     "output_name": "barcodes_10x",
-                    "uuid": "8758576a-3173-420c-9f86-9ef336c87f07"
+                    "uuid": "e8b3c9eb-a920-4e56-b04f-ca093eb99aaa"
                 },
                 {
                     "label": null,
-                    "output_name": "matrix_10x",
-                    "uuid": "e3282cf8-6e1c-4005-938d-a647c9913398"
+                    "output_name": "genes_10x",
+                    "uuid": "4e42a64f-039f-416a-bdb9-fcb56ac71868"
                 }
             ]
         },
@@ -1245,14 +1245,14 @@
                 }
             ],
             "position": {
-                "bottom": 964.5,
+                "bottom": 1055,
                 "height": 192,
-                "left": -779.5,
-                "right": -579.5,
-                "top": 772.5,
+                "left": -753,
+                "right": -553,
+                "top": 863,
                 "width": 200,
-                "x": -779.5,
-                "y": 772.5
+                "x": -753,
+                "y": 863
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1312,14 +1312,14 @@
                 }
             ],
             "position": {
-                "bottom": 1384.5,
+                "bottom": 1475,
                 "height": 382,
-                "left": -779.5,
-                "right": -579.5,
-                "top": 1002.5,
+                "left": -753,
+                "right": -553,
+                "top": 1093,
                 "width": 200,
-                "x": -779.5,
-                "y": 1002.5
+                "x": -753,
+                "y": 1093
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1368,18 +1368,18 @@
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "barcodes_10x",
-                    "uuid": "55846815-59d4-4666-9ae7-f45f7e5915fd"
+                    "output_name": "matrix_10x",
+                    "uuid": "270b9ce3-0001-4a48-81f5-d11996f0e800"
                 },
                 {
                     "label": null,
                     "output_name": "genes_10x",
-                    "uuid": "9ee0d613-6496-44d5-ba1d-3f44640302ad"
+                    "uuid": "351a026b-f944-4246-9736-f38fb9a83011"
                 },
                 {
                     "label": null,
-                    "output_name": "matrix_10x",
-                    "uuid": "0182ee3d-9770-4925-b086-0ec9b5125f66"
+                    "output_name": "barcodes_10x",
+                    "uuid": "9daa3fe8-31f6-4965-b0f8-c0de4cfcb4c7"
                 }
             ]
         },
@@ -1408,14 +1408,14 @@
                 }
             ],
             "position": {
-                "bottom": 939.5,
+                "bottom": 1030,
                 "height": 222,
-                "left": -501.5,
-                "right": -301.5,
-                "top": 717.5,
+                "left": -475,
+                "right": -275,
+                "top": 808,
                 "width": 200,
-                "x": -501.5,
-                "y": 717.5
+                "x": -475,
+                "y": 808
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1463,14 +1463,14 @@
                 }
             ],
             "position": {
-                "bottom": 893.5,
+                "bottom": 984,
                 "height": 152,
-                "left": -223.5,
-                "right": -23.5,
-                "top": 741.5,
+                "left": -197,
+                "right": 3,
+                "top": 832,
                 "width": 200,
-                "x": -223.5,
-                "y": 741.5
+                "x": -197,
+                "y": 832
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1522,14 +1522,14 @@
                 }
             ],
             "position": {
-                "bottom": 928.5,
+                "bottom": 1019,
                 "height": 342,
-                "left": 54.5,
-                "right": 254.5,
-                "top": 586.5,
+                "left": 81,
+                "right": 281,
+                "top": 677,
                 "width": 200,
-                "x": 54.5,
-                "y": 586.5
+                "x": 81,
+                "y": 677
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1586,14 +1586,14 @@
                 }
             ],
             "position": {
-                "bottom": 813.5,
+                "bottom": 904,
                 "height": 292,
-                "left": 342.5,
-                "right": 542.5,
-                "top": 521.5,
+                "left": 369,
+                "right": 569,
+                "top": 612,
                 "width": 200,
-                "x": 342.5,
-                "y": 521.5
+                "x": 369,
+                "y": 612
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1649,14 +1649,14 @@
                 }
             ],
             "position": {
-                "bottom": 1163.5,
+                "bottom": 1254,
                 "height": 312,
-                "left": 342.5,
-                "right": 542.5,
-                "top": 851.5,
+                "left": 369,
+                "right": 569,
+                "top": 942,
                 "width": 200,
-                "x": 342.5,
-                "y": 851.5
+                "x": 369,
+                "y": 942
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1723,14 +1723,14 @@
                 }
             ],
             "position": {
-                "bottom": 1543.5,
+                "bottom": 1634,
                 "height": 342,
-                "left": 342.5,
-                "right": 542.5,
-                "top": 1201.5,
+                "left": 369,
+                "right": 569,
+                "top": 1292,
                 "width": 200,
-                "x": 342.5,
-                "y": 1201.5
+                "x": 369,
+                "y": 1292
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1773,7 +1773,7 @@
                 {
                     "label": null,
                     "output_name": "output_embed",
-                    "uuid": "fa46c04c-9643-4ab8-b387-5e78c22e1328"
+                    "uuid": "edb0f754-3bda-4f2c-b24b-d61bb4eb6b50"
                 }
             ]
         },
@@ -1806,14 +1806,14 @@
                 }
             ],
             "position": {
-                "bottom": 747.5,
+                "bottom": 838,
                 "height": 312,
-                "left": 620.5,
-                "right": 820.5,
-                "top": 435.5,
+                "left": 647,
+                "right": 847,
+                "top": 526,
                 "width": 200,
-                "x": 620.5,
-                "y": 435.5
+                "x": 647,
+                "y": 526
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5ad": {
@@ -1856,7 +1856,7 @@
                 {
                     "label": null,
                     "output_name": "output_txt",
-                    "uuid": "b57c5d5f-3915-4f04-a886-7f62e547a327"
+                    "uuid": "4896c680-5da2-4b60-b933-5f34d06a228f"
                 }
             ]
         },
@@ -1881,14 +1881,14 @@
                 }
             ],
             "position": {
-                "bottom": 897.5,
+                "bottom": 988,
                 "height": 112,
-                "left": 620.5,
-                "right": 820.5,
-                "top": 785.5,
+                "left": 647,
+                "right": 847,
+                "top": 876,
                 "width": 200,
-                "x": 620.5,
-                "y": 785.5
+                "x": 647,
+                "y": 876
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput": {
@@ -1934,14 +1934,14 @@
                 }
             ],
             "position": {
-                "bottom": 1158.5,
+                "bottom": 1249,
                 "height": 222,
-                "left": 620.5,
-                "right": 820.5,
-                "top": 936.5,
+                "left": 647,
+                "right": 847,
+                "top": 1027,
                 "width": 200,
-                "x": 620.5,
-                "y": 936.5
+                "x": 647,
+                "y": 1027
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput_h5": {
@@ -1977,7 +1977,7 @@
                 {
                     "label": null,
                     "output_name": "output_embed",
-                    "uuid": "b150a711-01a0-409a-88f1-ca742dfbe57b"
+                    "uuid": "1885a778-703a-40e9-8503-37d7f58e4e7f"
                 }
             ]
         },
@@ -2002,14 +2002,14 @@
                 }
             ],
             "position": {
-                "bottom": 1428.5,
+                "bottom": 1519,
                 "height": 112,
-                "left": 898.5,
-                "right": 1098.5,
-                "top": 1316.5,
+                "left": 925,
+                "right": 1125,
+                "top": 1407,
                 "width": 200,
-                "x": 898.5,
-                "y": 1316.5
+                "x": 925,
+                "y": 1407
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput": {
@@ -2027,7 +2027,7 @@
                 {
                     "label": "input dataset(s) (filtered failed datasets)",
                     "output_name": "output",
-                    "uuid": "491ef7ab-272f-44b6-8cb1-dd79851b523d"
+                    "uuid": "5c1adeaa-bac4-4349-8331-d936d6a7f980"
                 }
             ]
         },
@@ -2056,14 +2056,14 @@
                 }
             ],
             "position": {
-                "bottom": 729.5,
+                "bottom": 820,
                 "height": 202,
-                "left": 898.5,
-                "right": 1098.5,
-                "top": 527.5,
+                "left": 925,
+                "right": 1125,
+                "top": 618,
                 "width": 200,
-                "x": 898.5,
-                "y": 527.5
+                "x": 925,
+                "y": 618
             },
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -2100,14 +2100,14 @@
                 }
             ],
             "position": {
-                "bottom": 1103.5,
+                "bottom": 1194,
                 "height": 112,
-                "left": 898.5,
-                "right": 1098.5,
-                "top": 991.5,
+                "left": 925,
+                "right": 1125,
+                "top": 1082,
                 "width": 200,
-                "x": 898.5,
-                "y": 991.5
+                "x": 925,
+                "y": 1082
             },
             "post_job_actions": {
                 "DeleteIntermediatesActionoutput": {
@@ -2125,7 +2125,7 @@
                 {
                     "label": "input dataset(s) (filtered failed datasets)",
                     "output_name": "output",
-                    "uuid": "21736dbf-23e0-4e4f-922e-318011aa1cf2"
+                    "uuid": "0cc160df-3afa-4a75-b8e4-4a6603d7b982"
                 }
             ]
         },
@@ -2158,14 +2158,14 @@
                 }
             ],
             "position": {
-                "bottom": 774.5,
+                "bottom": 865,
                 "height": 292,
-                "left": 1176.5,
-                "right": 1376.5,
-                "top": 482.5,
+                "left": 1203,
+                "right": 1403,
+                "top": 573,
                 "width": 200,
-                "x": 1176.5,
-                "y": 482.5
+                "x": 1203,
+                "y": 573
             },
             "post_job_actions": {
                 "HideDatasetActionoutput_h5ad": {
@@ -2196,7 +2196,7 @@
                 {
                     "label": null,
                     "output_name": "output_tsv",
-                    "uuid": "74af2674-89ec-4565-bff1-c8991a808fca"
+                    "uuid": "46f0abe8-5b6c-480c-8631-e8f3c5e302e7"
                 }
             ]
         },
@@ -2225,14 +2225,14 @@
                 }
             ],
             "position": {
-                "bottom": 1185.5,
+                "bottom": 1276,
                 "height": 202,
-                "left": 1176.5,
-                "right": 1376.5,
-                "top": 983.5,
+                "left": 1203,
+                "right": 1403,
+                "top": 1074,
                 "width": 200,
-                "x": 1176.5,
-                "y": 983.5
+                "x": 1203,
+                "y": 1074
             },
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -2269,14 +2269,14 @@
                 }
             ],
             "position": {
-                "bottom": 852.5,
+                "bottom": 943,
                 "height": 132,
-                "left": 1454.5,
-                "right": 1654.5,
-                "top": 720.5,
+                "left": 1481,
+                "right": 1681,
+                "top": 811,
                 "width": 200,
-                "x": 1454.5,
-                "y": 720.5
+                "x": 1481,
+                "y": 811
             },
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -2333,14 +2333,14 @@
                 }
             ],
             "position": {
-                "bottom": 1167.5,
+                "bottom": 1258,
                 "height": 502,
-                "left": 1732.5,
-                "right": 1932.5,
-                "top": 665.5,
+                "left": 1759,
+                "right": 1959,
+                "top": 756,
                 "width": 200,
-                "x": 1732.5,
-                "y": 665.5
+                "x": 1759,
+                "y": 756
             },
             "post_job_actions": {
                 "RenameDatasetActionoutput_h5ad": {
@@ -2366,12 +2366,12 @@
                 {
                     "label": null,
                     "output_name": "output_h5ad",
-                    "uuid": "71b424f1-84e8-4ab6-8db5-89c5d6954625"
+                    "uuid": "7455493c-e743-4899-91f6-00eb65792322"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "ae98f2a2-a8c1-4b2b-861b-c5b056df5e09",
-    "version": 9
+    "uuid": "1bd2b130-0324-47a6-a211-cdf19ec9ec1f",
+    "version": 10
 }
