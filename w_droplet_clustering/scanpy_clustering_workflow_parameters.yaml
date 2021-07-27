@@ -332,7 +332,7 @@ run_umap:
         spread: '1.0'
     use_graph: neighbors_INPUT_OBJ
 scrublet:
-    filter: 'false'
+    filter: 'true'
     input_format: anndata
     output_format: anndata_h5ad
     settings:
