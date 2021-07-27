@@ -2,6 +2,7 @@ Filtered cellgroup markers: {}
 barcodes:
     optional: false
 batch_variable: ''
+cell_type_field: ''
 cellmeta:
     optional: false
 clustering_slotnames:

@@ -2,6 +2,7 @@ Filtered cellgroup markers: {}
 barcodes:
     optional: false
 batch_variable: ''
+cell_type_field: ''
 cellmeta:
     optional: false
 clustering_slotnames:
@@ -338,3 +339,10 @@ scrublet:
         __current_case__: 0
         default: 'true'
     threshold: ''
+scrublet_plot:
+    input_format: anndata
+    scale_hist_obs: linear
+    scale_hist_sim: linear
+    settings:
+        __current_case__: 0
+        default: 'true'
