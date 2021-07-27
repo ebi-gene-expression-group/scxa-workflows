@@ -2,7 +2,6 @@ Filtered cellgroup markers: {}
 barcodes:
     optional: false
 batch_variable: ''
-cell_type_field: ''
 cellmeta:
     optional: false
 clustering_slotnames:
@@ -332,7 +331,6 @@ run_umap:
         spread: '1.0'
     use_graph: neighbors_INPUT_OBJ
 scrublet:
-    batch_key: ''
     filter: 'false'
     input_format: anndata
     output_format: anndata_h5ad
