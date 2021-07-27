@@ -19,7 +19,7 @@ filter_cells:
     parameters:
     -   __index__: 0
         max: '1000000000.0'
-        min: '400.0'
+        min: '500.0'
         name: n_genes
     -   __index__: 1
         max: '1000000000.0'
