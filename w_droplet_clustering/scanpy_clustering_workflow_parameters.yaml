@@ -11,7 +11,11 @@ clustering_slotnames:
         find_pattern: (.*)
         replace_pattern: louvain_resolution_\1
 filter_cells:
-    categories: []
+    categories:
+    -   __index__: 0
+        name: predicted_doublet
+        negate: 'false'
+        values: 'False'
     export_mtx: 'true'
     force_recalc: 'false'
     gene_name: gene_symbols
@@ -332,7 +336,7 @@ run_umap:
         spread: '1.0'
     use_graph: neighbors_INPUT_OBJ
 scrublet:
-    filter: 'true'
+    filter: 'false'
     input_format: anndata
     output_format: anndata_h5ad
     settings:
