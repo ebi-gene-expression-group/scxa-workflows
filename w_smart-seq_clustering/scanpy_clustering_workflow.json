@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true",
     "annotation": "",
     "format-version": "0.1",
-    "name": "SCXA prod v0.2.5, Scanpy 1.7.X (plate)",
+    "name": "SCXA prod v0.2.5, Scanpy 1.8.1 (plate)",
     "steps": {
         "0": {
             "annotation": "The cell metadata column that differentiates among experiments/batches.",

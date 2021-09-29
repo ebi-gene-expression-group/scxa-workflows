@@ -23,17 +23,15 @@ filter_cells:
     output_format: anndata_h5ad
     parameters:
     -   __index__: 0
-        max: '10000.0'
-        min: '200.0'
-        name: n_genes
-    -   __index__: 1
-        max: '30000.0'
-        min: '500.0'
+        max: '1000000000.0'
+        min: '1500.0'
         name: n_counts
-    -   __index__: 2
+    -   __index__: 1
         max: '35.0'
         min: '0.0'
         name: pct_counts_mito
+    save_layer: ''
+    save_raw: 'false'
     subsets: []
 filter_genes:
     categories: []
@@ -46,6 +44,8 @@ filter_genes:
         max: '1000000000.0'
         min: '3.0'
         name: n_cells
+    save_layer: ''
+    save_raw: 'false'
     subsets:
     -   __index__: 0
         name: index
@@ -91,14 +91,14 @@ find_markers:
         use_raw: 'true'
 find_variable_genes:
     filter: 'false'
-    flavor: seurat_v3
+    flavor: seurat
     input_format: anndata
     max_disp: '50.0'
     max_mean: '1000000000.0'
     min_disp: '0.5'
     min_mean: '0.0125'
     n_bin: '20'
-    n_top_gene: '2000'
+    n_top_gene: ''
     output_format: anndata_h5ad
     span: '0.3'
 genemeta:
@@ -163,6 +163,7 @@ make_project_file:
     output_format: anndata_h5ad
     sanitize_varm: 'false'
     top_genes: '50'
+    var_modifications: []
 matrix:
     optional: false
 merge_group_slotnames:

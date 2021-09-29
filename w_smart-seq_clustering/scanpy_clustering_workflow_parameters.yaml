@@ -20,16 +20,14 @@ filter_cells:
     parameters:
     -   __index__: 0
         max: '1000000000.0'
-        min: '500.0'
-        name: n_genes
-    -   __index__: 1
-        max: '1000000000.0'
-        min: '0.0'
+        min: '1500.0'
         name: n_counts
-    -   __index__: 2
+    -   __index__: 1
         max: '35.0'
         min: '0.0'
         name: pct_counts_mito
+    save_layer: ''
+    save_raw: 'false'
     subsets: []
 filter_genes:
     categories: []
@@ -42,11 +40,13 @@ filter_genes:
         max: '1000000000.0'
         min: '3.0'
         name: n_cells
+    save_layer: ''
+    save_raw: 'false'
     subsets:
     -   __index__: 0
         name: index
         subset:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
 find_clusters:
     input_format: anndata
     method: louvain
@@ -62,7 +62,7 @@ find_clusters:
         random_seed: '1234'
         resolution: '1.0'
         resolution_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         restrict_to: ''
         use_weights: 'false'
 find_markers:
@@ -87,14 +87,14 @@ find_markers:
         use_raw: 'true'
 find_variable_genes:
     filter: 'false'
-    flavor: seurat_v3
+    flavor: seurat
     input_format: anndata
     max_disp: '50.0'
     max_mean: '1000000000.0'
     min_disp: '0.5'
     min_mean: '0.0125'
     n_bin: '20'
-    n_top_gene: '2000'
+    n_top_gene: ''
     output_format: anndata_h5ad
     span: '0.3'
 genemeta:
@@ -120,7 +120,7 @@ make_project_file:
         -   __index__: 1
             contains: umap
         embedding_sources:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_l:
         __current_case__: 1
         default: 'false'
@@ -131,12 +131,12 @@ make_project_file:
         -   __index__: 0
             contains: louvain
         obs_sources:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_r:
         __current_case__: 0
         default: 'true'
         r_source:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_u:
         __current_case__: 0
         default: 'true'
@@ -144,7 +144,7 @@ make_project_file:
         -   __index__: 0
             contains: marker
         uns_sources:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_x:
         __current_case__: 0
         default: 'true'
@@ -152,13 +152,14 @@ make_project_file:
         -   __index__: 0
             dest: filtered
             x_source:
-                __class__: ConnectedValue
+                __class__: RuntimeValue
     gene_flags: []
     gene_symbols_field: index
     modifications: []
     output_format: anndata_h5ad
     sanitize_varm: 'false'
     top_genes: '50'
+    var_modifications: []
 matrix:
     optional: false
 merge_group_slotnames:
@@ -227,7 +228,7 @@ neighbours for umap:
         metric: euclidean
         n_neighbors: '15'
         n_neighbors_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         n_pcs: '50'
         random_seed: '0'
         use_rep:
@@ -311,7 +312,7 @@ run_tsne:
         n_pc: ''
         perplexity: '30.0'
         perplexity_file:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
         random_seed: '1234'
 run_umap:
     embeddings: 'true'
