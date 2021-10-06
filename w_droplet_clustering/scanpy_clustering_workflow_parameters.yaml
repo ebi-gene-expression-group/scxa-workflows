@@ -124,7 +124,7 @@ make_project_file:
         -   __index__: 1
             contains: umap
         embedding_sources:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_l:
         __current_case__: 1
         default: 'false'
@@ -135,12 +135,12 @@ make_project_file:
         -   __index__: 0
             contains: louvain
         obs_sources:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_r:
         __current_case__: 0
         default: 'true'
         r_source:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_u:
         __current_case__: 0
         default: 'true'
@@ -148,7 +148,7 @@ make_project_file:
         -   __index__: 0
             contains: marker
         uns_sources:
-            __class__: ConnectedValue
+            __class__: RuntimeValue
     copy_x:
         __current_case__: 0
         default: 'true'
@@ -156,7 +156,11 @@ make_project_file:
         -   __index__: 0
             dest: filtered
             x_source:
-                __class__: ConnectedValue
+                __class__: RuntimeValue
+        -   __index__: 1
+            dest: normalised
+            x_source:
+                __class__: RuntimeValue
     gene_flags: []
     gene_symbols_field: index
     modifications: []
