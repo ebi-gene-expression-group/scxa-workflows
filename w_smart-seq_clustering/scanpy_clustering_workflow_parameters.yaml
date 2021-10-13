@@ -120,7 +120,7 @@ make_project_file:
         -   __index__: 1
             contains: umap
         embedding_sources:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
     copy_l:
         __current_case__: 1
         default: 'false'
@@ -131,12 +131,12 @@ make_project_file:
         -   __index__: 0
             contains: louvain
         obs_sources:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
     copy_r:
         __current_case__: 0
         default: 'true'
         r_source:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
     copy_u:
         __current_case__: 0
         default: 'true'
@@ -144,7 +144,7 @@ make_project_file:
         -   __index__: 0
             contains: marker
         uns_sources:
-            __class__: RuntimeValue
+            __class__: ConnectedValue
     copy_x:
         __current_case__: 0
         default: 'true'
@@ -152,11 +152,11 @@ make_project_file:
         -   __index__: 0
             dest: filtered
             x_source:
-                __class__: RuntimeValue
+                __class__: ConnectedValue
         -   __index__: 1
             dest: normalised
             x_source:
-                __class__: RuntimeValue
+                __class__: ConnectedValue
     gene_flags: []
     gene_symbols_field: index
     modifications: []
@@ -272,9 +272,6 @@ normalise_data_internal:
         log_transform: 'true'
         scale_factor: '1000000.0'
 perplexity:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     input_type:
         __current_case__: 0
         input_values: 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50
@@ -282,9 +279,6 @@ perplexity:
     parameter_name: perplexity
 representation: ''
 resolution:
-    __job_resource:
-        __current_case__: 0
-        __job_resource__select: 'no'
     input_type:
         __current_case__: 0
         input_values: 0.1, 0.3, 0.5, 0.7, 1.0, 2.0, 3.0, 4.0, 5.0
