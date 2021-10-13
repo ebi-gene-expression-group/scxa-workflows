@@ -65,14 +65,26 @@ in the environment (example below for E-ENAD-15):
 export species=mus_musculus
 export expName=E-ENAD-15
 
+# Raw matrix file components
 export matrix_file=$BUNDLE/raw/matrix.mtx.gz
 export genes_file=$BUNDLE/raw/genes.tsv.gz
 export barcodes_file=$BUNDLE/raw/barcodes.tsv.gz
-export gtf_file=$REF/$species/Mus_musculus.GRCm38.95.gtf.gz
 
-export tpm_matrix_file=$BUNDLE/tpm/matrix.mtx.gz
-export tpm_genes_file=$BUNDLE/tpm/genes.tsv.gz
-export tpm_barcodes_file=$BUNDLE/tpm/barcodes.tsv.gz
+# Cell and gene-wise additional metadata
+
+export gene_meta_file=$BUNDLE/reference/gene_annotation.txt
+export cell_meta_file=$BUNDLE/E-ENAD-15.cell_metadata.tsv
+
+# Optional parameters 
+
+export cell_type_field='inferred_cell_type_-_-ontology labels' # To calculate cell type markers
+export batch_field='individual' # To run a batch correction using Harmony on a specific covariate
+
+# Supply Galaxy setup
+
+export create_conda_env=no
+export GALAXY_CRED_FILE=$galaxyCredentials
+export GALAXY_INSTANCE=$galaxyInstance
 
 export create_conda_env=yes
 export GALAXY_CRED_FILE=../galaxy_credentials.yaml
@@ -85,8 +97,24 @@ If `create_conda_env` is set to `no`, then the the following script should be ex
 in an environment that has bioblend and Python 3. Then execute:
 
 ```
-run_flavour_workflows.sh
+run_tertiary_workflow.sh
 ```
+
+#### Extra metadata files
+
+The gene and cell metadata files are simple tab-delimited files will be matched via their first column to the identifiers in genes.tsv and barcodes.tsv, respectively. 
+
+The gene_metadata table can be derived from a GTF-format Ensembl-style annotation file using the [atlas-gene-annotation-manipulation](tool) we provide. It can be executed like:
+
+```
+gtf2featureAnnotation.R --gtf-file GTF_FILE --version-transcripts \
+    --feature-type "gene" --mito --mito-biotypes \
+    'mt_trna,mt_rrna,mt_trna_pseudogene,mt_dna' --mito-chr \
+    'mt,mitochondrion_genome,mito,m,chrM,chrMt' --first-field "gene_id" \
+    --output-file gene_annotation.txt
+```
+
+See the [documentation](https://github.com/ebi-gene-expression-group/atlas-gene-annotation-manipulation) of that script for information on the options available.
 
 # Setting up access to a Galaxy instance
 
