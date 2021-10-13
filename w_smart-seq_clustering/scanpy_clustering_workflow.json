@@ -269,14 +269,14 @@
             "workflow_outputs": []
         },
         "6": {
-            "annotation": "Cell metadata, a tabular file derived from the Expression Atlas condensed SDRF. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.cell_metadata.tsv",
+            "annotation": "A tab-delimited text file of additional cell metadata, to be matched to the file supplied in ‘barcodes’ via the first column of both files. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.cell_metadata.tsv",
             "content_id": null,
             "errors": null,
             "id": 6,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "Cell metadata, a tabular file derived from the Expression Atlas condensed SDRF. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.cell_metadata.tsv",
+                    "description": "A tab-delimited text file of additional cell metadata, to be matched to the file supplied in ‘barcodes’ via the first column of both files. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.cell_metadata.tsv",
                     "name": "cellmeta"
                 }
             ],
@@ -383,14 +383,14 @@
             ]
         },
         "9": {
-            "annotation": "The matrix market row files with gene identifiers, compatible with the given GTF. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.aggregated_counts.mtx_rows.gz",
+            "annotation": "The matrix market row files with gene identifiers. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.aggregated_counts.mtx_rows.gz",
             "content_id": null,
             "errors": null,
             "id": 9,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "The matrix market row files with gene identifiers, compatible with the given GTF. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.aggregated_counts.mtx_rows.gz",
+                    "description": "The matrix market row files with gene identifiers. An example would be http://ftp.ebi.ac.uk/pub/databases/microarray/data/atlas/sc_experiments/E-MTAB-6077/E-MTAB-6077.aggregated_counts.mtx_rows.gz",
                     "name": "genes"
                 }
             ],
@@ -421,14 +421,14 @@
             ]
         },
         "10": {
-            "annotation": "Metadata for genes in tabular format, derived from the GTF and pre-filtered by the fastq files used in the preparation of the matrix, obtained as show at",
+            "annotation": "A tab-delimited text file of additional gene metadata, to be matched to the file supplied in ‘genes’ via the first column of both files. See https://github.com/ebi-gene-expression-group/scxa-workflows/blob/develop/README.md for more information on how to create this from an Ensembl GTF file",
             "content_id": null,
             "errors": null,
             "id": 10,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "Metadata for genes in tabular format, derived from the GTF and pre-filtered by the fastq files used in the preparation of the matrix, obtained as show at",
+                    "description": "A tab-delimited text file of additional gene metadata, to be matched to the file supplied in ‘genes’ via the first column of both files. See https://github.com/ebi-gene-expression-group/scxa-workflows/blob/develop/README.md for more information on how to create this from an Ensembl GTF file",
                     "name": "genemeta"
                 }
             ],
