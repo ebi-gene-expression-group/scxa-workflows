@@ -17,6 +17,12 @@ Details of all of the Single Cell tools that we have available in this setup can
 
 ### Workflow logic
 
+#### Secondary (quantification)
+
+Quantification workflows now take transcriptome indices as input rather than generating them dynamically. This reflects our in-house usage of [Refgenie](http://refgenie.databio.org/en/latest/) to produce libraries of all the index permutations we need (e.g. with/ without spikes).
+
+#### Tertiary (post-quantification)
+
 Some changes were added based on discussion with domain experts and some [semi-quantitative evaluation](https://github.com/ebi-gene-expression-group/scanpy-parameter-explorer) based on separation of known clusters in dimension reductions:
 
  * Filtering. Switch cell-wise filtering to filter based on counts only with count > 1500. Add mitochondrial content threshold of 35%. 
