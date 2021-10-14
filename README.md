@@ -155,7 +155,7 @@ Expression matrices are stored in the following slots:
 
  * Raw, un-normalised expression matrices in **.raw.X**. Since .raw must match in terms of cells with .X, this is not quite 'fully raw', and some cells with low counts will have been removed. Historically, this slot was used to store normalised and transformed expression values prior to removal of genes at the 'highly variable genes' step, which is not longer the default behahaviour. We have repurposed it here to provide 'raw as possible' expression values.
  * Matrix with gene filtering applied, in **.layers['filtered']**.
- * Normalised matrix, without transformation in **.layers['normalised']
+ * Normalised matrix, without transformation in **.layers['normalised']**
  * Final matrix used in all dimenstion reduction and clustering, in **.X**. This will be scaled relative to the normalised matrix, and have an additional scaling transformation in the case of droplet experiments. 
 
 The variants supplied are intended to allow users to undertake re-analyses from a variety of stages in our analysis with the mimumum of effort.
