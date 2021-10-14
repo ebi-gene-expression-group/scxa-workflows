@@ -4,11 +4,8 @@ Below we enumerate and explain the reasoning for deviating from default paramete
 
 ## Filter Cells (Scanpy)
 
-- n_genes:
-  - min: 400
-  - max: Inf (very large number used in Galaxy)
-- n_counts
-  - min: 0
+- n_counts:
+  - min: 1500
   - max: Inf (very large number used in Galaxy)
   
 ## Filter Genes (Scanpy)
@@ -26,20 +23,17 @@ No deviations from defaults.
 - flavour: Seurat
 - mean of expression:
   - min: 0.0125
-  - max: 3.0
+  - max: Inf
 - dispersion of expression:
   - min: 0.5
-  - max: Inf
+  - max: 50
 - number of bins for binning the mean expression: 20
   
 ## Scale data (Scanpy)
 
 - log1p scaling: yes
-- Zero centering: yes
-- regress out: n_count
-- scale max: 10
 
-I suspect some of these are actually the defaults.
+(no other scaling)
 
 ## Run PCA (Scanpy)
 
@@ -71,4 +65,4 @@ No deviations
 
 ## Find markers (Scanpy)
 
-- number of top genes: 50
+- number of top genes: 100
