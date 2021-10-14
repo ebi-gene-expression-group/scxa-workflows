@@ -145,8 +145,8 @@ These files can be loaded with a tool like [cellxgene](https://chanzuckerberg.gi
 The files can be read into Python using the Scanpy module:
 
 ```
- > import scanpy as sc
- > adata = sc.read("E-HCAD-9.project.h5ad")
+ >>> import scanpy as sc
+ >>> adata = sc.read("E-HCAD-9.project.h5ad")
  ```
 
 ### Expression matrices
