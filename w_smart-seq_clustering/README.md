@@ -1,4 +1,4 @@
-# Parameters for droplet Scanpy clustering
+# Parameters for plate-based Scanpy clustering
 
 Below we enumerate and explain the reasoning for deviating from default parameters at the different steps.
 
