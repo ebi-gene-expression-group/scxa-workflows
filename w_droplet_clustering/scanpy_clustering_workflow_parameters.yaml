@@ -288,6 +288,34 @@ resolution:
         input_values: 0.1, 0.3, 0.5, 0.7, 1.0, 2.0, 3.0, 4.0, 5.0
         parameter_values: list_comma_separated_values
     parameter_name: resolution
+restore_unscaled:
+    copy_adata_to_raw: 'false'
+    copy_e:
+        __current_case__: 1
+        default: 'false'
+    copy_l:
+        __current_case__: 1
+        default: 'false'
+    copy_o:
+        __current_case__: 1
+        default: 'false'
+    copy_r:
+        __current_case__: 0
+        default: 'true'
+        r_source:
+            __class__: ConnectedValue
+    copy_u:
+        __current_case__: 1
+        default: 'false'
+    copy_x:
+        __current_case__: 1
+        default: 'false'
+    gene_flags: []
+    gene_symbols_field: index
+    modifications: []
+    output_format: anndata_h5ad
+    sanitize_varm: 'false'
+    top_genes: '50'
 run_pca:
     extra_outputs: null
     input_format: anndata
