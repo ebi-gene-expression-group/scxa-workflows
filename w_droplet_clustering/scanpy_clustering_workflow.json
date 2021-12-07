@@ -1218,7 +1218,7 @@
                 "owner": "ebi-gxa",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"categories\": [{\"__index__\": 0, \"name\": \"predicted_doublet\", \"values\": \"False\", \"negate\": \"false\"}], \"export_mtx\": \"true\", \"force_recalc\": \"false\", \"gene_name\": \"gene_symbols\", \"input_format\": \"anndata\", \"input_obj_file\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": \"anndata_h5ad\", \"parameters\": [{\"__index__\": 0, \"name\": \"n_counts\", \"min\": \"1500.0\", \"max\": \"1000000000.0\"}, {\"__index__\": 1, \"name\": \"pct_counts_mito\", \"min\": \"0.0\", \"max\": \"35.0\"}], \"save_layer\": \"\", \"save_raw\": \"false\", \"subsets\": [], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"categories\": [{\"__index__\": 0, \"name\": \"predicted_doublet\", \"values\": \"False\", \"negate\": \"false\"}], \"export_mtx\": \"true\", \"force_recalc\": \"false\", \"gene_name\": \"gene_symbols\", \"input_format\": \"anndata\", \"input_obj_file\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": \"anndata_h5ad\", \"parameters\": [{\"__index__\": 0, \"name\": \"n_counts\", \"min\": \"750.0\", \"max\": \"1000000000.0\"}, {\"__index__\": 1, \"name\": \"pct_counts_mito\", \"min\": \"0.0\", \"max\": \"35.0\"}], \"save_layer\": \"\", \"save_raw\": \"false\", \"subsets\": [], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.8.1+2+galaxy0",
             "type": "tool",
             "uuid": "4b77fffb-9463-4408-bad4-a72c4d4ee397",

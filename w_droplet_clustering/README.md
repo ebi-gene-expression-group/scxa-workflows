@@ -5,7 +5,7 @@ Below we enumerate and explain the reasoning for deviating from default paramete
 ## Filter Cells (Scanpy)
 
 - n_counts:
-  - min: 1500
+  - min: 750
   - max: Inf (very large number used in Galaxy)
   
 ## Filter Genes (Scanpy)
