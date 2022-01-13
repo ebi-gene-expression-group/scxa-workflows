@@ -25,7 +25,7 @@ Quantification workflows now take transcriptome indices as input rather than gen
 
 Some changes were added based on discussion with domain experts and some [semi-quantitative evaluation](https://github.com/ebi-gene-expression-group/scanpy-parameter-explorer) based on separation of known clusters in dimension reductions:
 
- * Filtering. Switch cell-wise filtering to filter based on counts only with count > 1500. Add mitochondrial content threshold of 35%. 
+ * Filtering. Switch cell-wise filtering to filter based on counts only with count > 1500 (plate based) or 750 (droplet). Add mitochondrial content threshold of 35%. 
  * Scaling step added for droplet experiments specifically. 
  * Scrublet pre-filtering added to droplet workflow.
  * For batched experiments, supply batch to the highly-variable genes step in Scanpy.
