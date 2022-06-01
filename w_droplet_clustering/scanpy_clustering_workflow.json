@@ -421,14 +421,14 @@
             "workflow_outputs": []
         },
         "10": {
-            "annotation": "Optionally specify comma-separated fields from the cell metadata for use in differential expression.",
+            "annotation": "Single field from the cell metadata file for calculating differential expression (use underscores _ instead of spaces).",
             "content_id": null,
             "errors": null,
             "id": 10,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "Optionally specify comma-separated fields from the cell metadata for use in differential expression.",
+                    "description": "Single field from the cell metadata file for calculating differential expression (use underscores _ instead of spaces).",
                     "name": "cell_type_field"
                 }
             ],
@@ -446,7 +446,7 @@
                 "y": 1578.5
             },
             "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_state": "{\"default\": \"NO_CELLTYPE_FIELD\", \"parameter_type\": \"text\", \"optional\": true}",
             "tool_version": null,
             "type": "parameter_input",
             "uuid": "ab29268a-93fc-4ea8-aa10-3d54b29d910a",
