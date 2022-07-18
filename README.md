@@ -226,4 +226,4 @@ The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galax
   - Click on create API Key if not available, and copy it, to use in in the credentials file needed of the Galaxy workflow executor module (galaxy_credentials.yaml file, as the one [here](https://github.com/ebi-gene-expression-group/galaxy-workflow-executor/blob/b36dcb1eeb546f0b34566e95fb55202d92a34520/galaxy_credentials.yml.sample))
   ![image](https://user-images.githubusercontent.com/368478/62038543-d6c34e00-b1ed-11e9-9aae-8d0647e9ea13.png)
 
-Make sure that environment variable `GALAXY_CRED_FILE` points to the file where you put the API key, and that `GALAXY_INSTANCE` env variable is accordingly set to match what it is in that file.
+Make sure that environment variable `GALAXY_CRED_FILE` points to the file where you put the API key, and that `GALAXY_INSTANCE` env variable is accordingly set to match what it is in that file. 
