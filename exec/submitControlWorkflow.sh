@@ -53,7 +53,7 @@ cd $SCXA_WORKFLOW_ROOT
 
 # Are we prod or test?
 
-scxaBranch='master'
+scxaBranch='master' # check this
 if [ "$SCXA_ENV" == 'test' ]; then
     scxaBranch='develop'
 fi
@@ -104,8 +104,9 @@ fi
 
 nextflowCommand="nextflow run -N $SCXA_REPORT_EMAIL -r $scxaBranch -resume ${workflow} $expNamePart $skipQuantificationPart $skipAggregationPart $tertiaryWorkflowPart $overwritePart --enaSshUser fg_atlas_sc --sdrfDir $SCXA_SDRF_DIR -work-dir $workingDir"
 
-# Run the LSF submission if it's not already running
+# Run the SLURM submission if it's not already running
 
+# the line below needs migration
 bjobs -w | grep "${SCXA_ENV}_$workflow" > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
@@ -128,6 +129,7 @@ if [ $? -ne 0 ]; then
 
     echo "Submitting job"
     rm -rf run.out run.err .nextflow.log*  
+    # the line below needs migration
     bsub \
         -J ${SCXA_ENV}_$workflow \
         -M 4096 -R "rusage[mem=4096]" \
