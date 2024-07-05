@@ -44,7 +44,7 @@ workflow=scxa-control-workflow
 
 # Change working dir for experiment-specific runs
 
-workingDir="$SCXA_WORKFLOW_ROOT/work/${workflow}"
+workingDir="$SCXA_WORKFLOW_ROOT/data/work/${workflow}"
 if [ -n "$expName" ]; then
     workingDir="${workingDir}_$expName"
 fi
@@ -113,7 +113,7 @@ if [ $? -ne 0 ]; then
     # If workflow completed successfully we can clean up the work dir. If not,
     # then the caching from the work dir will be useful to resume
 
-    successMarker="$SCXA_WORKFLOW_ROOT/work/.success"
+    successMarker="$SCXA_WORKFLOW_ROOT/data/work/.success"
 
     if [ -e "$successMarker" ]; then
         echo "Previous run succeeded, cleaning up $workingDir"
