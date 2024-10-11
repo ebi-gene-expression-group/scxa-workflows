@@ -53,7 +53,7 @@ cd $SCXA_WORKFLOW_ROOT
 
 # Are we prod or test?
 
-scxaBranch='master' # check this
+scxaBranch='master'
 if [ "$SCXA_ENV" == 'test' ]; then
     scxaBranch='develop'
 fi
@@ -106,8 +106,7 @@ nextflowCommand="nextflow run -N $SCXA_REPORT_EMAIL -r $scxaBranch -resume ${wor
 
 # Run the SLURM submission if it's not already running
 
-# the line below needs migration
-bjobs -w | grep "${SCXA_ENV}_$workflow" > /dev/null 2>&1
+squeue -o "%j" | grep -w "${SCXA_ENV}_$workflow" > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
 
@@ -129,14 +128,16 @@ if [ $? -ne 0 ]; then
 
     echo "Submitting job"
     rm -rf run.out run.err .nextflow.log*  
-    # the line below needs migration
-    bsub \
-        -J ${SCXA_ENV}_$workflow \
-        -M 4096 -R "rusage[mem=4096]" \
-        -u $SCXA_REPORT_EMAIL \
-        -o run.out \
-        -e run.err \
-        "$nextflowCommand" 
+
+    sbatch \
+        --job-name="${SCXA_ENV}_$workflow" \
+        --mem=4096 \
+        --time=7-00:00:00 \
+        --mail-user=$SCXA_REPORT_EMAIL \
+        --mail-type=END,FAIL \
+        --output=run.out \
+        --error=run.err \
+        --wrap="$nextflowCommand"
 else
     echo "Workflow process already running" 
 fi   
