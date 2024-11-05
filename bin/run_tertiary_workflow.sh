@@ -25,14 +25,6 @@ scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export baseDir=$scriptDir/..
 
 
-# Check galaxy-workflow-executor properly installed
-
-which run_galaxy_workflow.py > /dev/null
-if [ $? -gt 0 ]; then
-  echo "run_galaxy_workflow.py is not in the path, please install galaxy-workflow-executor. Exiting"
-  exit 1
-fi
-
 which choose_resolution_per_clustering.py > /dev/null
 if [ $? -gt 0 ]; then
   echo "choose_resolution_per_clustering.py is not in the path, exiting"
@@ -46,8 +38,8 @@ echo "Results will be available on $WORKDIR"
 
 # This is where additional variables defined during the inputs_yaml setup will be left
 
-inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
-parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml
+inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml          # do we need this?
+parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml  # do we need this?
 flavor_dir=$baseDir/$FLAVOUR
 
 # Run substitutions on the inputs template
@@ -82,16 +74,23 @@ sub_in_params 'cell_type_field' "$cell_type_field"
 sub_in_params 'batch_variable' $batch_field
 sub_in_params 'representation' $representation
 
-run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
-                       -i $inputs_yaml \
-                       -o $WORKDIR \
-                       -W $flavor_dir/scanpy_clustering_workflow.json \
-                       -P $parameters_yaml \
-                       -H scanpy-clustering-$EXP_ID \
-                       -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
-                       -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
-                       -s $STATE_FILE \
-                       --parameters-yaml
+#run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
+#                       -i $inputs_yaml \
+#                       -o $WORKDIR \
+#                       -W $flavor_dir/scanpy_clustering_workflow.json \
+#                       -P $parameters_yaml \
+#                       -H scanpy-clustering-$EXP_ID \
+#                       -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
+#                       -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
+#                       -s $STATE_FILE \
+#                       --parameters-yaml
+
+module load nextflow/23.04.1   # we need to pin the NF version somewhere, or just leave it like this until full migration
+
+nextflow ...
+
+module unload nextflow/23.04.1
+
 
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
 
