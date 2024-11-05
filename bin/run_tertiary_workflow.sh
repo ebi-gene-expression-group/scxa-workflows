@@ -1,22 +1,17 @@
 #!/bin/env bash
 set -e
 
-# This file runs the Galaxy smart-seq Scanpy clustering workflow
+# This file runs the tertiary workflow
 
 # Experiment related, needs to be inyected
 export EXP_ID=${1:-$expName}
 export EXP_SPECIE=${2:-$species}
 export STATE_FILE=${3:-$state_file}
 
-# GALAXY Related, needs to be inyected
-export GALAXY_INSTANCE=${GALAXY_INSTANCE}
-export GALAXY_CRED_FILE=${GALAXY_CRED_FILE}
 
 export WORKDIR=${WORKDIR:-$(pwd)}
 
 [ ! -z ${FLAVOUR+x} ] || ( echo "Env var FLAVOUR for the type of workflow to be run, matching one of the w_* directories" && exit 1 )
-[ ! -z ${GALAXY_INSTANCE+x} ] || ( echo "Env var GALAXY_INSTANCE must be set." && exit 1 )
-[ ! -z ${GALAXY_CRED_FILE+x} ] || ( echo "Env var GALAXY_CRED_FILE pointing to the credentials file must be set." && exit 1 )
 [ ! -z ${EXP_SPECIE+x} ] || ( echo "Env var EXP_SPECIE for the species of the experiment needs to be defined." && exit 1 )
 [ ! -z ${EXP_ID+x} ] || ( echo "Env var EXP_ID for the id/accession of the experiment needs to be defined." && exit 1 )
 [ -z ${matrix_file+x} ] && echo "Env var matrix_file should be set." && exit 1
@@ -29,10 +24,6 @@ export WORKDIR=${WORKDIR:-$(pwd)}
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export baseDir=$scriptDir/..
 
-for mod in util util/galaxy-workflow-executor; do
-  PATH=$baseDir/$mod:$PATH
-done
-export PATH
 
 # Check galaxy-workflow-executor properly installed
 
