@@ -1,17 +1,12 @@
-# scxa-workflows v0.2.5
+# scxa-workflows v0.3.0
 
 Higher level repo for aggregating all of Atlas workflow logic for Single Cell
-towards execution purposes. v0.2.5 will be used to generate a future release of Single-Cell Expression Atlas.
+towards execution purposes. v0.3.0 will be used to generate a future release of Single-Cell Expression Atlas.
 
-Alignment and quantification workflows are developed in NextFlow and can be
+Alignment and quantification workflows are developed in Nextflow and can be
 found in the `w_*_quantification` directories, whereas the clustering and
-downstream analysis was built on Galaxy and can be found in `w_*_clustering`
-directories. All of the Galaxy tools used here are available from the
-[Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/view/ebi-gxa) to be installed
-on any instance. The tools are available for direct use as well on the
-[Human Cell Atlas European Galaxy](https://humancellatlas.usegalaxy.eu/) instance
-and the workflow itself available directly [there](https://humancellatlas.usegalaxy.eu/u/pmoreno/w/ebi-sc-expression-atlas-release-10-analysis-pipeline-scanpy-143).
-Details of all of the Single Cell tools that we have available in this setup can be found in our [pre-print](https://www.biorxiv.org/content/10.1101/2020.04.08.032698v1).
+downstream analysis can be found in `w_*_clustering`
+directories. 
 
 ## Changes in latest version
 
@@ -32,6 +27,8 @@ Some changes were added based on discussion with domain experts and some [semi-q
  * Differential testing switched to Wilcoxon from the t-test used previously. 
  * Tertiary workflow now takes a simple tab-delimited file for gene annotations, replacing previous GTF.
 
+ Tertiary analysis have been moved to nextflow, and can be found in `w_tertiary`.
+
 ### annData output
 
 We now produce detailed [annData](https://anndata.readthedocs.io/en/latest/) files as a key output of the tertiary workflow, combining most workflow outputs into a single object. See below for discussion.
@@ -41,7 +38,7 @@ We now produce detailed [annData](https://anndata.readthedocs.io/en/latest/) fil
 Software version updates are:
 
  - Scanpy updated to 1.8.1
- - Salmon (Alevin, droplet pipeline) updated to 1.5.1
+ - Salmon (Alevin-fry, droplet pipeline) updated to 1.7.0
  - Kallisto (SMART-like pipeline) updated to 0.46.2
 
 ## Organization
@@ -101,16 +98,7 @@ export cell_meta_file=$BUNDLE/E-ENAD-15.cell_metadata.tsv
 export cell_type_field='inferred_cell_type_-_-ontology labels' # To calculate cell type markers
 export batch_field='individual' # To run a batch correction using Harmony on a specific covariate
 
-# Supply Galaxy setup
-
-export create_conda_env=no
-export GALAXY_CRED_FILE=$galaxyCredentials
-export GALAXY_INSTANCE=$galaxyInstance
-
 export create_conda_env=yes
-export GALAXY_CRED_FILE=../galaxy_credentials.yaml
-export GALAXY_INSTANCE=ebi_cluster
-
 export FLAVOUR=w_smart-seq_clustering
 ```
 
@@ -166,9 +154,9 @@ Expression matrices are stored in the following slots:
 
 The variants supplied are intended to allow users to undertake re-analyses from a variety of stages in our analysis with the mimumum of effort.
 
-### Dimension reductions
+### Dimensionality reductions
 
-The tertiary pipleine operates in parallel to produce variants of dimension reduction resulting from manipulation of key parameters (under review, but currently perplexity for t-SNE and number of neighbours for UMAP). As a consequence you will find multiple keyed alternative representations in .obsm:
+The tertiary pipeline operates in parallel to produce variants of dimension reduction resulting from manipulation of key parameters (under review, but currently perplexity for t-SNE and number of neighbours for UMAP). As a consequence you will find multiple keyed alternative representations in .obsm:
 
  ```
  > adata.obsm
@@ -209,21 +197,3 @@ Marker genes are currently stored in .uns alongside unstructured metadata, and a
 >>> list(filter(lambda x: 'marker' in x, adata.uns.keys()))
 ['markers_authors_cell_type_-_ontology_labels', 'markers_authors_cell_type_-_ontology_labels_filtered', 'markers_louvain_resolution_0.1', 'markers_louvain_resolution_0.1_filtered', 'markers_louvain_resolution_0.3', 'markers_louvain_resolution_0.3_filtered', 'markers_louvain_resolution_0.5', 'markers_louvain_resolution_0.5_filtered', 'markers_louvain_resolution_0.7', 'markers_louvain_resolution_0.7_filtered', 'markers_louvain_resolution_1.0', 'markers_louvain_resolution_1.0_filtered', 'markers_louvain_resolution_2.0', 'markers_louvain_resolution_2.0_filtered', 'markers_louvain_resolution_3.0', 'markers_louvain_resolution_3.0_filtered', 'markers_louvain_resolution_4.0', 'markers_louvain_resolution_4.0_filtered', 'markers_louvain_resolution_5.0', 'markers_louvain_resolution_5.0_filtered']
 ```
-
-# Setting up access to a Galaxy instance
-
-To run the Galaxy part, you will need a running Galaxy instance with all tools installed. Below we explain with [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) as an example which already has the tools, but the same holds for another instance where the Galaxy tools are installed.
-
-## Using Human Cell Atlas use-galaxy.eu instance
-
-The [Human Cell Atlas use-galaxy.eu](https://humancellatlas.usegalaxy.eu/) Galaxy instance already has all the tools required installed there, and can be used to reproduce the Expression Atlas clustering pipeline available here. For this you need to:
-- Create an account at https://humancellatlas.usegalaxy.eu/ by clicking on **Login or Register**
-![image](https://user-images.githubusercontent.com/368478/62038201-35d49300-b1ed-11e9-9c87-571cf539cb8c.png)
-- Retrieve your user's API Key for programmatic access:
-![image](https://user-images.githubusercontent.com/368478/62038291-5f8dba00-b1ed-11e9-864a-aa2d27f69e91.png)
-  - Click on Manage API Key
-  ![image](https://user-images.githubusercontent.com/368478/62038697-1c801680-b1ee-11e9-9bb0-e7b1d1cd6439.png)
-  - Click on create API Key if not available, and copy it, to use in in the credentials file needed of the Galaxy workflow executor module (galaxy_credentials.yaml file, as the one [here](https://github.com/ebi-gene-expression-group/galaxy-workflow-executor/blob/b36dcb1eeb546f0b34566e95fb55202d92a34520/galaxy_credentials.yml.sample))
-  ![image](https://user-images.githubusercontent.com/368478/62038543-d6c34e00-b1ed-11e9-9aae-8d0647e9ea13.png)
-
-Make sure that environment variable `GALAXY_CRED_FILE` points to the file where you put the API key, and that `GALAXY_INSTANCE` env variable is accordingly set to match what it is in that file.
