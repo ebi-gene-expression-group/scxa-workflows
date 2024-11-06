@@ -69,10 +69,10 @@ if [ -n "$batch_field" ]; then
 fi
     
 sub_in_params 'cell_type_field' "$cell_type_field"
-sub_in_params 'batch_variable' $batch_field
-sub_in_params 'representation' $representation
+sub_in_params 'batch_variable' "$batch_field"
+sub_in_params 'representation' "$representation"
 
-# Run the workflow
+
 FLAVOUR_NF=''
 if [ "$FLAVOUR" = 'w_droplet_clustering' ]; then
     export FLAVOUR_NF='droplet'
@@ -83,10 +83,13 @@ else
     exit 1
 fi
 
+# Run the workflow
 nextflow run $baseDir/$FLAVOUR_NF/main.nf \
     --exp_id $EXP_ID \
     --workdir $WORKDIR \
-    --flavour $FLAVOUR_NF
+    --flavour $FLAVOUR_NF \
+    --batch_field $batch_field \
+    --representation $representation
 
 
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
