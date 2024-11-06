@@ -6,8 +6,6 @@ set -e
 # Experiment related, needs to be inyected
 export EXP_ID=${1:-$expName}
 export EXP_SPECIE=${2:-$species}
-export STATE_FILE=${3:-$state_file}
-
 
 export WORKDIR=${WORKDIR:-$(pwd)}
 
@@ -74,6 +72,7 @@ sub_in_params 'cell_type_field' "$cell_type_field"
 sub_in_params 'batch_variable' $batch_field
 sub_in_params 'representation' $representation
 
+
 #run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
 #                       -i $inputs_yaml \
 #                       -o $WORKDIR \
@@ -85,11 +84,22 @@ sub_in_params 'representation' $representation
 #                       -s $STATE_FILE \
 #                       --parameters-yaml
 
-module load nextflow/23.04.1   # we need to pin the NF version somewhere, or just leave it like this until full migration
 
-nextflow ...
+FLAVOUR_NF=''
+if [ "$FLAVOUR" = 'w_droplet_clustering' ]; then
+    export FLAVOUR_NF='droplet'
+elif [ "$FLAVOUR" = 'w_smart-seq_clustering' ]; then
+    export FLAVOUR_NF='smartseq'
+else
+    echo "Unknown FLAVOUR $FLAVOUR"
+    exit 1
+fi
 
-module unload nextflow/23.04.1
+
+nextflow run $baseDir/$FLAVOUR_NF/main.nf \
+    --exp_id $EXP_ID \
+    --workdir $WORKDIR \
+    --flavour $FLAVOUR_NF
 
 
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
