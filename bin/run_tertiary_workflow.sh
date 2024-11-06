@@ -72,19 +72,7 @@ sub_in_params 'cell_type_field' "$cell_type_field"
 sub_in_params 'batch_variable' $batch_field
 sub_in_params 'representation' $representation
 
-
-#run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
-#                       -i $inputs_yaml \
-#                       -o $WORKDIR \
-#                       -W $flavor_dir/scanpy_clustering_workflow.json \
-#                       -P $parameters_yaml \
-#                       -H scanpy-clustering-$EXP_ID \
-#                       -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
-#                       -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
-#                       -s $STATE_FILE \
-#                       --parameters-yaml
-
-
+# Run the workflow
 FLAVOUR_NF=''
 if [ "$FLAVOUR" = 'w_droplet_clustering' ]; then
     export FLAVOUR_NF='droplet'
@@ -94,7 +82,6 @@ else
     echo "Unknown FLAVOUR $FLAVOUR"
     exit 1
 fi
-
 
 nextflow run $baseDir/$FLAVOUR_NF/main.nf \
     --exp_id $EXP_ID \
