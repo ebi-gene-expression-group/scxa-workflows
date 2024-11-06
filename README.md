@@ -40,6 +40,7 @@ Software version updates are:
  - Scanpy updated to 1.8.1
  - Salmon (Alevin-fry, droplet pipeline) updated to 1.7.0
  - Kallisto (SMART-like pipeline) updated to 0.46.2
+ - atlas-fastq-provider updated to 0.4.7
 
 ## Organization
 
