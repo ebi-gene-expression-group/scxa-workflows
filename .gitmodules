@@ -10,3 +10,6 @@
 [submodule "util/scxa-bundle-workflow"]
 	path = w_bundle
 	url = https://github.com/ebi-gene-expression-group/scxa-bundle-workflow
+[submodule "w_tertiary"]
+	path = w_tertiary
+	url = https://github.com/ebi-gene-expression-group/scxa-tertiary-workflow.git
