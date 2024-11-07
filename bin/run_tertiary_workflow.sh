@@ -84,7 +84,7 @@ else
 fi
 
 # Run the workflow
-nextflow run $baseDir/$FLAVOUR_NF/main.nf \
+nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
     --exp_id $EXP_ID \
     --workdir $WORKDIR \
     --flavour $FLAVOUR_NF \
