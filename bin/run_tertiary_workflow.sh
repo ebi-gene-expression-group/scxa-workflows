@@ -36,17 +36,8 @@ echo "Results will be available on $WORKDIR"
 
 # This is where additional variables defined during the inputs_yaml setup will be left
 
-inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml          # do we need this?
 parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml  # do we need this?
 flavor_dir=$baseDir/$FLAVOUR
-
-# Run substitutions on the inputs template
-
-sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
-    sed "s+<GENES_PATH>+$genes_file+" | \
-    sed "s+<BARCODES_PATH>+$barcodes_file+" | \
-    sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
-    sed "s+<GENE_META_PATH>+$gene_meta_file+" > $inputs_yaml
 
 # If the batch variable is set, then tell the workflow about it, and also
 # adjust the representation used by PCA-consuming workflow steps.
