@@ -79,7 +79,7 @@ bash $baseDir/scxa-tertiary-workflow/scripts/dataprep.sh $EXP_ID $SCXA_WORK
 
 # Run the workflow
 nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
-    --exp_id $EXP_ID \
+    --dir_path $SCXA_WORK/$EXP_ID \
     --workdir $WORKDIR \
     --flavour $FLAVOUR_NF \
     --batch_field $batch_field \
