@@ -36,20 +36,12 @@ echo "Results will be available on $WORKDIR"
 
 # This is where additional variables defined during the inputs_yaml setup will be left
 
-parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml  # do we need this?
+
 flavor_dir=$baseDir/$FLAVOUR
 
 # If the batch variable is set, then tell the workflow about it, and also
 # adjust the representation used by PCA-consuming workflow steps.
 
-function sub_in_params {
-    param=$1
-    value=$2
-
-    sed -i "s/$param: '.*'/$param: '$value'/" $parameters_yaml
-}
-
-cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
 
 # If we have cell type fields or batch, set those in the params
 
@@ -59,9 +51,6 @@ if [ -n "$batch_field" ]; then
     representation='X_pca_harmony'
 fi
     
-sub_in_params 'cell_type_field' "$cell_type_field"
-sub_in_params 'batch_variable' "$batch_field"
-sub_in_params 'representation' "$representation"
 
 
 FLAVOUR_NF=''
@@ -85,7 +74,7 @@ nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
     --batch_field $batch_field \
     --representation $representation
 
-
+# software_versions_galaxy.txt to be renamed software_versions_tertiary.txt
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
 
 choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
