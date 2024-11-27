@@ -74,6 +74,9 @@ else
     exit 1
 fi
 
+# Prepare input data for tertiary workflow stores them in $SCXA_WORK 
+bash $baseDir/scxa-tertiary-workflow/scripts/dataprep.sh $EXP_ID $SCXA_WORK
+
 # Run the workflow
 nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
     --exp_id $EXP_ID \
