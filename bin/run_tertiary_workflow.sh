@@ -74,12 +74,12 @@ else
     exit 1
 fi
 
-# Prepare input data for tertiary workflow stores them in $SCXA_WORK 
-bash $baseDir/scxa-tertiary-workflow/scripts/dataprep.sh $EXP_ID $SCXA_WORK
+# Prepare input data for tertiary workflow stores them in $SCXA_WORKDIR 
+bash $baseDir/scxa-tertiary-workflow/scripts/dataprep.sh $EXP_ID $SCXA_WORKDIR
 
 # Run the workflow
 nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
-    --dir_path $SCXA_WORK/$EXP_ID \
+    --dir_path $SCXA_WORKDIR/$EXP_ID \
     --workdir $WORKDIR \
     --flavour $FLAVOUR_NF \
     --batch_field $batch_field \
