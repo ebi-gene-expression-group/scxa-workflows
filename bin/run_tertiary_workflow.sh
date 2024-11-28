@@ -76,6 +76,10 @@ nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
     --output_path $SCXA_WORKFLOW_ROOT/results/$EXP_ID/$EXP_SPECIE/scanpy
 
 # software_versions_galaxy.txt to be renamed software_versions_tertiary.txt
+# To clean up this code later
+
+echo "Analysis  Software  Version  Citation" > $WORKDIR/software_versions_galaxy.txt
+echo "Tertiary  scanpy-scripts  v1.1.6  quay.io/biocontainers/scanpy-scripts:1.1.6--pypyhdfd78af_0" >> $WORKDIR/software_versions_galaxy.txt
 mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
 
 choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
