@@ -22,6 +22,11 @@ export WORKDIR=${WORKDIR:-$(pwd)}
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export baseDir=$scriptDir/..
 
+for mod in util; do
+   PATH=$baseDir/$mod:$PATH
+done
+export PATH
+
 
 which choose_resolution_per_clustering.py > /dev/null
 if [ $? -gt 0 ]; then
@@ -29,10 +34,7 @@ if [ $? -gt 0 ]; then
   exit 1
 fi
 
-for mod in util; do
-   PATH=$baseDir/$mod:$PATH
-done
-export PATH
+
 
 set -e
 echo "Results will be available on $WORKDIR"
