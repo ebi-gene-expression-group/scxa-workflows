@@ -29,6 +29,11 @@ if [ $? -gt 0 ]; then
   exit 1
 fi
 
+for mod in util; do
+   PATH=$baseDir/$mod:$PATH
+done
+export PATH
+
 set -e
 echo "Results will be available on $WORKDIR"
 
