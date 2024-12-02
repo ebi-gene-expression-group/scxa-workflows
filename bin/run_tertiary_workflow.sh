@@ -72,9 +72,9 @@ fi
 
 # Prepare input data for tertiary workflow stores them in $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/
 mkdir -p $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data
-gunzip -f $matrix_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/matrix.mtx
-gunzip -f $genes_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes.tsv
-gunzip -f $barcodes_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/barcodes.tsv
+cp $matrix_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/matrix.mtx
+cp $genes_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes.tsv
+cp $barcodes_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/barcodes.tsv
 cp $cell_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/cell_metadata.tsv
 cp $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes_metadata.tsv
 
