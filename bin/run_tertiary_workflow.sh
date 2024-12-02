@@ -73,12 +73,12 @@ fi
 # Prepare input data for tertiary workflow stores them in $SCXA_WORKDIR 
 # bash $baseDir/w_tertiary/scripts/data_prep.sh $EXP_ID $SCXA_WORKDIR
 
-mkdir $SCXA_WORKDIR/$EXP_ID
-cp $matrix_file $genes_file $barcodes_file $cell_meta_file $gene_meta_file $SCXA_WORKDIR/$EXP_ID
+mkdir $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data
+cp $matrix_file $genes_file $barcodes_file $cell_meta_file $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/
 
 # Run the workflow
 nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
-    --dir_path $SCXA_WORKDIR/$EXP_ID \
+    --dir_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data \
     --workdir $WORKDIR \
     --flavour $FLAVOUR_NF \
     --batch_field $batch_field \
