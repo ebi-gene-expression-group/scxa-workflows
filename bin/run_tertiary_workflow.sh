@@ -77,7 +77,7 @@ mkdir -p $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data
 cp $matrix_file $genes_file $barcodes_file $cell_meta_file $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/
 
 # Run the workflow
-nextflow run $baseDir/scxa-tertiary-workflow/main.nf \
+nextflow run $baseDir/w_tertiary/main.nf \
     --dir_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data \
     --workdir $WORKDIR \
     --flavour $FLAVOUR_NF \
