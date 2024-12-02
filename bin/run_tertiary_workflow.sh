@@ -89,7 +89,7 @@ nextflow run $baseDir/w_tertiary/main.nf \
     --flavour $FLAVOUR_NF \
     --batch_field $batch_field \
     --representation $representation \
-    --output_path $SCXA_WORKFLOW_ROOT/results/$EXP_ID/$EXP_SPECIE/scanpy
+    --output_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/scanpy
 
 # software_versions_galaxy.txt to be renamed software_versions_tertiary.txt
 # To clean up this code later
