@@ -70,11 +70,16 @@ else
     exit 1
 fi
 
-# Prepare input data for tertiary workflow stores them in $SCXA_WORKDIR 
-# bash $baseDir/w_tertiary/scripts/data_prep.sh $EXP_ID $SCXA_WORKDIR
-
+# Prepare input data for tertiary workflow stores them in $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/
 mkdir -p $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data
-cp $matrix_file $genes_file $barcodes_file $cell_meta_file $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/
+gunzip -f $matrix_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/matrix.mtx
+gunzip -f $genes_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes.tsv
+gunzip -f $barcodes_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/barcodes.tsv
+cp $cell_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/cell_metadata.tsv
+cp $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes_metadata.tsv
+
+
+
 
 # Run the workflow
 nextflow run $baseDir/w_tertiary/main.nf \
