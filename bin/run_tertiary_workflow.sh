@@ -100,4 +100,10 @@ echo "Analysis  Software  Version  Citation" > $WORKDIR/software_versions_tertia
 echo "Tertiary  scanpy-scripts  v1.1.6  quay.io/biocontainers/scanpy-scripts:1.1.6--pypyhdfd78af_0" >> $WORKDIR/software_versions_tertiary.txt
 mv $WORKDIR/software_versions_tertiary.txt $WORKDIR/clustering_software_versions.txt
 
+#creating a symlink for the clusters to match existing pipelines
+for file in $(ls $SCXA_OUTDIR/clusters); do 
+   BASENAME=$(basename "$file"); 
+   ln -sf "$SCXA_OUTDIR/clusters/$file" "$BASENAME";
+done;
+
 choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
