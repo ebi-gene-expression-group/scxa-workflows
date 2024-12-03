@@ -6,7 +6,7 @@ set -e
 # Experiment related, needs to be inyected
 export EXP_ID=${1:-$expName}
 export EXP_SPECIE=${2:-$species}
-export SCXA_OUTDIR=${3:-SCXA_OUTDIR}
+export SCXA_OUTDIR=${3:-$SCXA_OUTDIR}
 
 export WORKDIR=${WORKDIR:-$(pwd)}
 
