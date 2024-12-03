@@ -6,6 +6,7 @@ set -e
 # Experiment related, needs to be inyected
 export EXP_ID=${1:-$expName}
 export EXP_SPECIE=${2:-$species}
+export SCXA_OUTDIR=${3:-SCXA_OUTDIR}
 
 export WORKDIR=${WORKDIR:-$(pwd)}
 
@@ -18,6 +19,7 @@ export WORKDIR=${WORKDIR:-$(pwd)}
 [ -z ${cell_meta_file+x} ] && echo "Env var cell_meta_file should be set." && exit 1
 [ -z ${gene_meta_file+x} ] && echo "Env var gene_meta_file should be set." && exit 1
 [ -z ${EXP_ID+x} ] && echo "Env var EXP_ID should be set." && exit 1
+[ -z ${SCXA_OUTDIR+x} ] && echo "Env var SCXA_OUTDIR should be set." && exit 1
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export baseDir=$scriptDir/..
@@ -89,7 +91,7 @@ nextflow run $baseDir/w_tertiary/main.nf \
     --flavour $FLAVOUR_NF \
     --batch_field $batch_field \
     --representation $representation \
-    --output_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/scanpy
+    --output_path $SCXA_OUTDIR
 
 # software_versions_galaxy.txt to be renamed software_versions_tertiary.txt
 # To clean up this code later
