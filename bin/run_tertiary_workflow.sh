@@ -108,7 +108,7 @@ done;
 
 for file in $(ls $SCXA_OUTDIR/markers); do 
    BASENAME=$(basename "$file"); 
-   ln -sf "$SCXA_OUTDIR/markers/$file" "$BASENAME";
+   mv "$SCXA_OUTDIR/markers/$file" "$BASENAME";
 done;
 
 choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
