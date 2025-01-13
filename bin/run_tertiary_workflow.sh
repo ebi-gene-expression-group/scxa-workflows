@@ -91,6 +91,7 @@ nextflow run $baseDir/w_tertiary/main.nf \
     --technology $FLAVOUR_NF \
     --batch_field $batch_field \
     --representation $representation \
+    --celltype_field $cell_type_field \
     --output_path $SCXA_OUTDIR
 
 # software_versions_galaxy.txt to be renamed software_versions_tertiary.txt
