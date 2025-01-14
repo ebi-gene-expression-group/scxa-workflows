@@ -1,8 +1,0 @@
-find_clusters:
-  - any
-find_markers:
-  - any
-run_tsne:
-  - any
-run_umap:
-  - any

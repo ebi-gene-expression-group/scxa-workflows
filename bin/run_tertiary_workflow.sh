@@ -1,22 +1,16 @@
 #!/bin/env bash
 set -e
 
-# This file runs the Galaxy smart-seq Scanpy clustering workflow
+# This file runs the tertiary workflow
 
 # Experiment related, needs to be inyected
 export EXP_ID=${1:-$expName}
 export EXP_SPECIE=${2:-$species}
-export STATE_FILE=${3:-$state_file}
-
-# GALAXY Related, needs to be inyected
-export GALAXY_INSTANCE=${GALAXY_INSTANCE}
-export GALAXY_CRED_FILE=${GALAXY_CRED_FILE}
+export SCXA_OUTDIR=${3:-$SCXA_OUTDIR}
 
 export WORKDIR=${WORKDIR:-$(pwd)}
 
 [ ! -z ${FLAVOUR+x} ] || ( echo "Env var FLAVOUR for the type of workflow to be run, matching one of the w_* directories" && exit 1 )
-[ ! -z ${GALAXY_INSTANCE+x} ] || ( echo "Env var GALAXY_INSTANCE must be set." && exit 1 )
-[ ! -z ${GALAXY_CRED_FILE+x} ] || ( echo "Env var GALAXY_CRED_FILE pointing to the credentials file must be set." && exit 1 )
 [ ! -z ${EXP_SPECIE+x} ] || ( echo "Env var EXP_SPECIE for the species of the experiment needs to be defined." && exit 1 )
 [ ! -z ${EXP_ID+x} ] || ( echo "Env var EXP_ID for the id/accession of the experiment needs to be defined." && exit 1 )
 [ -z ${matrix_file+x} ] && echo "Env var matrix_file should be set." && exit 1
@@ -25,28 +19,24 @@ export WORKDIR=${WORKDIR:-$(pwd)}
 [ -z ${cell_meta_file+x} ] && echo "Env var cell_meta_file should be set." && exit 1
 [ -z ${gene_meta_file+x} ] && echo "Env var gene_meta_file should be set." && exit 1
 [ -z ${EXP_ID+x} ] && echo "Env var EXP_ID should be set." && exit 1
+[ -z ${SCXA_OUTDIR+x} ] && echo "Env var SCXA_OUTDIR should be set." && exit 1
 
 scriptDir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export baseDir=$scriptDir/..
 
-for mod in util util/galaxy-workflow-executor; do
-  PATH=$baseDir/$mod:$PATH
+for mod in util; do
+   PATH=$baseDir/$mod:$PATH
 done
 export PATH
 
-# Check galaxy-workflow-executor properly installed
-
-which run_galaxy_workflow.py > /dev/null
-if [ $? -gt 0 ]; then
-  echo "run_galaxy_workflow.py is not in the path, please install galaxy-workflow-executor. Exiting"
-  exit 1
-fi
 
 which choose_resolution_per_clustering.py > /dev/null
 if [ $? -gt 0 ]; then
   echo "choose_resolution_per_clustering.py is not in the path, exiting"
   exit 1
 fi
+
+
 
 set -e
 echo "Results will be available on $WORKDIR"
@@ -55,29 +45,12 @@ echo "Results will be available on $WORKDIR"
 
 # This is where additional variables defined during the inputs_yaml setup will be left
 
-inputs_yaml=$WORKDIR/scanpy_clustering_inputs_$EXP_ID\.yaml
-parameters_yaml=$WORKDIR/scanpy_clustering_parameters_$EXP_ID\.yaml
+
 flavor_dir=$baseDir/$FLAVOUR
-
-# Run substitutions on the inputs template
-
-sed "s+<MATRIX_PATH>+$matrix_file+" $flavor_dir/scanpy_clustering_inputs.yaml.template | \
-    sed "s+<GENES_PATH>+$genes_file+" | \
-    sed "s+<BARCODES_PATH>+$barcodes_file+" | \
-    sed "s+<CELL_META_PATH>+$cell_meta_file+" | \
-    sed "s+<GENE_META_PATH>+$gene_meta_file+" > $inputs_yaml
 
 # If the batch variable is set, then tell the workflow about it, and also
 # adjust the representation used by PCA-consuming workflow steps.
 
-function sub_in_params {
-    param=$1
-    value=$2
-
-    sed -i "s/$param: '.*'/$param: '$value'/" $parameters_yaml
-}
-
-cp $flavor_dir/scanpy_clustering_workflow_parameters.yaml $parameters_yaml
 
 # If we have cell type fields or batch, set those in the params
 
@@ -87,21 +60,56 @@ if [ -n "$batch_field" ]; then
     representation='X_pca_harmony'
 fi
     
-sub_in_params 'cell_type_field' "$cell_type_field"
-sub_in_params 'batch_variable' $batch_field
-sub_in_params 'representation' $representation
 
-run_galaxy_workflow.py -C $GALAXY_CRED_FILE \
-                       -i $inputs_yaml \
-                       -o $WORKDIR \
-                       -W $flavor_dir/scanpy_clustering_workflow.json \
-                       -P $parameters_yaml \
-                       -H scanpy-clustering-$EXP_ID \
-                       -a $flavor_dir/scanpy_clustering_allowed_errors.yaml \
-                       -G $GALAXY_INSTANCE $ADDITIONAL_GALAXY_WF_EXECUTOR_OPTION \
-                       -s $STATE_FILE \
-                       --parameters-yaml
 
-mv $WORKDIR/software_versions_galaxy.txt $WORKDIR/clustering_software_versions.txt
+FLAVOUR_NF=''
+if [ "$FLAVOUR" = 'w_droplet_clustering' ]; then
+    export FLAVOUR_NF='droplet'
+elif [ "$FLAVOUR" = 'w_smart-seq_clustering' ]; then
+    export FLAVOUR_NF='smartseq'
+else
+    echo "Unknown FLAVOUR $FLAVOUR"
+    exit 1
+fi
+
+# Prepare input data for tertiary workflow stores them in $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/
+mkdir -p $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data
+
+gunzip -c $matrix_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/matrix.mtx
+gunzip -c $genes_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes.tsv
+gunzip -c $barcodes_file > $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/barcodes.tsv
+cp $cell_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/cell_metadata.tsv
+cp $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes_metadata.tsv
+
+
+
+
+# Run the workflow
+nextflow run $baseDir/w_tertiary/main.nf \
+    --dir_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data \
+    --workdir $WORKDIR \
+    --technology $FLAVOUR_NF \
+    --batch_field $batch_field \
+    --representation $representation \
+    --celltype_field $cell_type_field \
+    --output_path $SCXA_OUTDIR
+
+# software_versions_galaxy.txt to be renamed software_versions_tertiary.txt
+# To clean up this code later
+
+echo -e "Analysis\tSoftware\tVersion\tCitation" > $WORKDIR/software_versions_tertiary.txt
+echo -e "Tertiary\tscanpy-scripts\tv1.1.6\tquay.io/biocontainers/scanpy-scripts:1.1.6--pypyhdfd78af_0" >> $WORKDIR/software_versions_tertiary.txt
+mv $WORKDIR/software_versions_tertiary.txt $WORKDIR/clustering_software_versions.txt
+
+#creating a symlink for the clusters to match existing pipelines
+for file in $(ls $SCXA_OUTDIR/clusters); do 
+   BASENAME=$(basename "$file"); 
+   ln -sf "$SCXA_OUTDIR/clusters/$file" "$BASENAME";
+done;
+
+for file in $(ls $SCXA_OUTDIR/markers); do 
+   BASENAME=$(basename "$file"); 
+   mv "$SCXA_OUTDIR/markers/$file" "$BASENAME";
+done;
 
 choose_resolution_per_clustering.py --clusters-path $WORKDIR --output-dir $WORKDIR
