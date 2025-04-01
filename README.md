@@ -182,11 +182,11 @@ Index(['age', 'cause_of_death', 'developmental_stage', 'disease', 'individual',
        'doublet_score', 'predicted_doublet', 'n_genes_by_counts',
        'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts',
        'total_counts_mito', 'log1p_total_counts_mito', 'pct_counts_mito',
-       'n_counts', 'louvain_resolution_0.1', 'louvain_resolution_0.3',
-       'louvain_resolution_0.5', 'louvain_resolution_0.7',
-       'louvain_resolution_1.0', 'louvain_resolution_2.0',
-       'louvain_resolution_3.0', 'louvain_resolution_4.0',
-       'louvain_resolution_5.0'],
+       'n_counts', 'leiden_resolution_0.1', 'leiden_resolution_0.3',
+       'leiden_resolution_0.5', 'leiden_resolution_0.7',
+       'leiden_resolution_1.0', 'leiden_resolution_2.0',
+       'leiden_resolution_3.0', 'leiden_resolution_4.0',
+       'leiden_resolution_5.0'],
       dtype='object')
 ```
 
@@ -196,5 +196,5 @@ Marker genes are currently stored in .uns alongside unstructured metadata, and a
 
 ```
 >>> list(filter(lambda x: 'marker' in x, adata.uns.keys()))
-['markers_authors_cell_type_-_ontology_labels', 'markers_authors_cell_type_-_ontology_labels_filtered', 'markers_louvain_resolution_0.1', 'markers_louvain_resolution_0.1_filtered', 'markers_louvain_resolution_0.3', 'markers_louvain_resolution_0.3_filtered', 'markers_louvain_resolution_0.5', 'markers_louvain_resolution_0.5_filtered', 'markers_louvain_resolution_0.7', 'markers_louvain_resolution_0.7_filtered', 'markers_louvain_resolution_1.0', 'markers_louvain_resolution_1.0_filtered', 'markers_louvain_resolution_2.0', 'markers_louvain_resolution_2.0_filtered', 'markers_louvain_resolution_3.0', 'markers_louvain_resolution_3.0_filtered', 'markers_louvain_resolution_4.0', 'markers_louvain_resolution_4.0_filtered', 'markers_louvain_resolution_5.0', 'markers_louvain_resolution_5.0_filtered']
+['markers_authors_cell_type_-_ontology_labels', 'markers_authors_cell_type_-_ontology_labels_filtered', 'markers_leiden_resolution_0.1', 'markers_leiden_resolution_0.1_filtered', 'markers_leiden_resolution_0.3', 'markers_leiden_resolution_0.3_filtered', 'markers_leiden_resolution_0.5', 'markers_leiden_resolution_0.5_filtered', 'markers_leiden_resolution_0.7', 'markers_leiden_resolution_0.7_filtered', 'markers_leiden_resolution_1.0', 'markers_leiden_resolution_1.0_filtered', 'markers_leiden_resolution_2.0', 'markers_leiden_resolution_2.0_filtered', 'markers_leiden_resolution_3.0', 'markers_leiden_resolution_3.0_filtered', 'markers_leiden_resolution_4.0', 'markers_leiden_resolution_4.0_filtered', 'markers_leiden_resolution_5.0', 'markers_leiden_resolution_5.0_filtered']
 ```

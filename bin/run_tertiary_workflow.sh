@@ -86,6 +86,7 @@ cp $gene_meta_file $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data/genes_metadat
 
 # Run the workflow
 nextflow run $baseDir/w_tertiary/main.nf \
+    -profile atlas \
     --dir_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data \
     --workdir $WORKDIR \
     --technology $FLAVOUR_NF \
