@@ -99,6 +99,7 @@ nextflow run $baseDir/w_tertiary/main.nf \
 # To clean up this code later
 
 echo -e "Analysis\tSoftware\tVersion\tCitation" > $WORKDIR/software_versions_tertiary.txt
+#edit this
 echo -e "Tertiary\tscanpy-scripts\tv1.1.6\tquay.io/biocontainers/scanpy-scripts:1.1.6--pypyhdfd78af_0" >> $WORKDIR/software_versions_tertiary.txt
 mv $WORKDIR/software_versions_tertiary.txt $WORKDIR/clustering_software_versions.txt
 
