@@ -100,6 +100,25 @@ nextflow run $baseDir/w_tertiary/main.nf \
 
 echo -e "Analysis\tSoftware\tVersion\tCitation" > $WORKDIR/software_versions_tertiary.txt
 echo -e "Tertiary\tscanpy-scripts\tv1.1.6\tquay.io/biocontainers/scanpy-scripts:1.1.6--pypyhdfd78af_0" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "scanpy_read_10x\tScanpy Read 10X\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/scanpy_read_10x.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "scanpy_multiplet_scrublet\tScanpy Multiplet Scrublet\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/scanpy_multiplet_scrublet.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "scanpy_plot_scrublet\tScanpy Plot Scrublet\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/scanpy_plot_scrublet.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "scanpy_filter_cells\tScanpy FilterCells\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/scanpy_filter_cells.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "scanpy_filter_genes\tScanpy FilterGenes\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/scanpy_filter_genes.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "normalise_data\tNormalise Data\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/normalise_data.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "normalise_internal_data\tNormalise Internal Data\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/normalise_internal_data.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "find_variable_genes\tFind Variable Genes\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/find_variable_genes.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "scale_data\tScale Data\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/scale_data.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "run_pca\tRun PCA\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/run_pca.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "harmony_batch\tHarmony Batch\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/harmony_batch.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "neighbors\tNeighbors\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/neighbors.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "neighbors_for_umap\tNeighbors for UMAP\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/neighbors_for_umap.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "run_tsne\tRun t-SNE\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/run_tsne.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "run_umap\tRun UMAP\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/run_umap.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "find_clusters\tFind Clusters\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/find_clusters.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "find_markers\tFind Markers\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/scanpy-scripts/find_markers.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "restore_unscaled\tRestore Unscaled\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/restore_unscaled.nf" >> $WORKDIR/software_versions_tertiary.txt
+echo -e "make_project_file\tMake Project File\t1.0.1\thttps://github.com/ebi-gene-expression-group/scxa-tertiary-workflow/blob/baaf21c0494364e0ac0e0b31b0bb26d29610141a/modules/make_project_file.nf" >> $WORKDIR/software_versions_tertiary.txt
 mv $WORKDIR/software_versions_tertiary.txt $WORKDIR/clustering_software_versions.txt
 
 #creating a symlink for the clusters to match existing pipelines
