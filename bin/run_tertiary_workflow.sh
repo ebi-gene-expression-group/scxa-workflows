@@ -56,8 +56,10 @@ flavor_dir=$baseDir/$FLAVOUR
 
 cell_type_field=${cell_type_field:-'NO_CELLTYPE_FIELD'}
 representation='X_pca'
+batch_args=()
 if [ -n "$batch_field" ]; then
     representation='X_pca_harmony'
+    batch_args+=( --batch_field "$batch_field" )
 fi
     
 
@@ -90,7 +92,7 @@ nextflow run $baseDir/w_tertiary/main.nf \
     --dir_path $SCXA_WORKDIR/$EXP_ID/$EXP_SPECIE/tertiary_data \
     --workdir $WORKDIR \
     --technology $FLAVOUR_NF \
-    --batch_field $batch_field \
+    "${batch_args[@]}" \
     --representation $representation \
     --celltype_field $cell_type_field \
     --output_path $SCXA_OUTDIR
